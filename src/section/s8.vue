@@ -1,12 +1,11 @@
 <template>
   <article class="s8">
     <div class="img1" data-aos="fade" data-aos-delay="600" v-if="!isMobile"></div>
-    <svg class="img2" viewBox="0 0 100 100"><path fill="#009686" d="M0,100V0h100"/></svg>
-    <svg class="img3" v-if="!isMobile" viewBox="0 0 100 100"><path fill="#fff000" d="M0,100V0h100"/></svg>
-    <svg class="img4" v-if="!isMobile" viewBox="0 0 100 100"><path fill="#009686" d="M0,100V0h100"/></svg>
+    <svg class="img2" viewBox="0 0 100 100"><path fill="#736446" d="M0,100V0h100"/></svg>
+    <svg class="img3" v-if="!isMobile" viewBox="0 0 100 100"><path fill="#736446" d="M0,100V0h100"/></svg>
     <div class="main">
       <div class="txt">
-        <h3 class="title" data-aos="fade-up" data-aos-delay="0">新北第一環，<br v-if="isMobile">唯一人口正成長</h3>
+        <h3 class="title" data-aos="fade-up" data-aos-delay="0">一橋北市<br v-if="isMobile">一門雙捷</h3>
     </div>
     </div>
     <div class="slider" data-aos="fade">
@@ -34,16 +33,14 @@
   flex-wrap:nowrap;
     flex-direction:column;
   &::before{content: "";position: absolute;width: 100%;height: 100%;
-  top: 0;left: 0;background:  url("./s4/bg_green.png")no-repeat center/cover;mix-blend-mode: multiply;
+  top: 0;left: 0;background:  url("./s4/bg_7d6a35.jpg")no-repeat center/cover;mix-blend-mode: multiply;
 }
 .img1{position: absolute;left: size(320);top:size(660);
-  width: size(415);height: size(415);background: #005a3c;}
-.img2{position: absolute;left: size(340);top:size(100);mix-blend-mode: multiply;
+  width: size(415);height: size(415);background: #fff000;}
+.img2{position: absolute;left: size(340);top:size(100);
   width: size(90);}
-.img3{position: absolute;right: size(150);bottom:size(280);
+.img3{position: absolute;right: size(150);bottom:size(0);
   width: size(55);}
-.img4{position: absolute;left: size(650);bottom:size(0);mix-blend-mode: multiply;
-  width: size(95);}
   .main {
     @apply flex;
     margin: 0;

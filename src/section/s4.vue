@@ -1,9 +1,9 @@
-<template>
+ebp<template>
   <article class="s4 " ref="s4">
     <div class="img1" data-aos="fade" data-aos-delay="600"></div>
     <svg class="img2" viewBox="0 0 100 100"><path fill="#fff000" d="M0,100V0h100"/></svg>
-    <svg class="img3" viewBox="0 0 100 100"><path fill="#fff000" d="M100,100H0V0"/></svg>
-    <svg class="img4" v-if="!isMobile" viewBox="0 0 100 100"><path fill="#009686" d="M0,100V0h100"/></svg>
+    <svg class="img3" viewBox="0 0 100 100"><path fill="#736446" d="M100,100H0V0"/></svg>
+    <svg class="img4" v-if="!isMobile" viewBox="0 0 100 100"><path fill="#736446" d="M0,100V0h100"/></svg>
     <div class="main">
       <div class="txt">
         <h3 class="title" data-aos="fade-up" data-aos-delay="200">食衣住行動 便利全到位</h3>
@@ -40,15 +40,15 @@
   gap:3em;
   flex-wrap: wrap;
   &::before{content: "";position: absolute;width: 100%;height: 100%;
-  top: 0;left: 0;background: url("./s4/bg_green.png");mix-blend-mode: multiply;
+  top: 0;left: 0;background: url("./s4/bg_7d6a35.jpg");mix-blend-mode: multiply;
 }
 .img1{position: absolute;right: size(190);top:size(380);
-  width: size(415);height: size(415);background: #005a3c;}
+  width: size(415);height: size(415);background: #fff000;}
 .img2{position: absolute;left: size(220);top:size(270);
   width: size(50);}
 .img3{position: absolute;right: size(170);top:size(180);
   width: size(35);}
-.img4{position: absolute;right: size(510);bottom:size(0);mix-blend-mode: multiply;
+.img4{position: absolute;right: size(510);bottom:size(0);
   width: size(95);}
   .main {
     @apply flex;

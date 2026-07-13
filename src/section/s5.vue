@@ -1,9 +1,8 @@
 <template>
   <article class="s5">
     <div class="img1" v-if="!isMobile"  data-aos="fade" data-aos-delay="600"></div>
-    <img src="./s3/img.svg" class="img2" v-if="!isMobile" />
-    <img src="./s5/imgm.svg" class="img2" v-else />
-    <svg class="img3" v-if="!isMobile"  viewBox="0 0 100 100"><path fill="#009686" d="M0,0h100v100"/></svg>
+    <img src="./s3/img-2.svg" class="img2" v-if="!isMobile" />
+    <img src="./s3/imgm-2.svg" class="img2" v-else />
     <div class="main">
       <div class="txt">
         <h3 class="title" data-aos="fade-up" data-aos-delay="0">東基頂尖團隊<br v-if="isMobile"> 讓願景落地成真</h3>
@@ -41,11 +40,9 @@
   top: 0;left: 0;background: url("./s3/bg2.webp");mix-blend-mode: multiply;
 }
 .img1{position: absolute;right: size(320);bottom:size(185);
-  width: size(415);height: size(415);background: #00915a}
-.img2{position: absolute;left: size(70);bottom:size(100);mix-blend-mode: multiply;
+  width: size(415);height: size(415);background: #fff000}
+.img2{position: absolute;left: size(70);bottom:size(100);
   width: size(790);transform: rotate(180deg);}
-.img3{position: absolute;right: size(56);bottom:size(-150);mix-blend-mode: multiply;
-  width: size(250);}
   .main {
     @apply flex;
     margin: 0;
@@ -57,7 +54,7 @@
 .txt {
   margin: auto;
   width: size(1050);text-align: center;
-  .title{color: #00915a;}
+  .title{color: #3d3523;}
 }
 
   .slider {
@@ -94,7 +91,7 @@
         //@apply rounded-full;
         width: 1em;
         height: 1em;
-        background:#0091597e ;
+        background:#ffffff ;
         transition: background .5s, transform .5s;
         overflow: hidden;
         &::before{content: "";

@@ -133,7 +133,7 @@
 
   .contact-item-box {
     position: relative;
-    margin-top:1.25em;
+    margin-top:3em;
     gap: 1.25em;
    // width: size(920);
     // min-width: 680px;
@@ -241,7 +241,7 @@
     height: sizem(63);
     gap: sizem(1);
     box-shadow: 0 0 sizem(50) rgba(0, 0, 0, 0.501);
-    background:#004933;
+    background:#3d3523;
    //background:linear-gradient(180deg, #FF8BF3 , #6D1EDB );
     //background:linear-gradient(180deg, #f575a6 , #652ccf );
     // background:linear-gradient(180deg, #b2baff , #781297 );

@@ -7,7 +7,7 @@
                     <div class="info-items mt-4 w-full grid grid-cols-1 md:grid-cols-2 ">
                         <div class="item font-bold flex items-center w-full whitespace-nowrap"
                             v-for="item in info.houseInfos" :key="item">
-                            <p class="mr-5 border-l-2 border-[#00915a] pl-2 text-[#00915a] font-[700]" v-html="item[0]"></p>
+                            <p class="mr-5 border-l-2 border-[#3d3523] pl-2 text-[#3d3523] font-[700]" v-html="item[0]"></p>
                             <p class="whitespace-pre-line leading-normal text-left text-[#333] font-normal"
                                 v-html="item[1]">
                             </p>
@@ -46,7 +46,7 @@
 .house {
    // height: auto;
     font-size: size(22);
-    background: #FFF;
+    background: #e7cfa2;
    // height:4em;
     img{height: 1.3em;vertical-align: middle;}
 }
@@ -56,13 +56,14 @@
     .title {
         font-size: size(40);
         font-weight: 700;
-        color: #00915a;
+        color: #3d3523;
         margin: 0 auto .5em auto;
     }
 
     .info-items {
         row-gap: size(20);
         column-gap: size(20);
+        margin-bottom: size(40);
 
         .item {
             line-height: size(17);

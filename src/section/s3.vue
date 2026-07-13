@@ -1,9 +1,8 @@
 <template>
   <article class="s3" ref="s3">
     <div class="img1" data-aos="fade" data-aos-delay="600"></div>
-    <img src="./s3/imgm.svg" class="img2" data-aos="fade-left" v-if="isMobile" />
-    <img src="./s3/img.svg" class="img2" data-aos="fade-left" v-else />
-    <svg class="img3" data-aos="zoom-in-up" viewBox="0 0 100 100"><path fill="#009686" d="M0,100V0h100"/></svg>
+    <img src="./s3/imgm-2.svg" class="img2" data-aos="fade-left" v-if="isMobile" />
+    <img src="./s3/img-2.svg" class="img2" data-aos="fade-left" v-else />
     <div class="main">
       <div class="txt">
           <h3 class="title" data-aos="fade-up" data-aos-delay="200">一橋北市 一門雙捷 </h3>
@@ -44,8 +43,8 @@
   top: 0;left: 0;background: url("./s3/bg2.webp");mix-blend-mode: multiply;
 }
 .img1{position: absolute;left: size(190);top:size(380);
-  width: size(415);height: size(415);background: #00915a}
-.img2{position: absolute;right: size(70);top:size(100);mix-blend-mode: multiply;
+  width: size(415);height: size(415);background: #fff000}
+.img2{position: absolute;right: size(70);top:size(100);
   width: size(790);}
 .img3{position: absolute;left: size(56);bottom:size(-150);//transform-origin: 0 0;
   mix-blend-mode: multiply;
@@ -60,7 +59,7 @@
 .txt{
  // margin: auto auto 3vw auto;
  padding: 0;
- .title{color: #00915a;}
+ .title{color: #3d3523;}
   .subtitle{font-weight: 400;}
   a{text-decoration:underline;margin: 0 1em 0 0;display: inline-block;
   &::after{content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 17' fill='none' stroke='%23FFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='M12,10v3.5c0,1.4-1.1,2.5-2.5,2.5H3.5c-1.4,0-2.5-1.1-2.5-2.5v-6c0-1.4,1.1-2.5,2.5-2.5h3.5M16,8V1h-7M5,12L16,1'/%3E%3C/svg%3E");display: inline-block;width: .8em;margin:0 0 0 .2em;position: relative;top: .1em;}
@@ -96,7 +95,7 @@
         //@apply rounded-full;
         width: 1em;
         height: 1em;
-        background:#0091597e ;
+        background:#ffffff ;
         transition: background .5s, transform .5s;
         overflow: hidden;
         &::before{content: "";

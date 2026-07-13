@@ -129,7 +129,7 @@
         flex-direction: row;
         top: 0;
         right: 0;
-        background: #004933b3;
+        background: #09050680;
         width:100%;
         height: size(60);
         z-index: 5;
@@ -173,9 +173,9 @@
             &.btn2{
                 background:#FFEB00;
                 color: #000;
-                border-radius: 2em;
+                border-radius: 1.5em;
                 margin-right:-1em;
-                padding:.7em 1.5em;
+                padding:.5em 1.5em;
 
                 &:hover {
                     background:#ca8c30;

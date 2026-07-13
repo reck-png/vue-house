@@ -1,8 +1,5 @@
 <template>
   <article class="s2">
-    <div class="txt"> 
-      <h3 class="title" data-aos="fade-up" data-aos-delay="200">繁華靜巷X雙捷歸心<br v-if="isMobile"> 新店核心生活圈</h3>
-    </div>
    <!-- 
     <div class="caption">基地空拍實景經後製修飾</div>  --> 
     <Fullview />

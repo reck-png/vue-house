@@ -3,7 +3,10 @@
 		<!--  --><img src="./s1/mo.jpg" class="t0">
 		<img src="./s1/tl.svg" class="topl">
 		<img src="./s1/logo.svg" class="logo" data-aos="fade-up" data-aos-delay="0">
-    <div class="t1" data-aos="fade-up" data-aos-delay="200">大坪林雙捷運｜第一環正核心｜居遊1-4房</div>
+    <div class="t1" data-aos="fade-up" data-aos-delay="200">
+      <span class="line1">大坪林站250米｜裕隆城生活圈</span>
+      <span class="line2">從容尺度 優雅生活｜26-53坪</span>
+    </div>
     
   </article>
 </template>
@@ -26,7 +29,7 @@
   justify-content:center;
   align-items:center;
   flex-direction:column;
-  background: url("./s1/bg.svg");
+  background: url("./s1/BG-2.webp");
   background-position: 50% 50%;
   background-size:cover;
   // overflow: hidden;
@@ -37,7 +40,26 @@
 	pointer-events: none;opacity: 0.0;z-index: 50;}
   .logo{position: absolute;left: 0;right: 0;top:calc(50% + #{size(363 - 1080 * .5)});
     width: size(501);margin: auto;}
-  .t1{position: absolute;left: 0;right: 0;top:calc(50% + #{size(765 - 1080 * .5)});margin: auto;text-align: center;font-size:size(70);font-weight: 700;}
+  .t1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(40% + #{size(765 - 1080 * .5)});
+    margin: auto;
+    text-align: center;
+    font-size: size(60);
+    font-weight: 700;
+
+     .line1 {
+      display: block;
+     letter-spacing: 0em;
+      }
+
+     .line2 {
+     display: block;
+     letter-spacing: 0.05em;
+      }
+    }
   .topl{position: absolute;top:size(60);left: 0;width:size(260);}
   
 }
@@ -56,11 +78,11 @@
     max-height: sizem(604);
     font-size:sizem(23);
     
-  background-image: url("./s1/bgm.svg");
+  background-image: url("./s1/BGM-2.webp");
   background-position: 48% 50%;
   background-size:265% 100%;
-    .logo{width:sizem(210);top:sizem(260);}
-    .t1{font-size:sizem(17);top:sizem(410);}
+    .logo{width:sizem(210);top:sizem(240);}
+    .t1{font-size:sizem(22);top:sizem(360);}
     .topl{top:0;width:sizem(150);}
   }
 }

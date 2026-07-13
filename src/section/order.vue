@@ -1,5 +1,5 @@
 <template>
-  <div id="order" class="order relative text-center bg-[#007550]">
+  <div id="order" class="order relative text-center bg-[#7d6a35]">
     <div class="order-section">
       <div class="order-title text-center" v-if="info.order.title" v-html="info.order.title"></div>
       <div class="order-subTitle text-center" v-if="info.order.subTitle" v-html="$isMobile() && info.order.subTitle_mo?info.order.subTitle_mo:info.order.subTitle"></div>

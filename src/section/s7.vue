@@ -1,9 +1,8 @@
 <template>
   <article class="s7" ref="s7">
     <div class="img1" data-aos="fade" data-aos-delay="600"></div>
-    <img src="./s7/img.svg" class="img2" v-if="!isMobile" />
-    <img src="./s7/imgm.svg" class="img2" v-else />
-    <svg v-if="!isMobile" class="img3" viewBox="0 0 100 100"><path fill="#009686" d="M0,0h100v100"/></svg>
+    <img src="./s7/imgs7-2.svg" class="img2" v-if="!isMobile" />
+    <img src="./s7/imgms7-2.svg" class="img2" v-else />
     <div class="main">
       <div class="txt">
         <h3 class="title" data-aos="fade-up" data-aos-delay="200">建設齊發<br v-if="isMobile"> 搶進增值第一排</h3>
@@ -44,12 +43,10 @@
   top: 0;left: 0;background: url("./s3/bg2.webp");mix-blend-mode: multiply;
 }
 .img1{position: absolute;right: size(185);bottom:size(175);
-  width: size(415);height: size(415);background: #00915a}
-.img2{position: absolute;left: size(100);top:size(60);mix-blend-mode: multiply;
+  width: size(415);height: size(415);background: #fff000}
+.img2{position: absolute;left: size(100);top:size(60);
   width: size(790);//transform:scaleX(-1) ;
 }
-.img3{position: absolute;right: size(350);bottom:size(-150);mix-blend-mode: multiply;
-  width: size(250);}
 
   .main {
     @apply flex;
@@ -61,7 +58,7 @@
 .txt{
  // margin: auto auto 3vw auto;
  padding: 0 0 0;
- .title{color: #00915a;}
+ .title{color: #3d3523;}
   .subtitle{font-weight: 400;}
 }
 
@@ -92,7 +89,7 @@
         //@apply rounded-full;
         width: 1em;
         height: 1em;
-        background:#0091597e ;
+        background:#ffffff ;
         transition: background .5s, transform .5s;
         overflow: hidden;
         &::before{content: "";

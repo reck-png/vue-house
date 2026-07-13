@@ -12,7 +12,7 @@
      <!--  -->
      <Nav />
   <div class="home overflow-hidden bg-[#fffff6] font-['Noto_Sans_TC',sans-serif]">
-    <!-- <img src="@/section/s1/bg.svg" class="bg"> -->
+    <!-- <img src="@/section/s1/BG-2.webp" class="bg"> -->
       <S1 />
       <S2 />
       <S3 />
