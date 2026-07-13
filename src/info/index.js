@@ -6,8 +6,8 @@ export default {
     address1: "",//按鈕區的--- 如空白會只呈現地址
     address2: "",//map點下確認的--- 如空白會顯示"導航地址"
     address: "新北市新店區寶慶街85號",
-    googleSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.397972905783!2d121.53840597607758!3d24.986589540197695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346801fef431a75d%3A0xf419117bfebfe525!2zMjMx5paw5YyX5biC5paw5bqX5Y2A5L-h576p6YeM5a-25oW26KGXODXomZ8!5e0!3m2!1szh-TW!2stw!4v1781063802862!5m2!1szh-TW!2stw",//嵌入的
-    googleLink: "https://maps.app.goo.gl/Jb2XDrm7xx9XjyQ9A",//導航網址
+    googleSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4300.720353609327!2d121.53787651501311!3d24.98446956398818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34680319f5b9f925%3A0x6b200f6f3222f28!2z5p2x5Z-6TTHmjqXlvoXkuK3lv4M!5e0!3m2!1szh-TW!2stw!4v1783909567356!5m2!1szh-TW!2stw",//嵌入的
+    googleLink: "https://maps.app.goo.gl/78j8d29gBTW6qq729",//導航網址
     phone: "(02)8667-2266",
     fbLink: "https://www.facebook.com/100054446832848/",
     fbMessage: "https://m.me/100054446832848/",
