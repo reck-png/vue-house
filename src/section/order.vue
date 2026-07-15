@@ -4,8 +4,8 @@
       <div class="order-title text-center" v-if="info.order.title" v-html="info.order.title"></div>
       <div class="order-subTitle text-center" v-if="info.order.subTitle" v-html="$isMobile() && info.order.subTitle_mo?info.order.subTitle_mo:info.order.subTitle"></div>
 
-      <img class="order-title-img" src="./form/titlem.svg" alt="" srcset="" v-if="isMobile">
-      <img class="order-title-img" src="./form/title.svg" alt="" srcset="" v-else>
+      <img class="order-title-img" src="./form/titlem-2.svg" alt="" srcset="" v-if="isMobile">
+      <img class="order-title-img" src="./form/title-2.svg" alt="" srcset="" v-else>
 
       <!-- Form -->
       <div class="form mx-auto relative flex justify-center">
@@ -173,7 +173,7 @@
   }
 
   .order-title-img {
-    width: size(1186);
+    width: size(640);
     margin: size(80) auto size(35);
   }
   .order-subTitle{
@@ -319,8 +319,8 @@
     }
 
       .order-title-img {
-    width: sizem(250);
-    margin: sizem(50) auto sizem(30);
+    width: sizem(300);
+    margin: sizem(50) auto sizem(10);
   }
 
     .order-title {
