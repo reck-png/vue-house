@@ -9,9 +9,9 @@ export default {
     case_code: "tongyuan",
     address1: "接待中心",//按鈕區的--- 如空白會只呈現地址
     address2: "接待中心",//map點下確認的--- 如空白會顯示"導航地址"
-    address: "三重區光陽街78號",
-    googleSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d537.2720759746768!2d121.48200091431106!3d25.057096851045657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a900523d0797%3A0x9660f889cba272ac!2z57Wx5YWD5qW1576OIOaOpeW-heS4reW_gw!5e0!3m2!1szh-TW!2stw!4v1747587055966!5m2!1szh-TW!2stw",
-    googleLink: "https://maps.app.goo.gl/B7yyvqbFPCywZVQC7",
+    address: "新北市三重區成功一街22之1號",
+   googleSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d903.627410689988!2d121.48658040754472!3d25.05070993351234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a900523d0797%3A0x9660f889cba272ac!2z57Wx5YWD5qW1576OIOmKt-WUruS4reW_gw!5e0!3m2!1szh-TW!2stw!4v1788165438760!5m2!1szh-TW!2stw",
+    googleLink: "https://maps.app.goo.gl/7LcnjZ5zg7rLzoFMA",
     phone: "02-2989-2168",
     fbLink: "https://www.facebook.com/61551470159566/",
     fbMessage: "https://m.me/61551470159566/",
