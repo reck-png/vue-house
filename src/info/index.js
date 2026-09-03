@@ -76,7 +76,7 @@ export default {
           title: "介紹、推薦來源",
           type: "select",
           hold: "請選擇來源",
-         option: ["親友介紹", "合作店家推薦"]
+         option: ["親友介紹", "合作店家推薦","已購客"]
       },
 
         recname: {
