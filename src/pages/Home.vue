@@ -282,7 +282,15 @@ keySplines="
 
 }
 
+/* macOS Safari */
 @supports (-webkit-hyphens: none) and (not (-webkit-touch-callout: none)) {
+  .page-bg {
+    filter: none !important;
+  }
+}
+
+/* iOS Safari */
+@supports (-webkit-touch-callout: none) {
   .page-bg {
     filter: none !important;
   }
