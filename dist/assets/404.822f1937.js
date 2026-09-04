@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as t}from"./index.c979166e.js";const n={name:"404",components:{},methods:{}},s={class:"bg"};function d(o,c,r,_,i,g){return t(),a("div",s)}var m=e(n,[["render",d],["__scopeId","data-v-1918a0d2"]]);export{m as default};
