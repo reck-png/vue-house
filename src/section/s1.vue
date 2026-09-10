@@ -1,42 +1,110 @@
 <template>
-  <section class="s1 text-white relative">
+  <section class="s1">
 
+<div class="s1-pc">
+    <img
+        class="s1-bg-pic"
+        src="@/section/s1/s1-bg.jpg">
 
+    <div class="Head" >
+        <img
+            class="H1"
+            src="@/section/s1/LOGO.svg"
+            alt="詮美湛"
+            data-aos="zoom-out"
+            data-aos-offset="0"
+            data-aos-delay="520"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-once="false"
+            data-aos-mirror="true"
+            >
 
-<div class="H1"
-    data-aos="fade"
-    data-aos-delay="500"
-    data-aos-duration="1200"
-    data-aos-easing="ease"
-    data-aos-once="false"
-    data-aos-mirror="true"
->
+        <div class="HD">
+             <img
+                class="H2"
+                src="@/section/s1/H2.svg"
+                alt="一橋台北靜隱集美"  
+            data-aos="fade"
+            data-aos-offset="0"
+            data-aos-delay="500"
+            data-aos-duration="2000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-once="false"
+            data-aos-mirror="true">
 
+            <div class="p5group"
+                        alt="詮美湛"
+            data-aos="fade"
+            data-aos-offset="0"
+            data-aos-delay="500"
+            data-aos-duration="2000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-once="false"
+            data-aos-mirror="true"
+            >    
+                <img
+                    class="p5"
+                    src="@/section/s1/H3.svg"
+                    alt="簽訂5%工程期0付款">
 
-    <img 
-      class="Coming-soon"
-      src="@/section/s1/h1-coming-soon.svg"
-    />
+                <img class="p5light"
+                    src="@/section/s1/new-light.png">
+            </div>
+        </div>
+    </div>
 
-    <img 
-      class="Coming-soon-m"
-      src="@/section/s1/h1-coming-soon-m.svg"
-    >
+    <div class="right-side">
+        <img class="bl"
+        src="@/section/s1/bl.png">
 
-    <img 
-      class="LOGO"
-      src="@/section/s1/h2-logo.svg"
-    >
-    
-    <img 
-      class="LOGO-m"
-      src="@/section/s1/h2-logo-m.svg" 
-    >
+        <img class="bl-light"
+        src="@/section/s1/bl-light.png">
+    </div>    
 
-
-
+    <p class="3D">3D外觀透視示意圖</p>
 </div>
+
+
+<div class="s1-m">
+    <img
+        class="s1-bg-pic-m"
+        src="@/section/s1/s1-bg-m.jpg">
+
+    <div class="Head-m">
+        <img
+            class="top-m"
+            src="@/section/s1/top-m.svg"
+            alt="一橋台北靜隱集美">
+        <img
+            class="LOGO-m"
+            src="@/section/s1/LOGO.svg"
+            alt="詮美湛">
+        <img
+            class="H2-m"
+            src="@/section/s1/H2-m.svg"
+            alt="均質35坪純3房">
+        <img
+            class="5p-m"
+            src="@/section/s1/5p-m.svg"
+            alt="簽訂5%工程期0付款">
+         <img class="5light-m"
+            src="@/section/s1/light.png">
+    </div>
+
+    <div class="right-side">
+        <img class="bl-m"
+        src="@/section/s1/bl.png">
+
+        <img class="bl-light-m"
+        src="@/section/s1/s1-light.svg">
+    </div> 
     
+    <p class="3D-m">3D外觀透視示意圖</p>
+</div>
+
+
+
 
   </section>
 </template>
@@ -46,499 +114,235 @@
 
 .s1 {
   position: relative;
-  width: 100%;
-  height: auto;
-  
-  font-weight: 500;
-  margin-bottom:190px;
+  width: auto;
+  height: auto;}
   
   @media screen and (min-width:768px) {
+
+    .s1-m{display:none;}
+
+    .s1-pc{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .s1-bg-pic{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -50;
+        margin-top: -120px;
+    }
+
+    .Head{
+        position: absolute;
+        display: flex;
+        width: clamp(302px, 40vw, 738px);
+        flex-direction: column;
+        align-items: center;
+        gap: 72px;
+        margin-top:120px;
+        margin-left:clamp(0px, 16vw, 302px);
+    }
+
+    .HD{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 34px;
+        align-self: stretch;
+    }
+
+    .H2{
+        z-index: 1;
+    }
+
+   .p5light {
+    position: absolute;
+
+    left: clamp(50px, 5.2vw, 95px);
+    top: clamp(-25px, -7.8vw, -120px);
+
+    width: clamp(110px, 8vw, 154px);
+    height: clamp(110px, 8vw, 154px);
+
+    margin: 0;
+
+    mix-blend-mode: screen;
+
+    transform-origin: center center;
+    animation: p5-natural-light 7s ease-in-out infinite;
+
+    will-change: transform, opacity;
+    pointer-events: none;
+}
+
+    .p5group {
+    position: relative;
+
+    transform-origin: center center;
+    animation: p5-bounce 4s ease-in-out infinite;
+    will-change: transform;
+    z-index: 0;
+}
+
+.p5 {
+    display: block;
+    width: auto;
     height: auto;
-    
-  }
-  
-
-
-.H1 {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    justify-content: center;
-    align-items: center; 
-    width: auto ;
-    height: auto;
-    gap: clamp(4px, 2vw, 12px);
-    z-index: 3;
-    
-  }
-
-  .Coming-soon {
-    position: relative;
-    width: clamp(320px, 64vw, 920px);
-    height: fit-content;
-    object-fit: Contain;
-    margin: clamp(148px, 20vw, 240px) auto clamp(8px, 5vw, 24px) auto;
-    z-index: 3;
-    animation: glowBreath 3s ease-in-out infinite;
-  }
-
-  .LOGO {
-    position: relative;
-    width: clamp(364px, 80vw, 935px);
-    height: fit-content;
-    object-fit: contain;
-    margin: clamp(8px, 5vw, 48px) auto clamp(8px, 5vw, 24px) auto;
-    z-index: 3;
-  }
-
-
-
-
-@media(max-width:767px){
-
-
-
-
-  
-  
 }
 
-
- /* 手機版 */
-
-.Coming-soon-m,
-.Coming-soon-TC-m,
-.Local-m,
-.LOGO-m{
-    display:none;
-}
-
-
-@media screen and (max-width:767px){
-
-    .Coming-soon,
-    .Local,
-    .LOGO{
-        display:none;
+    .right-side{
+        
+        position: absolute;
+        width: 100%;
+        height: auto;
     }
 
 
-    .Coming-soon-m,
-    .Coming-soon-TC-m,
-    .Local-m,
-    .LOGO-m{
-        display:block;
+    .bl{
+        position: absolute;
+        width: 1542px;
+        height: auto;
+        aspect-ratio: 241/128;
+        margin-top: 100px;
+        margin-left: 680px;
+        z-index: -5;
     }
 
-    .s1{margin-bottom: 132px;}    
-
-
-
-
-
-    .Coming-soon-m{
-      position: relative;
-      width: clamp(240px, 100vw, 880px);
-      height: fit-content;
-      object-fit: Contain;
-      margin-top: 134px;
-      margin-bottom: 24px;
-      z-index: 3;
-      animation: glowBreath 3s ease-in-out infinite;
-  }
-
-
-    .Local-m{
-      position: relative;
-      width: clamp(264px, 60vw, 660px);
-      height: fit-content;
-      object-fit: Contain;
-      margin-top: 64px;
-      z-index: 3;
-    }
-
-    .LOGO-m{
-      position: relative;
-      width: clamp(256px, 56vw, 560px);
-      height: fit-content;
-      object-fit: contain;
-      margin-top: 16px;
-      margin-bottom: 0px;
-      z-index: 3;
-
-
-    }
-
-    
-
-}
-
-.glow-breath {
-  animation: glowBreath 1s ease-in-out infinite;
-}
-
-@keyframes glowBreath {
-  0%,
-  100% {
-    filter:
-      drop-shadow(0 0 2px rgba(255, 78, 196, 0.2))
-      drop-shadow(0 0 6px rgba(255, 220, 170, 0.1));
-  }
-
-  50% {
-    filter:
-      drop-shadow(0 0 5px rgba(255, 92, 201, 0.7))
-      drop-shadow(0 0 15px rgba(255, 220, 170, 0.45))
-      drop-shadow(0 0 30px rgba(255, 220, 170, 0.2));
-  }
-}
-
-
-
-
-//螢火蟲專區
-
-.fireflies{
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    overflow:hidden;
-    z-index:5;
-}
-
-
-.firefly{
-    position:absolute;
-    width:8px;
-    height:8px;
-}
-
-
-/* 螢火蟲本體 */
-.firefly span{
-
-    display:block;
-
-    width:100%;
-    height:100%;
-
-    border-radius:50%;
-
-    background:#f6f48b;
-
-    box-shadow:
-        0 0 8px #fff7a0,
-        0 0 20px #f6f48b,
-        0 0 45px #d7ff78;
-
-
-    animation:
-        blink 2.5s ease-in-out infinite alternate;
-
-}
-
-
-
-/* -----------------
-   位置 + 飛行
------------------- */
-
-
-.f1{
-    top:75%;
-    left:15%;
-    animation:fly1 18s ease-in-out infinite;
-}
-
-
-.f2{
-    top:60%;
-    left:10%;
-    animation:fly2 22s ease-in-out infinite;
-}
-
-
-.f3{
-    top:40%;
-    left:20%;
-    animation:fly3 20s ease-in-out infinite;
-}
-
-
-.f4{
-    top:80%;
-    right:15%;
-    animation:fly4 24s ease-in-out infinite;
-}
-
-
-.f5{
-    top:55%;
-    right:18%;
-    animation:fly5 19s ease-in-out infinite;
-}
-
-
-.f6{
-    top:28%;
-    right:5%;
-    animation:fly6 21s ease-in-out infinite;
-}
-
-
-.f7{
-    top:72%;
-    left:90%;
-    animation:fly7 25s ease-in-out infinite;
-}
-
-
-
-
-/* -----------------
-   閃爍
------------------- */
-
-
-@keyframes blink{
-
-    0%{
-        opacity:.2;
-        transform:scale(.6);
-    }
-
-
-    40%{
-        opacity:.9;
-        transform:scale(1);
-    }
-
-
-    70%{
-        opacity:.4;
-        transform:scale(.8);
-    }
-
-
-    100%{
-        opacity:1;
-        transform:scale(1.35);
+    .bl-light{
+        position: absolute;
+        width: 665px;
+        height: auto;
+        aspect-ratio: 241/128;
+        margin-top: 64px;
+        margin-left: 1312px;
+        z-index: -4;
+        mix-blend-mode: screen;
     }
 
 }
 
 
+@media screen and (max-width:1022px){
 
-/* -----------------
-   飛行路徑
------------------- */
-
-
-@keyframes fly1{
-
-    0%{
-        transform:translate(0,0);
+    .s1-pc {
+        display: none;
     }
 
-    25%{
-        transform:translate(80px,-120px);
+    .s1-m {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: block;
+        overflow: hidden;
     }
 
-    50%{
-        transform:translate(-40px,-240px);
-    }
+    .s1-bg-pic-m {
+        position: absolute;
+        inset: 0;
 
-    75%{
-        transform:translate(130px,-330px);
-    }
+        width: 100%;
+        height: 100%;
 
-    100%{
-        transform:translate(0,0);
-    }
-
-}
-
-
-
-@keyframes fly2{
-
-    0%{
-        transform:translate(0,0);
-    }
-
-    30%{
-        transform:translate(-120px,-100px);
-    }
-
-    55%{
-        transform:translate(-40px,-260px);
-    }
-
-    80%{
-        transform:translate(-180px,-350px);
-    }
-
-    100%{
-        transform:translate(0,0);
+        display: block;
+        object-fit: cover;
+        object-position: center top;
     }
 
 }
 
 
-
-
-@keyframes fly3{
-
-    0%{
-        transform:translate(0,0);
+@keyframes p5-bounce {
+    0%,
+    100% {
+        transform: scale(1);
     }
 
-    25%{
-        transform:translate(160px,-80px);
+    20% {
+        transform: scale(1.02);
     }
 
-    50%{
-        transform:translate(100px,-260px);
+    35% {
+        transform: scale(0.98);
     }
 
-    75%{
-        transform:translate(-40px,-360px);
+    50% {
+        transform: scale(1.02);
     }
 
-    100%{
-        transform:translate(0,0);
+    70% {
+        transform: scale(1);
     }
-
 }
 
+@keyframes p5-natural-light {
 
-
-
-@keyframes fly4{
-
-    0%{
-        transform:translate(0,0);
+    0% {
+        opacity: 0.2;
+        transform: rotate(0deg) scale(0.94);
     }
 
-    30%{
-        transform:translate(-100px,-140px);
+    7% {
+        opacity: 0.55;
+        transform: rotate(28deg) scale(0.99);
     }
 
-    60%{
-        transform:translate(80px,-280px);
+    13% {
+        opacity: 0.3;
+        transform: rotate(51deg) scale(0.96);
     }
 
-    100%{
-        transform:translate(0,0);
+    24% {
+        opacity: 0.9;
+        transform: rotate(96deg) scale(1.07);
     }
 
-}
-
-
-
-
-@keyframes fly5{
-
-    0%{
-        transform:translate(0,0);
+    31% {
+        opacity: 0.65;
+        transform: rotate(121deg) scale(1.02);
     }
 
-    25%{
-        transform:translate(-140px,-80px);
+    39% {
+        opacity: 0.25;
+        transform: rotate(147deg) scale(0.95);
     }
 
-    55%{
-        transform:translate(-40px,-220px);
+    52% {
+        opacity: 0.75;
+        transform: rotate(205deg) scale(1.04);
     }
 
-    80%{
-        transform:translate(-180px,-380px);
+    59% {
+        opacity: 0.45;
+        transform: rotate(237deg) scale(0.98);
     }
 
-    100%{
-        transform:translate(0,0);
+    68% {
+        opacity: 0.95;
+        transform: rotate(281deg) scale(1.08);
     }
 
-}
-
-
-
-
-@keyframes fly6{
-
-    0%{
-        transform:translate(0,0);
+    73% {
+        opacity: 0.35;
+        transform: rotate(302deg) scale(0.96);
     }
 
-    35%{
-        transform:translate(130px,-120px);
+    84% {
+        opacity: 0.7;
+        transform: rotate(338deg) scale(1.03);
     }
 
-    60%{
-        transform:translate(40px,-260px);
+    91% {
+        opacity: 0.25;
+        transform: rotate(356deg) scale(0.95);
     }
 
-    100%{
-        transform:translate(0,0);
+    100% {
+        opacity: 0.2;
+        transform: rotate(380deg) scale(0.94);
     }
-
-}
-
-
-
-
-@keyframes fly7{
-
-    0%{
-        transform:translate(0,0);
-    }
-
-    20%{
-        transform:translate(-150px,-100px);
-    }
-
-    50%{
-        transform:translate(-60px,-280px);
-    }
-
-    75%{
-        transform:translate(-220px,-400px);
-    }
-
-    100%{
-        transform:translate(0,0);
-    }
-
-}
-
-.f1 span{
-    animation-delay:0s;
-}
-
-.f2 span{
-    animation-delay:.8s;
-}
-
-.f3 span{
-    animation-delay:1.5s;
-}
-
-.f4 span{
-    animation-delay:2.2s;
-}
-
-.f5 span{
-    animation-delay:1s;
-}
-
-.f6 span{
-    animation-delay:3s;
-}
-
-.f7 span{
-    animation-delay:1.8s;
-}
-
 }
 
 
