@@ -13,10 +13,7 @@
       
     <div class="gift-box">
       <p class="get">搶先掌握最新資訊，取得<b>限量早鳥優惠</b></p>  
-      <img 
-        class="gift-img"
-        src="@/section/s2/proicons_gift.svg"
-      />
+     
     </div>
 
 </div>
