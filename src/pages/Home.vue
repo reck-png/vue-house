@@ -54,11 +54,12 @@
 ========================= */
 
 .s1,
-.s2,
 .order {
   position: relative;
   z-index: 1;
 }
+
+.s2{z-index:0;}
 
 .light-effect {
   position: absolute;

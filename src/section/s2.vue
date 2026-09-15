@@ -1,52 +1,101 @@
 <template>
-<section class="s2 text-white relative">
+<section class="s2">
 
-<div class="gift"
+<div class="s2-pc">
+
+
+    <img
+    class="s2-bg-pic"
+    src="@/section/s2/newh-s2-bg.jpg"
+    data-aos="zoom-out"
+            data-aos-offset="20"
+            data-aos-delay="520"
+            data-aos-duration="3000"
+            data-aos-easing="ease-out-cubic"
+            data-aos-once="false"
+            data-aos-mirror="false">
+
+    <img
+    class="s2-twostar"
+    src="@/section/s2/txt-twostar.svg"
+    data-aos="fade-up"
+            data-aos-offset="20"
+            data-aos-delay="820"
+            data-aos-duration="800"
+            data-aos-easing="ease-out-cubic"
+            data-aos-once="false"
+            data-aos-mirror="false">
+
+    <img
+    class="s2-shimen"
+    src="@/section/s2/txt-shimen.svg"
+    data-aos="fade-up"
+            data-aos-offset="20"
+            data-aos-delay="820"
+            data-aos-duration="800"
+            data-aos-easing="ease-out-cubic"
+            data-aos-once="false"
+            data-aos-mirror="false">
+
+    <img
+    class="s2-bg-light"
+    src="@/section/s2/s2-light.svg">
+
+    <img
+    class="s2-h"
+    src="@/section/s2/s2-h.svg"
     data-aos="fade"
-    data-aos-delay="500"
-    data-aos-duration="1200"
-    data-aos-easing="ease"
-    data-aos-once="false"
-    data-aos-mirror="true"
->
-    <p class="opentxt" @click="scrollTo('.order')">提前登記開放中</p>
-      
-    <div class="gift-box">
-      <p class="get">搶先掌握最新資訊，取得<b>限量早鳥優惠</b></p>  
-     
-    </div>
+            data-aos-offset="10"
+            data-aos-delay="5200"
+            data-aos-duration="800"
+            data-aos-easing="ease-out-cubic"
+            data-aos-once="false"
+            data-aos-mirror="false"
+    >
 
-</div>
+    <p class="s2-AI-pic">中興橋實景拍攝輔AI情境示意</p>
 
-<div class="gift-m"
-    data-aos="fade"
-    data-aos-delay="500"
-    data-aos-duration="1200"
-    data-aos-easing="ease"
-    data-aos-once="false"
-    data-aos-mirror="true"
+  </div>
+  
 
->   <div class="line-m">
-    <p class="open-m" @click="scrollTo('.order')">提前登記開放中</p>
-    </div>
- <div class="umargin">   
- <div class="wmask">  
 
-    <div class="gift-box-m">
-      <p class="get-m">搶先掌握最新資訊，</p>
-        
+ <div class="s2-m">
 
-        <div class="gift-box-m-2">
-             <p class="get-m-2">取得限量早鳥優惠</p>  
-                <img 
-                    class="gift-img-m"
-                    src="@/section/s2/proicons_gift.svg"/>
-        </div>
+    <img
+    class="s2-bg-pic-m"
+    src="@/section/s2/s2-bg-m.jpg">
 
-</div>
-</div> 
-</div> 
-</div>
+    <img
+    class="s2-twostar-m"
+    src="@/section/s2/txt-twostar-m.svg">
+
+    <img
+    class="s2-twostar-m"
+    src="@/section/s2/txt-twostar-m.svg">
+
+    <img
+    class="s2-shimen-m"
+    src="@/section/s2/txt-shimen-m.svg">
+
+    <img
+    class="s2-h-m"
+    src="@/section/s2/s2-h-m.svg">
+
+    <img
+    class="s2-toplight-m"
+    src="@/section/s2/bylight-m-new.svg">
+
+    <p class="s2-AI-pic-m">中興橋實景拍攝輔AI情境示意</p>
+
+
+ </div>
+
+
+
+
+
+
+
 
 </section>    
 </template>
@@ -54,378 +103,164 @@
 <style lang="scss">
 @import "@/assets/style/function.scss";
 
-.gift-m{
-    display:none;
-}
-
 .s2 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  display: flex;
-  padding: 64px 0 62px 0;
-  flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
-  
-  @media screen and (min-width:768px) {
-    height: auto;
-    
-  }
-
-}
-  
-
-
-.gift {
-    display: flex;
-    width: clamp(240px, 80vw, 1200px);
-    flex-direction: row;
     position: relative;
-    justify-content: center;
-    align-items: center; 
+    width: 100%;
     height: auto;
-    z-index: 3;
-
-    animation: glowBreath-light 3s ease-in-out infinite;
-    
-  }
-
-.opentxt{
-    display: flex;
-    padding: 18px 64px;
-    justify-content: center;
-    align-items: center;
-    align-self: stretch;
-    border: 0.5px solid #FFF;
-    color: #FFF;
-    font-size: clamp(24px, 1.5vw, 24px);
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 3.12px;
-    
-      border-radius: 12px;
-        border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.178) 0%, rgba(255, 255, 255, 0.05) 100%);
-        box-shadow: 1.127px 4.508px 43.168px 0 rgba(255, 255, 255, 0.2) inset;
-        backdrop-filter: blur(2.3105762004852295px);
-
-        transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-
-&:hover {
-  transform: scale(1.03);
+    z-index: 0;
 }
-
-    
-}
-
-.gift-box{
-    display: flex;
-    padding: 16px 64px;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-    border-radius: 0 12px 12px 0;
-    background: linear-gradient(90deg, rgba(102, 102, 102, 0.00) -4.28%, rgba(231, 209, 232, 0.18) 3.74%);
-}
-
-.get{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #FFF;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 3.12px;
-}
-
-.gift-img{
-    width: clamp(32px, 2vw, 48px);
-    height: auto;
-}
-
   
+  @media screen and (min-width:1021px) {
 
-
-
-
-
-
-@media screen and (max-width:1200px){
-
-    .gift{
-        display:none;
+    .s2-m {
+        display: none;
     }
 
-
-    .gift-m{
-        display:block;
-    }
-
-    .s2{
-        width: 100%;
-        margin-bottom: 132px;}    
-
-
-
-.gift-m {
-    display: flex;
+   .s2-pc {
+    position: relative;
     width: 100%;
-    padding: 18px 0px 8px 0px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-self: stretch;
-    z-index: 3;
-
-    margin-top: -120px;
-    
-    
-  }
-
-
-.line-m{
-  width: 60%;
-  display: flex;
-  padding: 18px 0px 0px 0px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  }
-
-  .line-m::after {
-  content: "";
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 1) 50%,
-    transparent 100%
-  );
-}
-
-
-.open-m{
-    width: 100%;
-    display: flex;
-    animation: glowBreath-light 3s ease-in-out infinite;
-   
-    justify-content: center;
-    align-items: center;
-    align-self: stretch;
-    border-radius: 12px;
-
-    color: #FFF;
-    font-size: clamp(24px, 2vw, 80px);
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 2.6px;
-    white-space: nowrap;
-    flex-shrink: 1;
-
-    margin-bottom: 16px;
-    animation: glowBreath-light 3s ease-in-out infinite;
-
-    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-
-&:active {
-  transform: scale(1.03);
-}
-}
-
-.wmask{
-    width:90%;
-    height:150px;
-    background: rgba(231, 209, 232, 0.18);
-
--webkit-mask-image:
-  linear-gradient(
-    90deg,
-    transparent 0%,
-    #000 20%,
-    #000 80%,
-    transparent 100%
-  ),
-  linear-gradient(
-    180deg,
-    #000 0%,
-    #000 60%,
-    transparent 100%
-  );
-
--webkit-mask-composite: source-in;
-mask-image:
-  linear-gradient(
-    90deg,
-    transparent 0%,
-    #000 20%,
-    #000 80%,
-    transparent 100%
-  ),
-  linear-gradient(
-    180deg,
-    #000 0%,
-    #000 60%,
-    transparent 100%
-  );
-
-mask-composite: intersect;
-
-
-}
-
-.gift-box-m{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: fit-content;
-padding: 25px 0px 64px 0px;
-justify-content: center;
-align-items: center;
-border-radius: 0 12px 12px 0;
-
-gap: 4px;
-
-white-space: nowrap;
-    flex-shrink: 1;
-    
-    margin-bottom: 0px;
-
-
-}
-
-
-.gift-box-m-2{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: fit-content;
-padding: 0px 0px 64px 0px;
-justify-content: center;
-align-items: center;
-border-radius: 0 12px 12px 0;
-
-
-mask-composite: intersect;
-gap: 4px;
-
-white-space: nowrap;
-    flex-shrink: 1;
-    
-    margin-bottom: -120px;
-
-
-}
-
-
-.get-m,
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #FFF;
-    font-size: clamp(16px, 8vw, 20px);
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 3px;
-    animation: glowBreath-light 3s ease-in-out infinite;
-
-    
-}
-
-
-.get-m-2
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #FFF;
-    font-size: clamp(16px, 8vw, 20px);
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 3px;
-    animation: glowBreath-light 3s ease-in-out infinite;
-
-    
-}
-
-.gift-img-m{
-    width: clamp(24px, 60vw, 40px);
     height: auto;
-    animation: glowBreath-light 3s ease-in-out infinite;
-    margin-left: 4px;
-    
-
+    max-height:100vh;
+    overflow: hidden;
+    aspect-ratio: 1920 /1000;
 }
 
-.umargin {
+  .s2-bg-pic {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin-bottom: -120px;
+    height: auto;
+    max-height:100vh;
+    aspect-ratio: 1920 /1000;
+    object-fit: cover;
+    object-position: center 65%;
+    margin: 0;
+    z-index: -5;
 }
+
+  .s2-twostar {
+    position: absolute;
+
+     width: clamp(1%, 1.1%, 1.5%);
+
+    left: 50%;
+    top: 20%;
     
 
+    z-index: 1;
 }
 
-.glow-breath {
-  animation: glowBreath 1s ease-in-out infinite;
-}
+ .s2-shimen {
+    position: absolute;
 
-@keyframes glowBreath {
-  0%,
-  100% {
-    filter:
-      drop-shadow(0 0 2px rgba(255, 78, 196, 0.2))
-      drop-shadow(0 0 6px rgba(255, 220, 170, 0.1));
-  }
+    width: clamp(1%, 1%, 1.5%);
 
-  50% {
-    filter:
-      drop-shadow(0 0 2px rgba(255, 92, 201, 0.7))
-      drop-shadow(0 0 15px rgba(255, 220, 170, 0.45))
-      drop-shadow(0 0 30px rgba(255, 220, 170, 0.2));
-  }
+    left: 80%;
+    top: 20%;
+
+    z-index: 1;
 }
 
 
-@keyframes glowBreath-light {
-  0%,
-  82%,
-  100% {
-    filter:
-      drop-shadow(0 0 2px rgba(255, 78, 196, 0.2))
-      drop-shadow(0 0 6px rgba(255, 220, 170, 0.1));
-  }
+  .s2-bg-light{
+    position: absolute;
 
-  50% {
-    filter:
-       drop-shadow(0 0 2px rgba(255, 92, 201, 0.5))
-      drop-shadow(0 0 10px rgba(255, 220, 170, 0.45))
-      drop-shadow(0 0 30px rgba(255, 220, 170, 0.2));
-  }
+    width: clamp(10%, 25%, 50%);
 
-  10% {
-    filter:
-      drop-shadow(0 0 2px rgba(255, 78, 196, 0.2))
-      drop-shadow(0 0 6px rgba(255, 220, 170, 0.1));
-  }
+    left: 50%;
+    top: 50%;
+    transform: translate(50%, -2%);
+    mix-blend-mode: screen;
+    animation: sunlightFlicker 8s ease-in-out infinite;
+
+    z-index: 1;
 }
+
+  .s2-h{
+    position: absolute;
+
+    width: clamp(250px, 28vw, 480px);
+
+    left: 15%;
+    top: 12%;
+    mix-blend-mode: screen;
+    z-index: 1;
+  }
+
+}
+
+@media screen and (max-width:1020px) {
+
+  .s2 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 376/453;
+    max-height: none;
+    overflow:visible;
+
+    z-index: 10;
+  }
+
+  .s2-pc {
+    display: none;
+  }
+
+  .s2-m {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 376/453;
+    overflow: hidden;
+  }
+
+  .s2-bg-pic-m {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    aspect-ratio: 376/453;
+    margin: 0;
+  }
+
+  .s2-twostar-m {
+    position: absolute;
+    width: clamp(2%, 3%, 4%);
+    left: 50%;
+    top: 20%;
+    z-index: 1;
+  }
+
+  .s2-shimen-m {
+    position: absolute;
+    width: clamp(1%, 1%, 1.5%);
+    left: 80%;
+    top: 20%;
+    z-index: 1;
+  }
+
+  .s2-h-m{
+    position: absolute;
+  }
+
+  .s2-toplight-m{
+    position: absolute;
+
+  }
+
+}
+
+
+
 
 
 
 
 </style>
+
 <script setup>
 import { computed, getCurrentInstance, ref ,inject} from 'vue';
 const globals = getCurrentInstance().appContext.config.globalProperties;

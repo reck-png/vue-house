@@ -1,7 +1,9 @@
 <template>
   <section class="s1">
 
-<div class="s1-pc">
+<div class="s1-pc"
+
+>
 
     <div class="pc-bg-warp">
         <img
@@ -9,6 +11,7 @@
         src="@/section/s1/s1-bg.jpg">
     </div>    
 
+<div class="s1-itwarp">
     <div class="Head" >
         <img
             class="H1"
@@ -58,14 +61,21 @@
     </div>
 
     <div class="right-side">
-        <img class="bl"
+
+    <img
+        class="bl"
         src="@/section/s1/bl.png">
 
-        <img class="bl-light"
-        src="@/section/s1/bl-light.png">
+    <img
+        class="bl-light"
+        src="@/section/s1/bl-light-new.png">
 
-        <p class="D3">3D外觀透視示意圖</p>
-    </div>    
+    <p class="D3">
+        3D外觀透視示意圖
+    </p>
+
+</div>  
+    </div> 
 
     
 </div>
@@ -119,7 +129,7 @@
          <img class="p5light-m"
             src="@/section/s1/new-light.png">
     </div>
-    </div>
+</div>
 
     <div class="right-side-m">
         <img class="bl-m"
@@ -130,6 +140,7 @@
     </div> 
     
     
+
 </div>
 
 
@@ -142,13 +153,16 @@
 @import "@/assets/style/function.scss";
 
 .s1 {
-  position: relative;
-  width: auto;
-  height: auto;}
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    z-index: 0;
+}
   
-  @media screen and (min-width:768px) {
+  @media screen and (min-width:1021px) {
 
-       .s1-m,
+    .s1-m,
     .right-side-m {
         display: none;
     }
@@ -156,9 +170,10 @@
    .s1-pc {
     position: relative;
     width: 100%;
-    height: 56.25vw;
-    min-height: 100vh;
+    height: auto;
+    max-height:100vh;
     overflow: hidden;
+    aspect-ratio: 1920 /1080;
 }
 
 .pc-bg-warp {
@@ -167,7 +182,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: -50;
+    z-index: 0;
 }
 
 .s1-bg-pic {
@@ -180,16 +195,41 @@
     margin: 0;
 }
 
-    .Head{
-        position: absolute;
-        display: flex;
-        width: clamp(300px, 40vw, 738px);
-        flex-direction: column;
-        align-items: center;
-        gap: 64px;
-        margin-top:clamp(0px, 10vw, 302px);
-        margin-left:clamp(0px, 10vw, 302px);
-    }
+
+.s1-itwarp {
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+   .Head {
+    position: absolute;
+
+    display: flex;
+    width: clamp(300px, 40vw, 738px);
+    height: auto;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+
+    margin-top: clamp(0px, 8vw, 160px);
+
+    left: clamp(0px, 16vw, 192px);
+
+    z-index: 5;
+
+    opacity: var(--s1-opacity, 1);
+
+    transform: translate3d(
+        var(--head-x, 0px),
+        0,
+        0
+    );
+
+    will-change: transform, opacity;
+}
 
     .H1{
         width: clamp(300px, 100vw, 543px);
@@ -247,53 +287,52 @@
 
 }
 
-.right-side {
-    position: absolute;
+
+.bl {
+    display: block;
+
     width: 100%;
     height: auto;
 
-    top: clamp(-80%, 80%, -8%);
-    margin-left: clamp(0%, 35.4167%, 35.4167%);
-}
-
-.bl {
-    position: relative;
-    display: block;
-
-    width: 80.3125%;
-    height: auto;
     aspect-ratio: 241 / 128;
 
     margin-top: 120px;
-    margin-left: 0%;
+    margin-left: -5vw;
 
-    z-index: -5;
+    position: relative;
+    z-index: 0;
 }
+
 
 .bl-light {
     position: absolute;
 
     width: 34.6354%;
     height: auto;
-    aspect-ratio: 241 / 128;
 
-    /* 重新用 right-side 當定位基準 */
-    top: 100px;
-    left: 33.3333%;
+    aspect-ratio: 241 / 241;
+
+    top: 40px;
+    left: calc(45% - 5vw);
 
     margin: 0;
 
-    z-index: -4;
+    z-index: 2;
+
     mix-blend-mode: screen;
+
     transform-origin: center center;
 
     animation: sunlightFlicker 8s ease-in-out infinite;
+
+    will-change: opacity, filter, transform;
 }
 
 .D3 {
     position: absolute;
-    right: 38vw;
-    bottom:20px;
+
+    right: calc(48% - 12vh);
+    bottom: 20px;
 
     width: auto;
     height: auto;
@@ -305,68 +344,111 @@
 
     text-shadow: 0 0 3.806px #000;
     font-family: "Noto Sans TC", sans-serif;
-    font-size:clamp(12px , 8vw , 14px);
-    font-style: normal;
+    font-size: clamp(12px, 0.73vw, 14px);
     font-weight: 400;
     line-height: 160%;
     letter-spacing: 1.776px;
 
     z-index: 10;
-    display: block;
+    white-space: nowrap;
 }
 
+/* =================================
+   S1 Scroll 進場 / 離場
+================================= */
+
+.Head {
+    opacity: var(--s1-opacity, 1);
+
+    transform:
+        translate3d(
+            var(--head-x, 0px),
+            0,
+            0
+        );
+
+    will-change:
+        transform,
+        opacity;
 }
 
 
-@media screen and (max-width:1022px){
+.right-side {
+    position: absolute;
+
+    width: clamp(800px, 80vw, 1536px);
+    height: auto;
+
+    margin-bottom: 100px;
+
+    left: clamp(360px, 35.4167vw, 680px);
+    
+    margin-left: 0;
+
+    z-index: 1;
+
+    transform: translate3d(
+        var(--right-x, 0px),
+        0,
+        0
+    );
+
+    will-change: transform;
+}
+
+
+
+}
+
+
+@media screen and (max-width:1020px){
 
     .s1-pc,.right-side {
         display: none;
     }
 
-   .s1-m {
+.s1-m {
+    
     position: relative;
     width: 100%;
     height: auto;
-    min-height: 0;
-    display: flex;
+    display: flex !important ;
     flex-direction: column;
-    overflow: hidden;
     align-items: center;
+    overflow: cover;
+    z-index: 2;
+    isolation: isolate;
 }
 
 
-
-    .s1-bg-pic-m {
+.s1-bg-pic-m {
     position: absolute;
-
-    left: 0;
-    right: 0;
-
-    width: 120%;
-    height: auto;
-
+    inset: 0;
+    width: 100%;
+    height: 100%;
     display: block;
     object-fit: cover;
-    object-position: center bottom;
-
-    top: clamp(-240px, 6vw, -112px);
+    object-position: center center;
+    z-index: 0;
 }
 
-    .Head-m{
-        position: relative;
-        display: flex;
-        width: clamp(300px, 80vw, 738px);
-        flex-direction: column;
-        align-items: center;
-        gap: 32px;
-        margin-top:clamp(18px, 10vw, 36px);
-        margin-left:clamp(0px, 10vw, 22px);
-    }
+   .Head-m {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    width: clamp(300px, 80vw, 738px);
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+
+    margin-top: clamp(18px, 10vw, 36px);
+    margin-left: clamp(0px, 10vw, 22px);
+}
 
     .LOGO-m{
         width:80%;
-        height: auto;
+        height: 100%;
     }
 
     .H2-m{
@@ -414,54 +496,44 @@
 
 .right-side-m {
     position: relative;
-    display: flex;
+    z-index: 2;
+    display: flex !important;
     flex-direction: column;
     align-items: center;
-
-    width: 200%;
+    width: 100%;              /* ← 原本 200% */
     height: auto;
-
     margin-top: clamp(0px, 6vw, 80px);
-    margin-left: clamp(0px, 6vw, 80px);
-
+    margin-left: 0;           /* ← 原本 clamp(0px, 6vw, 80px)，刪掉或設 0 */
     flex-shrink: 0;
 }
 
 .bl-m {
     position: relative;
     display: block;
-
-    width: clamp(0px, 175%, 1200px);
+    width: 175%;              /* ← 原本 clamp(0px, 175%, 1200px) */
+    max-width: 1200px;
     height: auto;
-
-    margin: 0 auto;
-
+    margin: 0 0;
     flex-shrink: 0;
 }
 
 .D3-m {
     position: absolute;
-    right: 60vw;
-    bottom:20px;
-
+    right: 16px;              /* ← 原本 right: 60vw */
+    bottom: 20px;
     width: auto;
     height: auto;
-
     margin: 0;
-
     color: #fff;
     text-align: right;
-
     text-shadow: 0 0 3.806px #000;
     font-family: "Noto Sans TC", sans-serif;
-    font-size:clamp(12px , 8vw , 14px);
-    font-style: normal;
+    font-size: 12px;          /* ← 原本 clamp(12px, 8vw, 14px)，那個 clamp 等於固定 14px */
     font-weight: 400;
     line-height: 160%;
     letter-spacing: 1.776px;
-
+    white-space: nowrap;      /* ← 補上，避免換行 */
     z-index: 10;
-    display: block;
 }
 
 }
@@ -685,17 +757,218 @@
 
 
 
+
 </style>
 <script setup>
-import { computed, getCurrentInstance, ref ,inject} from 'vue';
+import {
+  computed,
+  getCurrentInstance,
+  inject,
+  onMounted,
+  onBeforeUnmount
+} from 'vue';
+
 const globals = getCurrentInstance().appContext.config.globalProperties;
 
 const isMobile = computed(() => globals.$isMobile());
 
-const smoothScroll = inject('smoothScroll')
+const smoothScroll = inject('smoothScroll');
+
 const scrollTo = (el) => {
   smoothScroll({
     scrollTo: document.querySelector(el)
-  })
-}
+  });
+};
+
+
+// ==============================
+// S1 進場 / 離場 Scroll Animation
+// ==============================
+
+let rafId = null;
+
+const clamp = (value, min, max) => {
+  return Math.min(Math.max(value, min), max);
+};
+
+const updateS1Animation = () => {
+
+  // 手機版不處理
+  if (window.innerWidth <= 1020) return;
+
+  const s1 = document.querySelector('.s1-pc');
+
+  if (!s1) return;
+
+  const rect = s1.getBoundingClientRect();
+  const vh = window.innerHeight;
+
+  // ==============================
+  // RWD 位移縮放
+  // 以 1920px 為設計基準
+  // ==============================
+
+  const designWidth = 1920;
+
+  const scale = Math.min(
+    window.innerWidth / designWidth,
+    1
+  );
+
+  // ==============================
+  // Scroll progress
+  // ==============================
+
+  const progress = clamp(
+    (vh - rect.top) / (rect.height + vh),
+    0,
+    1
+  );
+
+
+  // ==============================
+  // 進場
+  // ==============================
+
+  const enterProgress = clamp(
+    progress / 0.2,
+    0,
+    1
+  );
+
+
+  // 原本 1400 / 1420
+  // 現在會跟著螢幕寬度縮放
+
+  const headEnterX =
+    -1400 * scale * (1 - enterProgress);
+
+  const rightEnterX =
+    1420 * scale * (1 - enterProgress);
+
+
+  // ==============================
+  // 離場
+  // ==============================
+
+  const exitProgress = clamp(
+    (progress - 0.58) / 0.42,
+    0,
+    1
+  );
+
+  const smoothExitProgress =
+    1 - Math.pow(1 - exitProgress, 3);
+
+
+  // 原本 400 / 420
+  // 也跟著 RWD 縮放
+
+  const headExitX =
+    -400 * scale * smoothExitProgress;
+
+  const rightExitX =
+    420 * scale * smoothExitProgress;
+
+
+  // ==============================
+  // 最終位置
+  // ==============================
+
+  const headX =
+    headEnterX + headExitX;
+
+  const rightX =
+    rightEnterX + rightExitX;
+
+
+  // ==============================
+  // 透明度
+  // ==============================
+
+  const enterOpacity =
+    enterProgress;
+
+  const exitOpacity =
+    Math.pow(1 - exitProgress, 2);
+
+  const opacity =
+    Math.min(
+      enterOpacity,
+      exitOpacity
+    );
+
+
+  // ==============================
+  // CSS Variables
+  // ==============================
+
+  s1.style.setProperty(
+    '--head-x',
+    `${headX}px`
+  );
+
+  s1.style.setProperty(
+    '--right-x',
+    `${rightX}px`
+  );
+
+  s1.style.setProperty(
+    '--s1-opacity',
+    opacity
+  );
+};
+
+
+const handleS1Scroll = () => {
+
+  if (rafId) return;
+
+  rafId = requestAnimationFrame(() => {
+
+    updateS1Animation();
+
+    rafId = null;
+
+  });
+
+};
+
+
+onMounted(() => {
+
+  // 初始位置
+  updateS1Animation();
+
+  window.addEventListener(
+    'scroll',
+    handleS1Scroll,
+    { passive: true }
+  );
+
+  window.addEventListener(
+    'resize',
+    updateS1Animation
+  );
+
+});
+
+
+onBeforeUnmount(() => {
+
+  window.removeEventListener(
+    'scroll',
+    handleS1Scroll
+  );
+
+  window.removeEventListener(
+    'resize',
+    updateS1Animation
+  );
+
+  if (rafId) {
+    cancelAnimationFrame(rafId);
+  }
+
+});
 </script>
