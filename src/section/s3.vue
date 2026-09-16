@@ -399,7 +399,7 @@
 
     text-shadow: 0 0 3.806px #000;
     font-family: "Noto Sans TC", sans-serif;
-    font-size: clamp(12px, 0.73vw, 14px);
+    font-size: clamp(14px, 0.73vw, 14px);
     font-weight: 400;
     line-height: 160%;
     letter-spacing: 1.776px;

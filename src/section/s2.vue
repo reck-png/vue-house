@@ -346,7 +346,7 @@
 .s2-AI-txt-m {
   position: absolute;
 
-  right: 8%;
+  right: 20px;
   bottom: 20px;
 
   margin: 0;
