@@ -61,6 +61,7 @@
     </div>
 
     <div class="right-side">
+        
 
     <img
         class="bl"
@@ -403,8 +404,16 @@
 
 @media screen and (max-width:1020px){
 
+
     .s1-pc,.right-side {
         display: none;
+    }
+
+        .s1 {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        min-height: 0;
     }
 
 .s1-m {

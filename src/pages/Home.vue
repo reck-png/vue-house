@@ -22,11 +22,12 @@
 
     <Nav v-if="config.showNav" />
 
-    <div class="home bg-white overflow-hidden font-['Noto_Sans_TC']">
+    <div class="home overflow-hidden font-['Noto_Sans_TC']">
 
 
       <S1 />
       <S2 />
+      <S3 />
       <Order />
 
     </div>
@@ -40,6 +41,10 @@
 
 .home {
   position: relative;
+    width:100%;
+  height:fit-content;
+  display:flex;
+  flex-direction: column;
 }
 /*::selection {
   background: rgba(255, 255, 255, 0.411);
@@ -54,12 +59,19 @@
 ========================= */
 
 .s1,
+.s3,
 .order {
   position: relative;
+  width:100%;
+  height:fit-content;
   z-index: 1;
 }
 
-.s2{z-index:0;}
+.s2{
+  position: relative;
+  width:100%;
+  height:fit-content;
+  z-index:0;}
 
 .light-effect {
   position: absolute;
@@ -79,6 +91,7 @@ import info from "@/info"
 
 import S1 from "@/section/s1.vue"
 import S2 from "@/section/s2.vue"
+import S3 from "@/section/s3.vue"
 import Order from "@/section/order.vue"
 import Nav from "@/layout/navbar.vue"
 
