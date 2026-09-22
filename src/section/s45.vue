@@ -11,18 +11,24 @@
          >
             <div class="s4-h-wrap">
 
-                <img
-                class="s4-h"
-                src="@/section/s4/s4-h.svg"
-                >
-                <img
-                class="s4-h-2"
-                src="@/section/s4/s4-h-2.svg"
-                >
-                <img
+               <img
                 class="s4-span"
                 src="@/section/s4/s4-span.svg"
                 >
+                <div class="s4-sp-warp">
+                    <img
+                    class="s4-h-2"
+                    src="@/section/s4/s4-h-2.svg"
+                    >
+
+                  <span class="s4-line"></span>   
+                    
+                    <img
+                    class="s4-h"
+                    src="@/section/s4/s4-h.svg"
+                    >
+                </div>
+
             </div>
 
         <img
@@ -31,33 +37,30 @@
 
         <p class="s4-3D-txt">3D外觀透視示意圖</p>
     </div>
+    </div>
 
 
-    <div class="s45">
+ <div class="s45">
         <img
         class="s45-bg"
         src="@/section/s4/s45-bg.jpg"
          >
 
-         <img
+          <img
          class="s45-bg-light"
          src="@/section/s4/s45-bg-light.png">
 
-        
+
                 <div class="s45-all-wrap">
 
                       <div class="s45-h-wrap">
                             <img
                             class="s45-en"
-                            src="@/section/s4/s45-en.svg"
+                            src="@/section/s4/s45-en.png"
                             >
                             <img
                             class="s45-h"
                             src="@/section/s4/s45-h.svg"
-                            >
-                            <img
-                            class="s45-light"
-                            src="@/section/s1/new-light.png"
                             >
                             <img
                             class="s45-light-2"
@@ -69,53 +72,43 @@
 
                             <div class="s45-sp-1">
                                 <img
-                                class="s45-sp-bg"
+                                class="s45-sp1-bg"
                                 src="@/section/s4/s45-sp-bg.png"
                                 >
-
-                                    <div class="s45-sp-by-1">
                                         <img
                                         class="s45-sp-by-1"
                                         src="@/section/s4/s45-sp1.svg"
                                         >
-                                    </div>
+                                    
                              </div>
 
                             <div class="s45-sp-2">
                                 <img
-                                class="s45-sp-bg"
+                                class="s45-sp2-bg"
                                 src="@/section/s4/s45-sp-bg.png"
                                 >
-
-                                    <div class="s45-sp-by-2">
                                         <img
                                         class="s45-sp-by-2"
                                         src="@/section/s4/s45-sp2.svg"
                                         >
-                                    </div>
                              </div>
 
                             <div class="s45-sp-3">
                                 <img
-                                class="s45-sp-bg"
+                                class="s45-sp3-bg"
                                 src="@/section/s4/s45-sp-bg.png"
                                 >
-
-                                    <div class="s45-sp-by-3">
                                         <img
                                         class="s45-sp-by-3"
                                         src="@/section/s4/s45-sp3.svg"
                                         >
-                                    </div>
                              </div>
-                              
-                              
                       </div>
                 </div>
 
         <p class="s45-3D-txt">公設3D示意不含擺飾品 僅供參考</p>
     </div>
-</div>
+
 
 
 <div class="s4-45-wrap-m">
@@ -144,144 +137,68 @@
     </div>
 
 
-    <div class="s45">
-        <img
-        class="s45-bg"
-        src="@/section/s4/s45-bg.jpg"
-         >
-                <div class="s45-all-wrap">
+   
+  
+ <div class="s45-m">
+                <div class="s45-all-wrap-m">
 
-                      <div class="s45-h-wrap">
+                      <div class="s45-h-wrap-m">
                             <img
-                            class="s45-en"
-                            src="@/section/s4/s45-en.svg"
+                            class="s45-en-m"
+                            src="@/section/s4/s45-en.png"
                             >
                             <img
-                            class="s45-h"
-                            src="@/section/s4/s45-h.svg"
+                            class="s45-h-m"
+                            src="@/section/s4/s45-h-m.svg"
                             >
-                            <img
-                            class="s45-light"
-                            src="@/section/s1/new-light.png"
-                            >
-                            <img
-                            class="s45-light-2"
-                            src="@/section/s4/s45-light2.svg"
-                            > 
                       </div>
+                      
+                      <div class="s45-pic-warp-m">
+                            <img class="s45-pic-m" src="@/section/s4/s45-bg.jpg">
+                            <p class="s45-3D-txt-m">公設3D示意不含擺飾品 僅供參考</p>
+                       </div>
 
-                      <div class="s45-sp-wrap">
+                      <div class="s45-sp-wrap-m">
 
-                            <div class="s45-sp-1">
+                            <div class="s45-sp-1-m">
                                 <img
-                                class="s45-sp-bg"
-                                src="@/section/s4/s45-sp-bg.png"
+                                class="s45-sp1-bg-m"
+                                src="@/section/s4/s45-sp-bg-m.png"
                                 >
-
-                                    <div class="s45-sp-by-1">
                                         <img
-                                        class="s45-sp-by-1"
-                                        src="@/section/s4/s45-sp1.svg"
+                                        class="s45-sp-by-1-m"
+                                        src="@/section/s4/s45-sp1-m.svg"
                                         >
-                                    </div>
                              </div>
 
-                            <div class="s45-sp-2">
+                            <div class="s45-sp-2-m">
                                 <img
-                                class="s45-sp-bg"
-                                src="@/section/s4/s45-sp-bg.png"
+                                class="s45-sp2-bg-m"
+                                src="@/section/s4/s45-sp-bg-m.png"
                                 >
-
-                                    <div class="s45-sp-by-2">
                                         <img
                                         class="s45-sp-by-2"
-                                        src="@/section/s4/s45-sp2.svg"
+                                        src="@/section/s4/s45-sp2-m.svg"
                                         >
-                                    </div>
                              </div>
 
-                            <div class="s45-sp-3">
+                            <div class="s45-sp-3-m">
                                 <img
-                                class="s45-sp-bg"
-                                src="@/section/s4/s45-sp-bg.png"
+                                class="s45-sp3-bg-m"
+                                src="@/section/s4/s45-sp-bg-m.png"
                                 >
-
-                                    <div class="s45-sp-by-3">
                                         <img
                                         class="s45-sp-by-3"
-                                        src="@/section/s4/s45-sp3.svg"
+                                        src="@/section/s4/s45-sp3-m.svg"
                                         >
-                                    </div>
                              </div>
-                              
-                              
                       </div>
                 </div>
-
-        <p class="s45-3D-txt">公設3D示意不含擺飾品 僅供參考</p>
     </div>
-</div>
-  
-
-
-<div class="s3-m" @pointerdown="handleFgInteraction">
-
-  <div class="s3-bg-wrap-m">
-
-    <div class="s3-bg-size-m">
-
-      <img
-        class="s3-bg-m"
-        src="@/section/s3/s3-bg.jpg"
-        data-aos="zoom-out"
-        data-aos-offset="20"
-        data-aos-delay="520"
-        data-aos-duration="3000"
-        data-aos-easing="ease-out-cubic"
-        data-aos-once="false"
-        data-aos-mirror="false"
-      >
-
-      <img
-        class="s3-local-m"
-        src="@/section/s3/s3-local.png"
-        data-aos="fade-up"
-        data-aos-offset="20"
-        data-aos-delay="820"
-        data-aos-duration="800"
-        data-aos-easing="ease-out-cubic"
-        data-aos-once="false"
-        data-aos-mirror="false"
-      >
-
-      <div
-        class="fg-wp"
-        :class="{ 'fg-hidden': !fgVisible }"
-      ></div>
-
     </div>
 
-  </div>
 
-  <img
-    class="s3-finger"
-    src="@/section/s3/s3-finger.svg"
-    :class="{ 'fg-hidden': !fgVisible }"
-  >
 
-  <img
-    class="s3-h-m"
-    src="@/section/s3/s3-h-m.svg"
-    data-aos="fade"
-    data-aos-offset="10"
-    data-aos-delay="5200"
-    data-aos-duration="2000"
-    data-aos-easing="ease-out-cubic"
-  >
-
-<p class="s3-p-txt-m">空拍實景經合成修飾示意</p>
-
-</div>
   
 </section>    
 </template>
@@ -289,109 +206,49 @@
 <style lang="scss">
 @import "@/assets/style/function.scss";
 
-.s3 {
+
+.s4 {
     position: relative;
     width: 100%;
     height: auto;
     z-index: 0;
-    background: linear-gradient(180deg, #00185F 0%, rgba(255, 255, 255, 0.00) 100%);
 }
   
 @media screen and (min-width:1201px) {
 
-  .s3-m {
+  .s4-45-wrap-m {
     display: none;
   }
 
-  .s3-pc {
+  .s4,
+  .s45 {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 
-  .s3-h {
-    position: absolute;
+  .s4-h-wrap {
+      position: absolute;
+  width:143px;
+  height:379px;
+  left: 1633;
+  right: 0;
+  top: 10%;
+  margin: 0 auto;
 
-    width: clamp(873px, 48vw, 1073px);
-    top: clamp(0%, 6vw, 32%);
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 
-    z-index: 1;
+  z-index: 5;
   }
 
-.s3-bg-wrap {
-  position: relative;
+  .s4-sp-warp{
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
 
-  width: 100%;
-
-  overflow: hidden;
-}
-
-
-/* =========================
-   1920 × 1000 設計稿
-   ========================= */
-.s3-bg-size {
-  position: relative;
-
-  width: max(100%, calc(100vh * 1.92));
-  aspect-ratio: 1920 / 1000;
-
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-
-/* BG */
-.s3-bg {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-}
-
-
-/* LOCAL */
-.s3-local {
-  position: absolute;
-
-  width: 100%;
-  height: 100%;
-
-  top: 0;
-  left: 0;
-
-  z-index: 1;
-}
-
-.s3-p-txt {
-    position: absolute;
-
-    right: calc(12% - 12vh);
-    bottom: 20px;
-
-    width: auto;
-    height: auto;
-
-    margin: 0;
-
-    color: #fff;
-    text-align: right;
-
-    text-shadow: 0 0 3.806px #000;
-    font-family: "Noto Sans TC", sans-serif;
-    font-size: clamp(12px, 0.73vw, 14px);
-    font-weight: 400;
-    line-height: 160%;
-    letter-spacing: 1.776px;
-
-    z-index: 10;
-    white-space: nowrap;
-  
   }
-
 
 
 }
