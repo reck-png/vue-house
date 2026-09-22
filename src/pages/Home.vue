@@ -28,6 +28,7 @@
       <S1 />
       <S2 />
       <S3 />
+      <S45 />
       <Order />
 
     </div>
@@ -60,6 +61,7 @@
 
 .s1,
 .s3,
+.s45,
 .order {
   position: relative;
   width:100%;
@@ -92,6 +94,7 @@ import info from "@/info"
 import S1 from "@/section/s1.vue"
 import S2 from "@/section/s2.vue"
 import S3 from "@/section/s3.vue"
+import S45 from "@/section/s45.vue"
 import Order from "@/section/order.vue"
 import Nav from "@/layout/navbar.vue"
 
