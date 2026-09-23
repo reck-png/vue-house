@@ -1,5 +1,10 @@
 <template>
+  
   <div id="order" class="order relative text-center ">
+
+    <img class="order-bg" src="@/section/order/order-bg.jpg">
+    <img class="order-bg-m" src="@/section/order/order-bg-m.jpg">
+
     <div class="order-section">
       <div class="order-title-style">
         <div class="order-title-line">
@@ -164,11 +169,26 @@
 }
 $o-title-c: #A30C24; //.order-title
 
+
+
 .order {
   width: 100%;
-  padding-top: size(40);
   font-size: clamp(12px, 4vw, 16px);
   z-index: 6;
+
+  .order-bg-m{
+    display: none;
+  }
+
+   .order-bg{
+  position: absolute;
+  width: 120%;
+  max-width: none;
+  top:0;
+  left:0;
+  height: auto;
+  }
+
 
   .order-section {
     position: relative;
@@ -489,7 +509,7 @@ $o-title-c: #A30C24; //.order-title
 }
 
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:1200px) {
   .order-section {
     min-height: sizem(800);
     position: relative;
@@ -587,14 +607,31 @@ $o-title-c: #A30C24; //.order-title
   
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
   .order {
+
+    .order-bg{
+    display: none;
+  }
+
+   .order-bg-m{
+    display: block;
+  position: absolute;
+  width: 100%;
+  max-width: none;
+  top:0;
+  left:0;
+  height: auto;
+  }
+
     .form {
       .row {
         background: rgba(64, 106, 161, 0.466);
       }
     }
   }
+
+    
 
 }
 
@@ -604,7 +641,7 @@ $o-title-c: #A30C24; //.order-title
 <script setup>
 import Policy from "@/section/form/policy.vue"
 import ContactInfo from "@/section/form/contactInfo.vue"
-//import Map from "@/section/form/map.vue"
+import Map from "@/section/form/map.vue"
 import HouseInfo from "@/section/form/houseInfo.vue"
 /*自訂下拉選單*/
 import CustomSelect from "@/section/CustomSelect.vue"

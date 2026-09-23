@@ -6,8 +6,8 @@ export default {
   address1: "接待中心",//按鈕區的--- 如空白會只呈現地址
   address2: "接待中心",//map點下確認的--- 如空白會顯示"導航地址"
   address: "XXXXX",
-  googleSrc: "",
-  googleLink: "",
+  googleSrc: "https://maps.app.goo.gl/2v6YTvobyd864o6z7",
+  googleLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3882.80823360261!2d121.48461667556296!3d25.049630037661668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a8febc50be57%3A0x4d2710a0a031bc96!2zMjQx5paw5YyX5biC5LiJ6YeN5Y2A5oiQ5Yqf6YeM5oiQ5Yqf6LevNTDlt7cgJiDmiJDlip_kuozooZc!5e1!3m2!1szh-TW!2stw!4v1790164343731!5m2!1szh-TW!2stw",
   phone: "04-829-1133",
   fbLink: "https://www.facebook.com/profile.php?id=61593190918264",
   fbMessage: "https://m.me/61593190918264",
@@ -29,9 +29,9 @@ export default {
   recaptcha_site_key: "6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s", // recaptcha v3
   recaptcha_user_token: "6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa",
   order: {
-    title: "立即登記",
-    //subTitle: "歡迎填寫表單，將由專人與您聯繫並提供服務，謝謝！",
-    //subTitle_mo: "歡迎填寫表單，將由專人與您聯繫並提供服務，謝謝！",
+    title: "VIP優先預約",
+    subTitle: "預計 116 年下半年落成  ｜  限時早鳥預約品鑑",
+    subTitle_mo: "預計 116 年下半年落成  ｜  限時早鳥預約品鑑",
   },
   // 控制表單欄位
   //性別
