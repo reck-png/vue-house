@@ -1,10 +1,10 @@
 const caseName = "詮美湛"
 
 export default {
-  caseid: "027b6ad6-f582-4a2f-9d41-a8d916dd529e",
+  caseid: "eeb2f87e-888c-42d7-8c51-5303791e701c",
   //caseid_j: "3c00c7f1-d23a-4d28-a94c-790a8f4626c5", //兩邊id一樣可以不用有
   address1: "銷售中心",//按鈕區的--- 如空白會只呈現地址
-  address2: "銷售中心",//map點下確認的--- 如空白會顯示"導航地址"
+  address2: "中心",//map點下確認的--- 如空白會顯示"導航地址"
   address: "新北市三重區成功路50巷73號1樓旁",
   googleSrc: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3882.8034839622687!2d121.48750799999999!3d25.04978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDAyJzU5LjIiTiAxMjHCsDI5JzE1LjAiRQ!5e1!3m2!1szh-TW!2stw!4v1790248150698!5m2!1szh-TW!2stw",
   googleLink: "https://maps.app.goo.gl/QLXW9uAw35zkFkFx6",

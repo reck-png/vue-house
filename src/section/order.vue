@@ -408,7 +408,7 @@ $o-title-c: #A30C24; //.order-title
       }
 
       input {
-    color:#ffffff;
+    color:#000000a2;
     opacity:1;
     background:transparent;
     font-size: clamp(12px, 4vw, 16px);
@@ -593,20 +593,7 @@ background: linear-gradient(168deg, #F6DDC0 13.32%, #F4A135 39.65%, #E48E1D 70%,
 /* 勾選後 */
 .checkbox:checked {
   background:
-    radial-gradient(
-      ellipse at 36% -20%,
-      #e93fff 0%,
-      #9b66b9 10%,
-      #003c80 55%,
-      transparent 75%
-    ),
-    radial-gradient(
-      ellipse at -100% 100%,
-      #5893FF 22%,
-      #00446E 55%,
-      transparent 75%
-    ),
-    #00446E;
+    #0068a8;
 
   border-color: transparent;
 }
@@ -623,7 +610,7 @@ background: linear-gradient(168deg, #F6DDC0 13.32%, #F4A135 39.65%, #E48E1D 70%,
   left: 6px;
   top: 2px;
 
-  border: solid #000000;
+  border: solid #ffffff;
   border-width: 0 2px 2px 0;
 
   transform: rotate(45deg);
