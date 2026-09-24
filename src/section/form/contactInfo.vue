@@ -42,7 +42,7 @@
       </div>
       <div class="flex contact-item justify-center items-center googlemap"
         @click="modalOpen = true; modalType = 'gmap'">
-        <img src="//h35.banner.tw/img/form/gmap.svg" alt="導航 GoogleMap" srcset="" />
+        <img class="local-icon" src="@/section/icon/local.svg" alt="導航 GoogleMap" srcset="" />
         <div>導航 GoogleMap</div>
       </div>
     </div>
@@ -63,17 +63,24 @@
       <div>FB 諮詢</div>
     </div>
     <div class="flex  flex-col contact-item justify-center items-center" @click="scrollTo('.order')">
-      <img src="@/section/icon/iCON.svg" alt="立即預約" srcset="" />
+      <img class="reserve-icon" src="@/section/icon/iCON.svg" alt="立即預約" srcset="" />
       <div>立即預約
       </div>
     </div>
-    <!--
-    <div class="flex flex-1 flex-col contact-item justify-center items-center"
-      @click="modalOpen = true; modalType = 'gmap'"  v-if="info.address" >
-      <img src="//h35.banner.tw/img/form/gmap.svg" alt="地圖導航" srcset="" />
-      <div>地圖導航</div>
-    </div>
-  -->
+    
+    <div
+  class="flex flex-1 flex-col contact-item justify-center items-center mobile-googlemap"
+  @click="modalOpen = true; modalType = 'gmap'"
+  v-if="info.address"
+>
+  <img
+    class="map-icon"
+    src="@/section/icon/local.svg"
+    alt="地圖導航"
+  />
+  <div>地圖導航</div>
+</div>
+  
   </div>
 
   <!-- Modal -->
@@ -122,6 +129,14 @@
 <style lang="scss">
 @import "@/assets/style/function.scss";
 
+.mo-contact-info {
+  display: none;
+}
+
+.local-icon{
+  width:36px;
+}
+
 .bg-color1{background-color: #00312E;}
 .hover\:bg-color2:hover{background-color:#002421;}
 
@@ -134,6 +149,7 @@
   padding: 5em 0 2.5em 0;
   position: relative;
   z-index: 50;
+  gap: 1em;
   width: clamp(768px, 90vw, 1000px);
   font-size:18px;
 
@@ -163,15 +179,11 @@
   overflow: hidden;
   gap:1em;
 
-  border-radius: 12px;
+  border-radius: 6px;
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
 
   // 原本透白
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.178) 0%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
+  background: linear-gradient(168deg, #F6DDC0 13.32%, #F4A135 39.65%, #E48E1D 70%, #e2ac4e 90%);
 
   box-shadow:
     1.127px 4.508px 43.168px 0 rgba(255, 255, 255, 0.2) inset;
@@ -183,7 +195,7 @@
   width: 100%;
   flex: 1;
 
-  padding: 1.1em 0;
+  padding: 1.1em ;
 
   line-height: 1.6;
   letter-spacing: 0.05em;
@@ -201,15 +213,8 @@
     position: absolute;
     inset: 0;
 
-    background:
-       linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.28) 0%,
-    rgba(255, 255, 255, 0.10) 35%,
-    rgba(130, 170, 255, 0.10) 65%,
-    rgba(255, 255, 255, 0.06) 100%
-  );
-    mix-blend-mode: color-burn;
+    background: linear-gradient(168deg, #F6DDC0 13.32%, #F4A135 39.65%, #E48E1D 70%, #e2ac4e 90%);
+    mix-blend-mode: multiply;
 
     z-index: 0;
     pointer-events: none;
@@ -276,9 +281,9 @@
   }
 }
     &.address {
-        display: none;
+        display: flex;
         background-color: #eee;
-        border-radius: 16px;
+        border-radius: 4px;
 
       .contact-item {
         &.add{
@@ -288,7 +293,7 @@
         flex:2.10;
 
         }
-        /*
+        
         background: none;
         z-index: 0;
         position: relative;
@@ -314,12 +319,14 @@
 
 
       &.googlemap {
+        gap: 0em;
         flex:1;
+        background: linear-gradient(168deg, #F6DDC0 13.32%, #F4A135 39.65%, #E48E1D 70%, #e2ac4e 90%);
   //    background-color: #9B1E44;
       border-left-width: 0;
       //  color: #fff;
       }
-    */
+    
     }
     }
     &.no-gap {
@@ -331,7 +338,7 @@
   img{filter: invert(0%) sepia(1%) saturate(4%) hue-rotate(348deg) brightness(99%) contrast(101%);
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1020px) {
 
   .mo-contact-info {
   position: fixed;
@@ -344,13 +351,13 @@
 
   /* ★ 固定三欄橫排 */
   display: grid !important;
-  grid-template-columns: repeat(3, 70px);
+  grid-template-columns: repeat(4, 48px);
   grid-template-rows: 1fr;
 
   justify-content: center;
   align-items: center;
 
-  column-gap: clamp(20px, 80vw, 40px);
+  column-gap: clamp(20px, 60vw, 40px);
 
     box-sizing: border-box;
 
@@ -406,7 +413,7 @@
   position: relative;
   z-index: 1;
 
-  width: sizem(70px);
+  width: sizem(64px);
   min-width: 0;
   max-width: none;
 
@@ -455,6 +462,7 @@
     width: 92%;
     margin-bottom: 32px;
     min-width:0;
+    border: 0;
     // height: sizem(400);
     // border-radius: sizem(68);
     //padding: sizem(0) sizem(0);
@@ -463,6 +471,7 @@
     position: relative;
     justify-content: space-between;
   background-size: sizem(450) auto;
+  
 
     .logo {
       width: sizem(257);
@@ -475,10 +484,12 @@
       margin-top: sizem(0);
       gap: sizem(15);
       flex-direction: column;
-    width: sizem(310);
+    width: 80vw;
+    max-width:400px;
+    
 
       .contact-item {
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.178) 0%, rgba(255, 255, 255, 0.05) 100%);
+        background: linear-gradient(168deg, #F6DDC0 13.32%, #F4A135 39.65%, #E48E1D 70%, #e2ac4e 90%);
         box-shadow: 1.127px 4.508px 43.168px 0 rgba(255, 255, 255, 0.2) inset;
         padding: 1.1em sizem(80);
         font-size: sizem(16);
@@ -498,7 +509,7 @@
         div{
           text-indent: 2em;
         }
-/*
+
         &.address {
           font-size: sizem(15);
           border-radius: sizem(0) sizem(0) 0 0;
@@ -517,10 +528,14 @@
           border-radius: 0 0 sizem(0) sizem(0);
         }
       &.googlemap {
+        
         border-top-width: 0;
       border-left-width:0;
+      
       }
-*/
+
+      
+
       }
       &.address {
         margin:sizem(15) 0 0 0 ;
@@ -536,6 +551,20 @@
       }
     }
   }
+
+  .mo-contact-info .mobile-googlemap .map-icon {
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+}
+
+.mo-contact-info .reserve-icon {
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+}
 
 }
 </style>

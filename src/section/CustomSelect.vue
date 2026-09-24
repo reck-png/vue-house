@@ -135,14 +135,14 @@ onUnmounted(() => {
 
   cursor:pointer;
 
-  color:#fff;
+  color: rgba(0, 0, 0, 0.507);
 
   padding-right:1em;
 }
 
 .placeholder{
 
-  color:rgba(255,255,255,.55);
+  color:rgba(0, 0, 0, 0.55);
 
 }
 

@@ -1,4 +1,4 @@
-const caseName = "泰和茂田中新案"
+const caseName = "詮美湛"
 
 export default {
   caseid: "f65b0dfd-6b1d-448b-9460-b5112e1ac995",
@@ -14,11 +14,14 @@ export default {
   //line: "https://lin.ee/qakWswp",
   caseName: caseName,
   houseInfos: [
-    ["投資建設", "秀溙開發有限公司"],
-    ["營造公司", "和固營造有限公司"],
-    ["建造執照", "(115)府建管(建)字第0189047號"],
-    ["企劃銷售", "泰和茂營建團隊"],
-    ["建築設計", "陳茂盛建築師事務所"],
+    ["建築興建", "詮美建設股份有限公司"],
+    ["建築設計", "莊志寬建築師事務所"],
+    ["建照號碼", "111重建字第00422號"],
+    ["樓層規劃", "地上14層，地下3層"],
+    ["格局規劃", "0店面純住社區｜戶戶邊間｜35坪純3房"],
+    ["企劃行銷", "聯頡廣告事業有限公司"],
+    ["　經紀人", "程上銘（93）北縣字000888號"],
+    ["銷售中心", "新北市三重區成功路50巷73號1樓旁"],
     /*
     */
   ],
@@ -44,49 +47,27 @@ export default {
 
   //各種欄位
   selectFields: {
-    room_type: {
+   /* room_type: {
       title: "需求房型",
       type: "select",
       hold: "請選擇房型",
       option: ["1房", "2房", "3房"],
       required: false, //必填開啟使用
       nowrap: false, //選項過長時是否換行
-    }, 
+    }, */
     
         budget: {
-          title: "購屋預算",
-          type: "select",
-          hold: "請選擇區間",
-          option: ["600萬以下", "600～800萬", "800～1,000萬","1,000萬以上"],
-          nowrap: false, //選項過長時是否換行
-          //bypass:true, //必填開啟使用
-        },
-
-         time: {
-          title: "方便聯絡時間",
-          type: "select",
-          hold: "請選擇",
-          option: ["全天皆可", "上午 09:00–12:00", "中午 12:00–13:00","下午 13:00–17:00","晚上 17:00–21:00",],
-          nowrap: false, //選項過長時是否換行
-          //bypass:true, //必填開啟使用
-        },
-
-       
-        recommender: {
-          title: "介紹、推薦來源",
-          type: "select",
-          hold: "請選擇來源",
-         option: ["親友介紹", "合作店家推薦","泰和茂已購VIP"]
-      },
-
-        recname: {
-          title: "介紹人、店家名稱",
-          type: "text",
-          dependsOn: "recommender",
-          hold: "請填寫介紹人或店家名稱",
-      },
-
-      
+        title: "最吸引您的特點（可複選）",
+        type: "checkbox",
+        hold: "請選擇",
+        option: [
+          "均質 35 坪、單層四併純 3 房",
+          "14F/B3 零店面純住社區",
+          "一橋到台北的絕對交通優勢",
+          "訂簽 5%、工程 0 付款方案"
+        ],
+         nowrap: false,
+},
         
   },
 

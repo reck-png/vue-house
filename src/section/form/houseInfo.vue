@@ -36,26 +36,21 @@
 
   <!-- Footer -->
   <div class="footer">
-
-    <a
-      href="https://www.taihe-mao.com"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a href="https://www.lixin.com.tw/" target="_blank">
       <img
-        src="@/section/form/footer-taihe-logo.svg"
-        alt="泰和茂"
-      />
+        src="//h65.tw/img/footerLogo.gif"
+        alt="立炘數位"
+      >
     </a>
 
     <a
       href="https://www.h65.tw/admin/test/login"
       target="_blank"
-      rel="noopener noreferrer"
-      class="footer-link"
     >
+      網頁製作
     </a>
   </div>
+
 </template>
 
 
@@ -67,8 +62,6 @@
    House
 ========================================================= */
 
-
-
 .house {
   position: relative;
   width: 100%;
@@ -78,7 +71,8 @@
 
 .house-inner {
   width: 100%;
-  padding: size(80) size(40);
+  box-sizing: border-box;
+  padding: 80px 30px;
 }
 
 
@@ -86,27 +80,12 @@
    Info Box
 ========================================================= */
 
-.house {
-  position: relative;
-  width: 100%;
-  color: #fff;
-}
-
-.house-inner {
-  width: 100%;
-  box-sizing: border-box;
-
-  /* 左右一起往中間收 */
-  padding: 80px 30px;
-}
-
 .info-box {
   position: relative;
 
   width: 100%;
-  max-width: 800px;
+  max-width: 1100px;
 
-  /* 核心：永遠置中 */
   margin-left: auto;
   margin-right: auto;
 }
@@ -119,19 +98,16 @@
 .title {
   width: 100%;
 
-  margin-bottom: size(40);
+  margin-bottom: 40px;
 
   color: #fff;
 
-  font-family: "Inter","Noto Sans TC", sans-serif;
+  font-family: "Inter", "Noto Sans TC", sans-serif;
 
-  /* 固定字體 */
   font-size: 24px;
-
   font-weight: 400;
 
   letter-spacing: 2px;
-
   line-height: 1.5;
 
   text-align: center;
@@ -140,40 +116,41 @@
 
 /* =========================================================
    Info Grid
+   整組縮小並置中
 ========================================================= */
 
 .info-items {
   width: 100%;
+  max-width: 1000px;
+
+  margin-left: auto;
+  margin-right: auto;
 
   display: grid;
 
   grid-template-columns: repeat(2, minmax(0, 1fr));
-font-family: "Inter","Noto Sans TC", sans-serif;
-  column-gap: size(120);
-  row-gap: size(25);
-}
 
+  column-gap: 60px;
+  row-gap: 24px;
+
+  font-family: "Inter", "Noto Sans TC", sans-serif;
+}
 
 /* =========================================================
    Single Item
 ========================================================= */
 
 .item {
-  width: 120%;
-
+  width: 100%;
   min-width: 0;
 
   display: flex;
-
   align-items: flex-start;
 
-  font-family: "Inter","Noto Sans TC", sans-serif;
+  font-family: "Inter", "Noto Sans TC", sans-serif;
 
-  /* 固定字體 */
   font-size: 18px;
-
   line-height: 1.6;
-
   letter-spacing: 1px;
 
   text-align: left;
@@ -187,11 +164,12 @@ font-family: "Inter","Noto Sans TC", sans-serif;
 .item-label {
   flex: 0 0 auto;
 
-  margin: 0 size(18) 0 0;
+  margin: 0 18px 0 0;
 
-  padding-right: size(18);
+  padding-left: 18px;
+  padding-right: 18px;
 
-  border-right: 2px solid #fff;
+  border-left: 2px solid #fff;
 
   color: #fff;
 
@@ -207,21 +185,16 @@ font-family: "Inter","Noto Sans TC", sans-serif;
 
 .item-value {
   flex: 1 1 auto;
-
   min-width: 0;
 
   margin: 0;
 
   color: #fff;
-
   font-weight: 400;
-
   text-align: left;
 
   white-space: pre-line;
-
   overflow-wrap: anywhere;
-
   word-break: break-word;
 }
 
@@ -230,43 +203,30 @@ font-family: "Inter","Noto Sans TC", sans-serif;
    Footer
 ========================================================= */
 
-
-
 .footer {
-  width: 100%;
+  position: relative;
+  z-index: 1;
 
-  height: 60px;
+  width: 100%;
+  height: 40px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   gap: 10px;
 
-  background: #4e69a3b7;
-  
+  background: #302626;
 
   img {
     display: block;
-
     height: 17px;
-
-    transition: opacity 0.3s ease;
   }
 
-  a:hover img {
-    opacity: 0.5;
+  a {
+    color: #fff;
+    font-size: 12px;
   }
-}
-
-.footer-link {
-  color: #fff;
-
-  font-size: 12px;
-
-  text-decoration: none;
 }
 
 
@@ -287,30 +247,31 @@ font-family: "Inter","Noto Sans TC", sans-serif;
 
   .title {
     font-size: 20px;
-
     margin-bottom: 32px;
-
     letter-spacing: 2px;
   }
 
   .info-items {
-  width: 100%;
+    width: 100%;
+    max-width: 800px;
 
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
-  column-gap: 40px;
-  row-gap: 25px;
-}
+    column-gap: 30px;
+    row-gap: 25px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .item {
-    /* 固定 16px */
-    font-size: 16px;
+    width: 100%;
+    font-size: 14px;
   }
 
   .item-label {
     margin-right: 14px;
-
+    padding-left: 14px;
     padding-right: 14px;
   }
 }
@@ -321,76 +282,22 @@ font-family: "Inter","Noto Sans TC", sans-serif;
    768px 以下
 ========================================================= */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1100px) {
 
-  .house-inner {
-    width: 100%;
-    box-sizing: border-box;
+ .house-inner {
+  width: 100%;
+  box-sizing: border-box;
 
-    padding: 55px 24px;
-  }
+  padding: 55px 24px calc(100px + env(safe-area-inset-bottom));
+}
 
   .info-box {
-    width: fit-content;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  .title {
-    text-align: center;
-    font-size: 22px;
-    margin-bottom: 30px;
-  }
-
-  .info-items {
-    width: fit-content;
+    width: 100%;
     max-width: 100%;
 
-    display: grid;
-    grid-template-columns: 1fr;
-
-    row-gap: 18px;
-
-    margin: 0 auto 40px auto;
+    margin-left: auto;
+    margin-right: auto;
   }
-
-  .item {
-    width: auto;
-    max-width: 100%;
-    
-
-    display: flex;
-    align-items: center;
-
-    font-size: 14px;
-  }
-
-  .item-label {
-    flex: 0 0 auto;
-
-    margin-right: 12px;
-    padding-right: 12px;
-
-    border-right: 1px solid #fff;
-
-    font-size: 14px;
-    white-space: nowrap;
-  }
-
-  .item-value {
-    flex: 0 1 auto;
-
-    min-width: 0;
-
-    font-size: 14px;
-
-    text-align: left;
-
-    white-space: pre-line;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-  }
-
 
 
   /* -------------------------
@@ -398,32 +305,37 @@ font-family: "Inter","Noto Sans TC", sans-serif;
   ------------------------- */
 
   .title {
+    width: 100%;
+
     margin-bottom: 30px;
 
-    /* Mobile 固定 22px */
     font-size: 22px;
-
     letter-spacing: 2px;
-
     line-height: 1.5;
+
+    text-align: center;
   }
 
 
   /* -------------------------
-     Mobile 改成單欄
+     Mobile Info
+     單欄並置中
   ------------------------- */
 
   .info-items {
-    display: grid;
+  width: fit-content;
+  max-width: 100%;
 
-    grid-template-columns: 1fr;
+  display: grid;
 
-    column-gap: 0;
+  grid-template-columns: 1fr;
 
-    row-gap: 18px;
+  column-gap: 0;
+  row-gap: 18px;
 
-    width: 100%;
-  }
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
   /* -------------------------
@@ -431,15 +343,15 @@ font-family: "Inter","Noto Sans TC", sans-serif;
   ------------------------- */
 
   .item {
-    width: 100%;
+  width: 100%;
+  max-width: 100%;
 
-    /* Mobile 固定 14px */
-    font-size: 14px;
+  display: flex;
+  align-items: center;
 
-    line-height: 1.6;
-
-    align-items: center;
-  }
+  font-size: clamp(12px, 3.8vw, 16px);
+  line-height: 1.6;
+}
 
 
   /* -------------------------
@@ -447,20 +359,20 @@ font-family: "Inter","Noto Sans TC", sans-serif;
   ------------------------- */
 
   .item-label {
-    flex: 0 0 auto;
+  flex: 0 0 auto;
 
-    margin-right: 12px;
+  margin: 0 12px 0 0;
 
-    padding-right: 12px;
+  padding-left: 0;
+  padding-right: 12px;
 
-    border-right: 1px solid #fff;
+  border-left: none;
+  border-right: 1px solid #fff;
 
-    white-space: nowrap;
+  font-size: clamp(12px, 3.8vw, 16px);
 
-    /* 固定 14px */
-    font-size: 14px;
-    
-  }
+  white-space: nowrap;
+}
 
 
   /* -------------------------
@@ -468,21 +380,22 @@ font-family: "Inter","Noto Sans TC", sans-serif;
   ------------------------- */
 
   .item-value {
-    flex: 1;
+  flex: 1 1 auto;
 
-    min-width: 0;
+  min-width: 0;
 
-    /* 固定 14px */
-    font-size: 14px;
+  margin: 0;
 
-    line-height: 1.6;
+  font-size: clamp(12px, 3.8vw, 16px);
+  line-height: 1.6;
 
-    white-space: pre-line;
+  text-align: left;
 
-    overflow-wrap: anywhere;
+  white-space: pre-line;
 
-    word-break: break-word;
-  }
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
 
 
   /* -------------------------
@@ -491,7 +404,6 @@ font-family: "Inter","Noto Sans TC", sans-serif;
 
   .footer {
     height: 40px;
-
     gap: 8px;
   }
 
@@ -500,7 +412,6 @@ font-family: "Inter","Noto Sans TC", sans-serif;
   }
 
   .footer-link {
-    /* 固定 12px */
     font-size: 12px;
   }
 }
@@ -515,12 +426,10 @@ font-family: "Inter","Noto Sans TC", sans-serif;
 
   .house-inner {
     padding-left: 20px;
-
     padding-right: 20px;
   }
 
   .title {
-    /* 仍然固定 22px */
     font-size: 22px;
   }
 
@@ -529,14 +438,11 @@ font-family: "Inter","Noto Sans TC", sans-serif;
   }
 
   .item {
-    /* 仍然固定 14px */
     font-size: 14px;
-    
   }
 
   .item-label {
     margin-right: 9px;
-
     padding-right: 9px;
 
     font-size: 14px;
@@ -546,6 +452,7 @@ font-family: "Inter","Noto Sans TC", sans-serif;
     font-size: 14px;
   }
 }
+
 </style>
 
 

@@ -5,15 +5,27 @@
     <img class="order-bg" src="@/section/order/order-bg.jpg">
     <img class="order-bg-m" src="@/section/order/order-bg-m.jpg">
 
-    <div class="order-section">
-      <div class="order-title-style">
-        <div class="order-title-line">
-          <div class="order-title" v-if="info.order.title" v-html="info.order.title"></div>
-        </div>  
-      </div> 
-    <div class="order-subTitle text-center" v-if="info.order.subTitle"
-        v-html="$isMobile() && info.order.subTitle_mo ? info.order.subTitle_mo : info.order.subTitle">
+
+  <div class="order-section">
+
+    <img class="order-logo" src="@/section/s1/LOGO.svg">
+
+      <div class="order-txt">
+ 
+          <div class="order-title-style">
+            
+              <div class="order-title" v-if="info.order.title" v-html="info.order.title"></div>
+          
+          </div> 
+
+        <div class="order-subTitle text-center" v-if="info.order.subTitle"
+            v-html="$isMobile() && info.order.subTitle_mo ? info.order.subTitle_mo : info.order.subTitle">
+
+        </div>
       </div>
+      
+
+    
 <!--  -->
       <!-- FORM -->
       <div class="form mx-auto relative flex justify-center">
@@ -22,7 +34,7 @@
           <div class="name">
           <!-- 姓名 -->
           <label class="row">
-            <span>姓名<span>*</span></span>
+            <span>貴賓姓名<span>*</span></span>
             <input v-model="formData.name" type="text" class="input w-full" placeholder="請填寫您的姓名" />
           </label>
 
@@ -39,13 +51,15 @@
 
           <!-- 手機 -->
           <label class="row">
-            <span>聯絡電話<span>*</span></span>
+            <span>聯絡手機<span>*</span></span>
             <input v-model="formData.phone" type="text" class="input w-full" placeholder="請填寫您的聯絡電話" />
           </label>
 
           <!-- 動態欄位 -->
-          <template v-for="(field, key) in selectFields" :key="key">
+         <template v-for="(field, key) in selectFields" :key="key">
+
   <Transition name="area-drop">
+
     <label
       class="row dynamic-row"
       v-if="!field.hidden && shouldShowField(field)"
@@ -56,17 +70,31 @@
         <span v-if="field.required">*</span>
       </span>
 
-      <CustomSelect
-  v-if="field.type === 'select'"
-  v-model="formData[key]"
-  :placeholder="field.hold"
-  :options="field.option?.map(item => ({
-    label: item,
-    value: item
-  })) || []"
-  :nowrap="field.nowrap"
-/>
+      <!-- 複選 -->
+      <CustomMultiSelect
+        v-if="field.type === 'checkbox'"
+        v-model="formData[key]"
+        :placeholder="field.hold"
+        :options="field.option?.map(item => ({
+          label: item,
+          value: item
+        })) || []"
+        :nowrap="field.nowrap"
+      />
 
+      <!-- 單選 -->
+      <CustomSelect
+        v-else-if="field.type === 'select'"
+        v-model="formData[key]"
+        :placeholder="field.hold"
+        :options="field.option?.map(item => ({
+          label: item,
+          value: item
+        })) || []"
+        :nowrap="field.nowrap"
+      />
+
+      <!-- 一般文字輸入 -->
       <input
         v-else
         v-model="formData[key]"
@@ -76,7 +104,9 @@
       />
 
     </label>
+
   </Transition>
+
 </template>
 
           <!-- 縣市 -->
@@ -120,7 +150,7 @@
       <div class="flex gap-2 items-center justify-center control">
         <input type="checkbox" v-model="formData.policyChecked" class="checkbox" />
         <p>
-          本人知悉並 「 同意個資告知事項聲明 」內容
+          本人知悉並同意<label for="policy-modal" class="text-[#00a3df] cursor-pointer">「個資告知事項聲明」</label>內容
         </p>
       </div>
 
@@ -134,7 +164,7 @@
       <div class="sendall mt-8 mb-12 mx-auto">
 
         <button v-if="!submitted" class="send" :disabled="sending" @click="send">
-          送出登記
+          搶先預約專案優惠席次
         </button>
 
         <div v-else class="send-load">
@@ -180,23 +210,29 @@ $o-title-c: #A30C24; //.order-title
     display: none;
   }
 
-   .order-bg{
+   .order-bg {
   position: absolute;
-  width: 120%;
-  max-width: none;
-  top:0;
-  left:0;
   height: auto;
-  }
+  width: 100%;
+  max-width: none;
 
+  top: 0;
+  left: 0;
+}
 
   .order-section {
-    position: relative;
-    overflow: hidden;
-    min-height: size(500);
-    margin-bottom: sizem(-100);
-  
-  }
+  position: relative;
+  overflow: hidden;
+  min-height: size(500);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  align-self: stretch;
+
+  padding-top: 8vw;
+}
 /*
 .order-title-img{
   width:sizem(310);
@@ -207,12 +243,34 @@ $o-title-c: #A30C24; //.order-title
 }
   */
 
+  .order-logo{
+    position: relative;
+    width: clamp(278px, 20vw, 738px);
+    top:0;
+    left:0;
+    margin:0 auto;
+
+  }
+
+  .order-txt{
+    display: flex;
+    padding-top:8vw;
+    padding-bottom:3vw;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    align-self: stretch;
+
+  }
+
 
   .order-title-style{
+ 
   display: flex;
   padding-bottom: 0px;
   flex-direction: column;
   align-items: center;
+  
   gap: 21px;
   align-self: stretch;
   }
@@ -238,29 +296,35 @@ $o-title-c: #A30C24; //.order-title
   );
 }
 
-  .order-title {
+  .order-title {  
   color: #FFF;
-  font-family: "Noto Sans";
-  font-size: 24px;
+  text-align: center;
+  font-family: "Noto Sans TC";
+  font-size: clamp(30px,-80vw,43px);
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   line-height: normal;
-  letter-spacing: 4.16px;
-  z-index: 6;
+  letter-spacing: .1em;
   }
 
- /* .order-subTitle {
-    font-size: 1.2em;
-    padding-top: .5em;
-    letter-spacing: .1em;
+ .order-subTitle {
+    color: #FFF;
+    text-align: center;
+
+    /* desc */
+    font-family: "Noto Sans TC";
+    font-size: clamp(14px,-80vw,18px);
+    font-style: normal;
+    font-weight: 320;
+    line-height: 36px; /* 200% */
+    letter-spacing: 0.08em;
   }
-    */
+   
 
   .form {
-    width: min(1000px, 95%); //最大1200px
+    width: min(920px, 95%);
     //  height: 350px;
     gap: 2em;
-    margin-top: 2em;
     margin-bottom: 6em;
     z-index: 50;
     align-items: stretch;
@@ -278,18 +342,19 @@ $o-title-c: #A30C24; //.order-title
       height: auto;
       //  width: size(419);
       .row {
-        color: #ffffff;
+        color: #000000;
         padding-left: 2em;
         padding-right: 2em;
         padding-top: 1.5em;
+
         letter-spacing: 2px;}
     }
 
     .right textarea::placeholder {
-    color: #ffffff;
+    color: #000000;
     opacity: 0.5;
     letter-spacing: 1px;
-    font-weight: 100;
+    font-weight: 500;
     padding-left: 1em;
     padding-top: 1em;
     }
@@ -299,11 +364,11 @@ $o-title-c: #A30C24; //.order-title
     .row {
       font-family: "Chiron Hei HK", sans-serif;
 
-      border-radius: 12px;
+      border-radius: 6px;
       border: 0.1px solid #FFF;
-      background: rgba(255, 255, 255, 0.01);
+      background: rgb(255, 255, 255);
       box-shadow: 1px 4px 38.3px 0 rgba(255, 255, 255, 0.04) inset;
-      color: #def6ff;
+      color: #000000;
       display: flex;
       width: 100%;
       align-items: center;
@@ -332,7 +397,7 @@ $o-title-c: #A30C24; //.order-title
 
 
   input::placeholder {
-    color:rgba(255,255,255,.5);
+    color:rgba(0, 0, 0, 0.5);
     opacity:1;
     font-size: clamp(12px, 4vw, 16px);
     letter-spacing:1.5px;
@@ -392,40 +457,15 @@ $o-title-c: #A30C24; //.order-title
   }
 
   .send {
-    font-size: 20px;
-    border-radius: 1px;
-
-  background:
-  radial-gradient(
-    ellipse at 36% -20%,
-    #e93fff 0%,
-    #9b66b9 10%,
-    #003c80 55%,
-    transparent 75%
-  ),
-
-  radial-gradient(
-    ellipse at -100% 100%,
-  
-    #5893FF 22%,
-    #00446E 55%,
-    transparent 75%
-  ),
-  radial-gradient(
-    ellipse at 180% 120%,
-    #AD3DB7 0%,
-    #5893FF 22%,
-    #00446E 55%,
-    transparent 75%
-  ),
-  #00446E;
+    font-size: 18px;
+background: linear-gradient(168deg, #F6DDC0 13.32%, #F4A135 39.65%, #E48E1D 70%, #e2ac4e 90%);
     
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    padding: .7em 0;
-    letter-spacing: 0.2em;
+    padding: 1em ;
+    letter-spacing: 0.15em;
     line-height: 1.5;
     text-indent: 0.5em;
-    border-radius: 12px;
+    border-radius: 6px;
     text-align: center;
     width: 264px;
     z-index: 10;
@@ -433,8 +473,69 @@ $o-title-c: #A30C24; //.order-title
     position: relative;
     transition: transform .5s;
     margin-bottom: 0em;
-    font-weight: 400;
+    font-weight: 350;
     &:hover{transform: scale(1.03);}
+
+    &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(168deg, #F6DDC0 13.32%, #F4A135 39.65%, #E48E1D 70%, #e2ac4e 90%);
+    mix-blend-mode: multiply;
+
+    z-index: 0;
+    pointer-events: none;
+
+    clip-path: circle(
+      0% at
+      var(--mouse-x, 50%)
+      var(--mouse-y, 50%)
+    );
+
+    // 滑入動畫
+    transition:
+      clip-path 0.5s cubic-bezier(
+        0.5,
+        1,
+        0.1,
+        1
+      );
+  }
+
+  // 滑入
+  &.is-hover::before {
+    clip-path: circle(
+      150% at
+      var(--mouse-x)
+      var(--mouse-y)
+    );
+  }
+
+  // ★ 滑出快速消失
+  &:not(.is-hover)::before {
+    transition: clip-path 0.03s ease-in-out;
+  }
+
+  img,
+  div {
+    position: relative;
+    z-index: 1;
+  }
+
+
+
+  // =================================
+  // Hover
+  // =================================
+
+  &.is-hover::before {
+    clip-path: circle(
+      150% at
+      var(--mouse-x)
+      var(--mouse-y)
+    );
+  }
   }
   .send-load{color: #ffffff;}
 
@@ -502,7 +603,7 @@ $o-title-c: #A30C24; //.order-title
   left: 6px;
   top: 2px;
 
-  border: solid #fff;
+  border: solid #000000;
   border-width: 0 2px 2px 0;
 
   transform: rotate(45deg);
@@ -511,23 +612,13 @@ $o-title-c: #A30C24; //.order-title
 
 @media screen and (max-width:1200px) {
   .order-section {
-    min-height: sizem(800);
+    min-height: 0;
     position: relative;
-    // overflow: hidden;
-    // padding-top: sizem(200);
-
-    .bg-image {
-      position: absolute;
-      width: 100%;
-      left: -#{sizem(30)};
-      bottom: sizem(590);
-    }
-
   }
 
   .order {
     width: 100%;
-  padding-top: sizem(96);
+    padding-top: sizem(96);
     padding-bottom: sizem(63);
 
     .cus-divider {
@@ -617,22 +708,37 @@ $o-title-c: #A30C24; //.order-title
    .order-bg-m{
     display: block;
   position: absolute;
-  width: 100%;
-  max-width: none;
+  min-height: 100vw;
+  min-width: 100vw;
+  width: auto;
+
   top:0;
   left:0;
-  height: auto;
   }
 
-    .form {
-      .row {
-        background: rgba(64, 106, 161, 0.466);
-      }
-    }
+    
   }
 
     
 
+}
+
+
+.dropdown-enter-active,
+.dropdown-leave-active {
+  transition: .25s;
+}
+
+.dropdown-enter-from,
+.dropdown-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.dropdown-enter-to,
+.dropdown-leave-from {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 
@@ -645,6 +751,7 @@ import Map from "@/section/form/map.vue"
 import HouseInfo from "@/section/form/houseInfo.vue"
 /*自訂下拉選單*/
 import CustomSelect from "@/section/CustomSelect.vue"
+import CustomMultiSelect from "@/section/CustomMultiSelect.vue"
 
 
 import info from "@/info"
@@ -652,6 +759,8 @@ import { cityList, renderAreaList } from "@/info/address.js"
 import { ref, reactive, watch, computed, getCurrentInstance } from "vue"
 import { VueRecaptcha } from "vue-recaptcha"
 import { useToast } from "vue-toastification"
+
+
 
 const toast = useToast()
 const sending = ref(false)
@@ -685,20 +794,17 @@ const shouldShowField = (field) => {
 const formData = reactive({
   name: "",
   phone: "",
-  room_type: "",
-  budget: "",
-  time: "",
-  recommender: "",
-  recname: "",
+  //room_type: "",
+  budget: [],
   msg: "",
   city: "",
   area: "",
-  gender: "",
+  //gender: "",
   policyChecked: false,
   r_verify: false,
 
   ...Object.keys(selectFields).reduce((acc, k) => {
-    acc[k] = ""
+    acc[k] = selectFields[k].type === "checkbox" ? [] : ""
     return acc
   }, {})
 })
@@ -715,11 +821,9 @@ const fieldLabelMap = {
   name: "姓名",
   phone: "手機",
   //gender: "性別",
-  room_type: "需求房型",
-  budget: "購屋預算",
-  time: "方便聯絡時間",
-  recommender: "介紹、推薦來源",
-  recname: "介紹人、店家名稱",
+  //room_type: "需求房型",
+  budget: "最吸引您的特點",
+  //time: "方便聯絡時間",
   city: "居住縣市",
   area: "居住地區",
   policyChecked: "個資聲明",
@@ -844,7 +948,10 @@ if (unfill.length) {
 for (const [k, v] of Object.entries(formData)) {
   if (["policyChecked", "r_verify"].includes(k)) continue
   if (k === "area" && !v) continue
-  presendA.form[k] = v
+
+  presendA.form[k] = Array.isArray(v)
+    ? v.join(" / ")
+    : v
 }
 
 presendA.form.note = formData.msg
@@ -864,9 +971,12 @@ for (const [k, v] of Object.entries(formData)) {
   if (mergeToMessageKeys.includes(k)) continue
   if (k === "area" && !v) continue
 
-  // B API 欄位對應
   const apiKey = selectFields[k]?.apiB || k
-  presendB.append(apiKey, v)
+
+  presendB.append(
+    apiKey,
+    Array.isArray(v) ? v.join(" / ") : v
+  )
 }
 
 Object.entries(utm).forEach(([k, v]) => presendB.append(k, v))
@@ -897,12 +1007,15 @@ presendB.append(
   const scriptParams = new URLSearchParams();
 
   for (const [k, v] of Object.entries(formData)) {
-    if (["policyChecked", "r_verify"].includes(k)) continue;
-    if (mergeToMessageKeys.includes(k)) continue; // ← 新增：car、time 不單獨送
-    if (k === "area" && !v) continue;
+  if (["policyChecked", "r_verify"].includes(k)) continue
+  if (mergeToMessageKeys.includes(k)) continue
+  if (k === "area" && !v) continue
 
-    scriptParams.append(k, v ?? "");
-  }
+  scriptParams.append(
+    k,
+    Array.isArray(v) ? v.join(" / ") : (v ?? "")
+  )
+}
 
   // msg 也統一改用合併後的 finalMessage
   scriptParams.set("msg", finalMessage);
@@ -965,4 +1078,5 @@ presendB.append(
     sending.value = false
   }
 }
+
 </script>
