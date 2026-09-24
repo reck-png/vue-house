@@ -1,16 +1,16 @@
 const caseName = "詮美湛"
 
 export default {
-  caseid: "f65b0dfd-6b1d-448b-9460-b5112e1ac995",
+  caseid: "027b6ad6-f582-4a2f-9d41-a8d916dd529e",
   //caseid_j: "3c00c7f1-d23a-4d28-a94c-790a8f4626c5", //兩邊id一樣可以不用有
-  address1: "接待中心",//按鈕區的--- 如空白會只呈現地址
-  address2: "接待中心",//map點下確認的--- 如空白會顯示"導航地址"
+  address1: "銷售中心",//按鈕區的--- 如空白會只呈現地址
+  address2: "銷售中心",//map點下確認的--- 如空白會顯示"導航地址"
   address: "新北市三重區成功路50巷73號1樓旁",
-  googleSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.69672382012!2d121.48470370696509!3d25.049698463135396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a8fc27fc5769%3A0xebf092d6fa2f7d5b!2zMjQxMDc35paw5YyX5biC5LiJ6YeN5Y2A5oiQ5Yqf6YeM5oiQ5Yqf6LevNTDlt7c3M-iZnzHmqJM!5e1!3m2!1szh-TW!2stw!4v1790244125607!5m2!1szh-TW!2stw",
-  googleLink: "https://maps.app.goo.gl/dUowGbsvw1GJp2us9",
-  phone: "04-829-1133",
-  fbLink: "https://www.facebook.com/profile.php?id=61593190918264",
-  fbMessage: "https://m.me/61593190918264",
+  googleSrc: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3882.8034839622687!2d121.48750799999999!3d25.04978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDAyJzU5LjIiTiAxMjHCsDI5JzE1LjAiRQ!5e1!3m2!1szh-TW!2stw!4v1790248150698!5m2!1szh-TW!2stw",
+  googleLink: "https://maps.app.goo.gl/QLXW9uAw35zkFkFx6",
+  phone: "02-2270-6789",
+  fbLink: "https://www.facebook.com/profile.php?id=61591981078591",
+  fbMessage: "https://m.me/61591981078591",
   //line: "https://lin.ee/qakWswp",
   caseName: caseName,
   houseInfos: [

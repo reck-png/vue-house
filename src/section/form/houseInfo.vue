@@ -1,7 +1,13 @@
 <template>
 
   <div class="house" v-if="info.houseInfos?.length">
-    <div class="house-inner">
+    <div class="house-inner" data-aos="fade-in"
+      data-aos-offset="20"
+      data-aos-delay="100"
+      data-aos-duration="1000"
+      data-aos-easing="ease-out-cubic"
+      data-aos-once="false"
+      data-aos-mirror="false">
       <div class="info-box">
 
         <!-- 標題 -->

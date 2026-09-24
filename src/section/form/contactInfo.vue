@@ -2,7 +2,13 @@
   <div>
   <div class="contact-info-img relative" >
 </div>
-  <div class="contact-info mx-auto  flex flex-col items-center justify-between">
+  <div class="contact-info mx-auto  flex flex-col items-center justify-between" data-aos="fade-in"
+      data-aos-offset="20"
+      data-aos-delay="100"
+      data-aos-duration="1000"
+      data-aos-easing="ease-out-cubic"
+      data-aos-once="false"
+      data-aos-mirror="false">
    <!--    --><div class="logo">
       <img src="@/section/s1/logo.svg" alt="" data-aos="zoom-out" data-aos-delay="300" data-aos-duration="1000"/>
     </div>
@@ -161,7 +167,7 @@
   z-index: 50;
   gap: 1em;
   width: clamp(768px, 90vw, 1000px);
-  font-size:18px;
+  font-size: clamp(12px, 4vw, 16px);
 
   .logo {position: relative;
     display: none;
@@ -438,7 +444,7 @@
 
       box-sizing: border-box;
 
-      font-size: sizem(16px);
+      font-size: clamp(12px, 4vw, 16px);
       font-weight: 400;
 
       color: transparent;
@@ -601,7 +607,7 @@
           rgba(255, 255, 255, 0.2) inset;
 
         padding: 1.1em sizem(80);
-        font-size: sizem(16px);
+        font-size: clamp(12px, 4vw, 16px);
         max-width: 100%;
         white-space: nowrap;
         margin: 0;
@@ -621,7 +627,7 @@
         }
 
         &.address {
-          font-size: sizem(15px);
+          font-size: clamp(12px, 4vw, 16px);
           border-radius: sizem(0) sizem(0) 0 0;
           padding: 1.1em 0;
           margin-top: sizem(25px);
@@ -641,6 +647,7 @@
         &.googlemap {
           border-top-width: 0;
           border-left-width: 0;
+          padding-left: 2em;
         }
       }
 
