@@ -65,7 +65,7 @@
 
     <img
         class="bl"
-        src="@/section/s1/bl.png">
+        src="@/section/s1/bl.webp">
 
     <img
         class="bl-light"
@@ -134,7 +134,7 @@
 
     <div class="right-side-m">
         <img class="bl-m"
-        src="@/section/s1/bl.png">
+        src="@/section/s1/bl.webp">
 
         <p class="D3-m">3D外觀透視示意圖</p>
 

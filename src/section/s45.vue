@@ -73,8 +73,8 @@
         data-aos="zoom-out"
   data-aos-offset="20"
   data-aos-delay="520"
-  data-aos-duration="3000"
-  data-aos-easing="ease-out-cubic"
+  data-aos-duration="2000"
+  data-aos-easing="ease-out"
   data-aos-once="false"
   data-aos-mirror="false"
          >
@@ -84,7 +84,14 @@
          src="@/section/s4/s45-bg-light.webp">
 
 
-                <div class="s45-all-wrap">
+                <div class="s45-all-wrap"
+      data-aos="fade-left"
+      data-aos-offset="50"
+      data-aos-delay="0"
+      data-aos-duration="1200"
+      data-aos-easing="ease-out-cubic"
+      data-aos-once="false"
+      data-aos-mirror="false">
                     <div class="s45-all-wrap-bg"> </div>
                       <div class="s45-h-wrap">
 
@@ -109,10 +116,10 @@
 
     <div
       class="s45-sp-1"
-      data-aos="fade-up"
+      data-aos="fade-in"
       data-aos-offset="50"
       data-aos-delay="0"
-      data-aos-duration="1600"
+      data-aos-duration="2000"
       data-aos-easing="ease-out-cubic"
       data-aos-once="false"
       data-aos-mirror="false"
@@ -130,10 +137,10 @@
 
     <div
       class="s45-sp-2"
-      data-aos="fade-up"
+      data-aos="fade-in"
       data-aos-offset="50"
       data-aos-delay="400"
-      data-aos-duration="1600"
+      data-aos-duration="2000"
       data-aos-easing="ease-out-cubic"
       data-aos-once="false"
       data-aos-mirror="false"
@@ -151,10 +158,10 @@
 
     <div
       class="s45-sp-3"
-      data-aos="fade-up"
+      data-aos="fade-in"
       data-aos-offset="50"
       data-aos-delay="800"
-      data-aos-duration="1600"
+      data-aos-duration="2000"
       data-aos-easing="ease-out-cubic"
       data-aos-once="false"
       data-aos-mirror="false"
@@ -254,7 +261,7 @@
 
                       <div class="s45-sp-wrap-m">
 
-                            <div class="s45-sp-1-m" data-aos="fade-up"
+                            <div class="s45-sp-1-m" data-aos="fade-in"
       data-aos-offset="20"
       data-aos-delay="0"
       data-aos-duration="1200"
@@ -272,7 +279,7 @@
                                         >
                              </div>
 
-                            <div class="s45-sp-2-m" data-aos="fade-up"
+                            <div class="s45-sp-2-m" data-aos="fade-in"
       data-aos-offset="20"
       data-aos-delay="400"
       data-aos-duration="1200"
@@ -289,7 +296,7 @@
                                         >
                              </div>
 
-                            <div class="s45-sp-3-m" data-aos="fade-up"
+                            <div class="s45-sp-3-m" data-aos="fade-in"
       data-aos-offset="20"
       data-aos-delay="800"
       data-aos-duration="1200"
