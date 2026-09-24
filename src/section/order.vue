@@ -8,9 +8,17 @@
 
   <div class="order-section">
 
-    <img class="order-logo" src="@/section/s1/LOGO.svg">
+    <img class="order-logo" src="@/section/s1/LOGO.svg"
+     data-aos="fade-up"
+      data-aos-offset="20"
+      data-aos-delay="300"
+      data-aos-duration="1000"
+      data-aos-easing="ease-out-cubic"
+      data-aos-once="false"
+      data-aos-mirror="false">
 
-      <div class="order-txt">
+      <div class="order-txt"
+      >
  
           <div class="order-title-style">
             
@@ -28,7 +36,15 @@
     
 <!--  -->
       <!-- FORM -->
-      <div class="form mx-auto relative flex justify-center">
+      <div class="form mx-auto relative flex justify-center"
+       data-aos="fade-up"
+      data-aos-offset="20"
+      data-aos-delay="300"
+      data-aos-duration="1000"
+      data-aos-easing="ease-out-cubic"
+      data-aos-once="false"
+      data-aos-mirror="false"
+      >
 
         <div class="left h-full flex flex-col justify-between items-center">
           <div class="name">
@@ -205,6 +221,7 @@ $o-title-c: #A30C24; //.order-title
   width: 100%;
   font-size: clamp(12px, 4vw, 16px);
   z-index: 6;
+  overflow: hidden;
 
   .order-bg-m{
     display: none;
@@ -212,12 +229,15 @@ $o-title-c: #A30C24; //.order-title
 
    .order-bg {
   position: absolute;
-  height: auto;
   width: 100%;
+  height: 100%;
   max-width: none;
 
   top: 0;
   left: 0;
+
+  object-fit: cover;
+  object-position: center top;
 }
 
   .order-section {
@@ -705,16 +725,19 @@ background: linear-gradient(168deg, #F6DDC0 13.32%, #F4A135 39.65%, #E48E1D 70%,
     display: none;
   }
 
-   .order-bg-m{
-    display: block;
+   .order-bg-m {
+  display: block;
   position: absolute;
-  min-height: 100vw;
-  min-width: 100vw;
-  width: auto;
+  width: 100%;
+  height: 100%;
+  max-width: none;
 
-  top:0;
-  left:0;
-  }
+  top: 0;
+  left: 0;
+
+  object-fit: cover;
+  object-position: center top;
+}
 
     
   }

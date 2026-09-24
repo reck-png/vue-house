@@ -5,9 +5,9 @@ export default {
   //caseid_j: "3c00c7f1-d23a-4d28-a94c-790a8f4626c5", //兩邊id一樣可以不用有
   address1: "接待中心",//按鈕區的--- 如空白會只呈現地址
   address2: "接待中心",//map點下確認的--- 如空白會顯示"導航地址"
-  address: "XXXXX",
-  googleSrc: "https://maps.app.goo.gl/2v6YTvobyd864o6z7",
-  googleLink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3882.80823360261!2d121.48461667556296!3d25.049630037661668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a8febc50be57%3A0x4d2710a0a031bc96!2zMjQx5paw5YyX5biC5LiJ6YeN5Y2A5oiQ5Yqf6YeM5oiQ5Yqf6LevNTDlt7cgJiDmiJDlip_kuozooZc!5e1!3m2!1szh-TW!2stw!4v1790164343731!5m2!1szh-TW!2stw",
+  address: "新北市三重區成功路50巷73號1樓旁",
+  googleSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.69672382012!2d121.48470370696509!3d25.049698463135396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a8fc27fc5769%3A0xebf092d6fa2f7d5b!2zMjQxMDc35paw5YyX5biC5LiJ6YeN5Y2A5oiQ5Yqf6YeM5oiQ5Yqf6LevNTDlt7c3M-iZnzHmqJM!5e1!3m2!1szh-TW!2stw!4v1790244125607!5m2!1szh-TW!2stw",
+  googleLink: "https://maps.app.goo.gl/dUowGbsvw1GJp2us9",
   phone: "04-829-1133",
   fbLink: "https://www.facebook.com/profile.php?id=61593190918264",
   fbMessage: "https://m.me/61593190918264",
@@ -18,8 +18,8 @@ export default {
     ["建築設計", "莊志寬建築師事務所"],
     ["建照號碼", "111重建字第00422號"],
     ["樓層規劃", "地上14層，地下3層"],
-    ["格局規劃", "0店面純住社區｜戶戶邊間｜35坪純3房"],
-    ["企劃行銷", "聯頡廣告事業有限公司"],
+    ["格局規劃", "0店面純住社區｜戶戶邊間｜35坪正3房"],
+    ["建築行銷", "聯頡廣告事業有限公司"],
     ["　經紀人", "程上銘（93）北縣字000888號"],
     ["銷售中心", "新北市三重區成功路50巷73號1樓旁"],
     /*

@@ -8,22 +8,50 @@
         <img
         class="s4-bg"
         src="@/section/s4/s4-bg.jpg"
+        data-aos="zoom-out"
+  data-aos-offset="20"
+  data-aos-delay="520"
+  data-aos-duration="3000"
+  data-aos-easing="ease-out-cubic"
+  data-aos-once="false"
+  data-aos-mirror="false"
          >
             <div class="s4-h-wrap">
 
                <img
                 class="s4-span"
                 src="@/section/s4/s4-span.svg"
+                    data-aos="fade"
+                    data-aos-offset="50"
+                    data-aos-delay="800"
+                    data-aos-duration="3000"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-once="false"
+                    data-aos-mirror="false"
                 >
                 <div class="s4-sp-warp">
                     <img
                     class="s4-h-2"
                     src="@/section/s4/s4-h-2.svg"
+                    data-aos="fade"
+                    data-aos-offset="50"
+                    data-aos-delay="400"
+                    data-aos-duration="3000"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-once="false"
+                    data-aos-mirror="false"
                     >
                     
                     <img
                     class="s4-h"
                     src="@/section/s4/s4-h.svg"
+                    data-aos="fade"
+                    data-aos-offset="50"
+                    data-aos-delay="0"
+                    data-aos-duration="3000"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-once="false"
+                    data-aos-mirror="false"
                     >
                 </div>
 
@@ -42,6 +70,13 @@
         <img
         class="s45-bg"
         src="@/section/s4/s45-bg.jpg"
+        data-aos="zoom-out"
+  data-aos-offset="20"
+  data-aos-delay="520"
+  data-aos-duration="3000"
+  data-aos-easing="ease-out-cubic"
+  data-aos-once="false"
+  data-aos-mirror="false"
          >
 
           <img
@@ -70,42 +105,71 @@
                             > 
                       </div>
 
-                      <div class="s45-sp-wrap">
+                     <div class="s45-sp-wrap">
 
-                            <div class="s45-sp-1">
-                                <img
-                                class="s45-sp1-bg"
-                                src="@/section/s4/s45-sp-bg.png"
-                                >
-                                        <img
-                                        class="s45-sp-by-1"
-                                        src="@/section/s4/s45-sp1.png"
-                                        >
-                                    
-                             </div>
+    <div
+      class="s45-sp-1"
+      data-aos="fade-up"
+      data-aos-offset="50"
+      data-aos-delay="0"
+      data-aos-duration="1600"
+      data-aos-easing="ease-out-cubic"
+      data-aos-once="false"
+      data-aos-mirror="false"
+    >
+      <img
+        class="s45-sp1-bg"
+        src="@/section/s4/s45-sp-bg.png"
+      >
+      <img
+        class="s45-sp-by-1"
+        src="@/section/s4/s45-sp1.png"
+      >
+    </div>
 
-                            <div class="s45-sp-2">
-                                <img
-                                class="s45-sp2-bg"
-                                src="@/section/s4/s45-sp-bg.png"
-                                >
-                                        <img
-                                        class="s45-sp-by-2"
-                                        src="@/section/s4/s45-sp2.png"
-                                        >
-                             </div>
 
-                            <div class="s45-sp-3">
-                                <img
-                                class="s45-sp3-bg"
-                                src="@/section/s4/s45-sp-bg.png"
-                                >
-                                        <img
-                                        class="s45-sp-by-3"
-                                        src="@/section/s4/s45-sp3.png"
-                                        >
-                             </div>
-                      </div>
+    <div
+      class="s45-sp-2"
+      data-aos="fade-up"
+      data-aos-offset="50"
+      data-aos-delay="400"
+      data-aos-duration="1600"
+      data-aos-easing="ease-out-cubic"
+      data-aos-once="false"
+      data-aos-mirror="false"
+    >
+      <img
+        class="s45-sp2-bg"
+        src="@/section/s4/s45-sp-bg.png"
+      >
+      <img
+        class="s45-sp-by-2"
+        src="@/section/s4/s45-sp2.png"
+      >
+    </div>
+
+
+    <div
+      class="s45-sp-3"
+      data-aos="fade-up"
+      data-aos-offset="50"
+      data-aos-delay="800"
+      data-aos-duration="1600"
+      data-aos-easing="ease-out-cubic"
+      data-aos-once="false"
+      data-aos-mirror="false"
+    >
+      <img
+        class="s45-sp3-bg"
+        src="@/section/s4/s45-sp-bg.png"
+      >
+      <img
+        class="s45-sp-by-3"
+        src="@/section/s4/s45-sp3.png"
+      >
+    </div>
+
+</div>
                      
                 </div>
 
@@ -125,7 +189,13 @@
             <div class="s4-pic-wrap">
                 <img
                 class="s4-bg-m"
-                src="@/section/s4/s4-bg-m.jpg"
+                src="@/section/s4/s4-bg-m.jpg" data-aos="zoom-out"
+  data-aos-offset="20"
+  data-aos-delay="520"
+  data-aos-duration="3000"
+  data-aos-easing="ease-out-cubic"
+  data-aos-once="false"
+  data-aos-mirror="false"
                 >
                 <img
                 class="s4-en-m"
@@ -137,6 +207,13 @@
             <img
                 class="s4-h-m"
                 src="@/section/s4/s4-h-m.svg"
+                data-aos="fade-in"
+  data-aos-offset="20"
+  data-aos-delay="520"
+  data-aos-duration="3000"
+  data-aos-easing="ease-out-cubic"
+  data-aos-once="false"
+  data-aos-mirror="false"
                 >
     </div>
 
@@ -146,7 +223,14 @@
  <div class="s45-m">
                 <div class="s45-all-wrap-m">
 
-                      <div class="s45-h-wrap-m">
+                      <div class="s45-h-wrap-m"
+                      data-aos="fade-in"
+  data-aos-offset="20"
+  data-aos-delay="520"
+  data-aos-duration="3000"
+  data-aos-easing="ease-out-cubic"
+  data-aos-once="false"
+  data-aos-mirror="false">
                             <img
                             class="s45-en-m"
                             src="@/section/s4/s45-en.png"
@@ -157,14 +241,27 @@
                             >
                       </div>
                       
-                      <div class="s45-pic-warp-m">
+                      <div class="s45-pic-warp-m" data-aos="zoom-out"
+  data-aos-offset="20"
+  data-aos-delay="520"
+  data-aos-duration="1000"
+  data-aos-easing="ease-out-cubic"
+  data-aos-once="false"
+  data-aos-mirror="false">
                             <img class="s45-pic-m" src="@/section/s4/s45-bg.jpg">
                             <p class="s45-3D-txt-m">公設3D示意不含擺飾品 僅供參考</p>
                        </div>
 
                       <div class="s45-sp-wrap-m">
 
-                            <div class="s45-sp-1-m">
+                            <div class="s45-sp-1-m" data-aos="fade-up"
+      data-aos-offset="20"
+      data-aos-delay="0"
+      data-aos-duration="1200"
+      data-aos-easing="ease-out-cubic"
+      data-aos-once="false"
+      data-aos-mirror="false"
+>
                                 <img
                                 class="s45-sp1-bg-m"
                                 src="@/section/s4/s45-sp-bg-m.png"
@@ -175,7 +272,13 @@
                                         >
                              </div>
 
-                            <div class="s45-sp-2-m">
+                            <div class="s45-sp-2-m" data-aos="fade-up"
+      data-aos-offset="20"
+      data-aos-delay="400"
+      data-aos-duration="1200"
+      data-aos-easing="ease-out-cubic"
+      data-aos-once="false"
+      data-aos-mirror="false">
                                 <img
                                 class="s45-sp2-bg-m"
                                 src="@/section/s4/s45-sp-bg-m.png"
@@ -186,7 +289,13 @@
                                         >
                              </div>
 
-                            <div class="s45-sp-3-m">
+                            <div class="s45-sp-3-m" data-aos="fade-up"
+      data-aos-offset="20"
+      data-aos-delay="800"
+      data-aos-duration="1200"
+      data-aos-easing="ease-out-cubic"
+      data-aos-once="false"
+      data-aos-mirror="false">
                                 <img
                                 class="s45-sp3-bg-m"
                                 src="@/section/s4/s45-sp-bg-m.png"
