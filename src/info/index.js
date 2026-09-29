@@ -9,8 +9,8 @@ export default {
   googleSrc: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3882.8034839622687!2d121.48750799999999!3d25.04978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDAyJzU5LjIiTiAxMjHCsDI5JzE1LjAiRQ!5e1!3m2!1szh-TW!2stw!4v1790248150698!5m2!1szh-TW!2stw",
   googleLink: "https://maps.app.goo.gl/QLXW9uAw35zkFkFx6",
   phone: "02-2270-6789",
-  fbLink: "https://www.facebook.com/profile.php?id=61591981078591",
-  fbMessage: "https://m.me/61591981078591",
+  fbLink: "https://www.facebook.com/profile.php?id=61592000196587",
+  fbMessage: "https://m.me/61592000196587",
   //line: "https://lin.ee/qakWswp",
   caseName: caseName,
   houseInfos: [
