@@ -184,8 +184,27 @@
    .s1-pc {
     position: relative;
     width: 100%;
-    height: var(--right-height);
+    height: 100vh;
     overflow: hidden;
+}
+
+.s1-itwarp {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+
+    width: 100%;
+    max-width: 1920px;
+    height: var(--s1-natural-height, 0px);
+
+    margin: 0;
+
+    transform-origin: center bottom;
+
+    transform:
+        translateX(-50%)
+        scale(var(--s1-scale, 1));
+        
 }
 
 .pc-bg-warp {
@@ -207,27 +226,21 @@
 }
 
 
-.s1-itwarp {
-    position: relative;
-    width: 100%;
-    max-width: 1920px;
-    margin: 0 auto;
-}
 
    .Head {
     position: absolute;
 
     display: flex;
-    width: clamp(300px, 40vw, 738px);
+    width: clamp(0px, 30vw, 738px);
     height: auto;
 
     flex-direction: column;
     align-items: center;
-    gap: 64px;
+    gap: 32px;
 
     margin-top: clamp(0px, 8vw, 160px);
 
-    left: clamp(0px, 16vw, 192px);
+    left: clamp(12px, 100vw, 260px);
 
     z-index: 5;
 
@@ -342,7 +355,7 @@
 .D3 {
     position: absolute;
 
-    right: calc(48% - 12vh);
+    right: 400px;
     bottom: 20px;
 
     width: auto;
@@ -389,7 +402,7 @@
     width: clamp(800px, 80vw, 1536px);
     height: auto;
 
-    left: clamp(360px, 35.4167vw, 680px);
+    left: clamp(320px, 32vw, 680px);
     top: 0;
 
     margin: 0;
@@ -785,6 +798,55 @@ import {
   onBeforeUnmount
 } from 'vue';
 
+
+const updateS1Scale = () => {
+
+  if (window.innerWidth <= 1020) return;
+
+  const s1 = document.querySelector('.s1-pc');
+  const wrap = document.querySelector('.s1-itwarp');
+  const head = document.querySelector('.Head');
+  const rightSide = document.querySelector('.right-side');
+
+  if (!s1 || !wrap || !head || !rightSide) return;
+
+  // 先恢復原始比例，避免重複縮放
+  wrap.style.setProperty('--s1-scale', '1');
+
+  const headRect = head.getBoundingClientRect();
+  const rightRect = rightSide.getBoundingClientRect();
+
+  // 找出整個畫面的最上與最下
+  const top = Math.min(
+    headRect.top,
+    rightRect.top
+  );
+
+  const bottom = Math.max(
+    headRect.bottom,
+    rightRect.bottom
+  );
+
+  const naturalHeight = bottom - top;
+
+  if (!naturalHeight) return;
+
+  // 告訴 wrapper 原始高度
+  wrap.style.setProperty(
+    '--s1-natural-height',
+    `${naturalHeight}px`
+  );
+
+  // 整體縮放到剛好 100vh
+  const scale =
+    window.innerHeight / naturalHeight;
+
+  wrap.style.setProperty(
+    '--s1-scale',
+    scale
+  );
+};
+
 const globals = getCurrentInstance().appContext.config.globalProperties;
 
 const isMobile = computed(() => globals.$isMobile());
@@ -814,15 +876,6 @@ const updateS1Animation = () => {
   if (window.innerWidth <= 1020) return;
 
   const s1 = document.querySelector('.s1-pc');
-
-  const rightSide = document.querySelector('.right-side');
-
-if (!s1 || !rightSide) return;
-
-s1.style.setProperty(
-    '--right-height',
-    `${rightSide.offsetHeight}px`
-);
 
   if (!s1) return;
 
@@ -965,13 +1018,23 @@ const handleS1Scroll = () => {
 
 onMounted(() => {
 
-  // 初始位置
+  updateS1Scale();
   updateS1Animation();
+
+  requestAnimationFrame(() => {
+    updateS1Scale();
+    updateS1Animation();
+  });
 
   window.addEventListener(
     'scroll',
     handleS1Scroll,
     { passive: true }
+  );
+
+  window.addEventListener(
+    'resize',
+    updateS1Scale
   );
 
   window.addEventListener(
@@ -991,6 +1054,11 @@ onBeforeUnmount(() => {
 
   window.removeEventListener(
     'resize',
+    updateS1Scale
+  );
+
+  window.removeEventListener(
+    'resize',
     updateS1Animation
   );
 
@@ -999,4 +1067,6 @@ onBeforeUnmount(() => {
   }
 
 });
+
+
 </script>
