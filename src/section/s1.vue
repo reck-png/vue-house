@@ -184,10 +184,8 @@
    .s1-pc {
     position: relative;
     width: 100%;
-    height: auto;
-    max-height:100vh;
+    height: var(--right-height);
     overflow: hidden;
-    aspect-ratio: 1920 /1080;
 }
 
 .pc-bg-warp {
@@ -206,7 +204,6 @@
     height: 100%;
     object-fit: cover;
     object-position: center top;
-    margin: 0;
 }
 
 
@@ -389,15 +386,13 @@
 
 .right-side {
     position: absolute;
-
     width: clamp(800px, 80vw, 1536px);
     height: auto;
 
-    margin-bottom: 100px;
-
     left: clamp(360px, 35.4167vw, 680px);
-    
-    margin-left: 0;
+    top: 0;
+
+    margin: 0;
 
     z-index: 1;
 
@@ -819,6 +814,15 @@ const updateS1Animation = () => {
   if (window.innerWidth <= 1020) return;
 
   const s1 = document.querySelector('.s1-pc');
+
+  const rightSide = document.querySelector('.right-side');
+
+if (!s1 || !rightSide) return;
+
+s1.style.setProperty(
+    '--right-height',
+    `${rightSide.offsetHeight}px`
+);
 
   if (!s1) return;
 
