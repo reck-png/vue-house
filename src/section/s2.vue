@@ -397,6 +397,16 @@
     }
 }
 
+[data-aos="zoom-out"] {
+    filter: blur(8px);
+    opacity: 0;
+    transition-property: transform, opacity, filter !important;
+}
+
+[data-aos="zoom-out"].aos-animate {
+    filter: blur(0);
+    opacity: 1;
+}
 
 
 

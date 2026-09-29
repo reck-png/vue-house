@@ -134,7 +134,9 @@
 
     <div class="right-side-m">
         <img class="bl-m"
-        src="@/section/s1/bl.webp">
+        src="@/section/s1/bl.webp
+        
+        ">
 
         <p class="D3-m">3D外觀透視示意圖</p>
 
@@ -153,6 +155,17 @@
 <style lang="scss">
 @import "@/assets/style/function.scss";
 
+
+[data-aos="zoom-out"] {
+    filter: blur(4px);
+    opacity: 0;
+    transition-property: transform, opacity, filter !important;
+}
+
+[data-aos="zoom-out"].aos-animate {
+    filter: blur(0);
+    opacity: 1;
+}
 .s1 {
     position: relative;
     width: 100%;
@@ -861,13 +874,15 @@ const updateS1Animation = () => {
   // ==============================
 
   const exitProgress = clamp(
-    (progress - 0.58) / 0.42,
-    0,
-    1
-  );
+  (progress - 0.58) / 0.42,
+  0,
+  1
+);
 
-  const smoothExitProgress =
-    1 - Math.pow(1 - exitProgress, 3);
+// 前段慢、中段加速、尾端放慢
+const smoothExitProgress =
+  exitProgress * exitProgress *
+  (3 - 2 * exitProgress);
 
 
   // 原本 400 / 420

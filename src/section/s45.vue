@@ -852,6 +852,16 @@
 
 }
 
+[data-aos="zoom-out"] {
+    filter: blur(80px) !important;
+    opacity: 0;
+}
+
+[data-aos="zoom-out"].aos-animate {
+    filter: blur(0px) !important;
+    opacity: 1;
+}
+
 
 
 

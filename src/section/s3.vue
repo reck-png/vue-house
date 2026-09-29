@@ -250,12 +250,10 @@
   overflow-x: auto;
   overflow-y: hidden;
 
-  /* 隱藏 scrollbar */
   scrollbar-width: none;
   -ms-overflow-style: none;
 
-  /* 手機左右拖曳 */
-  touch-action: pan-x;
+  touch-action: pan-x pan-y;
 
   /* 上下透明，中間正常 */
   -webkit-mask-image: linear-gradient(
@@ -439,6 +437,16 @@
     100% {
         opacity: 0.30;
     }
+}
+
+[data-aos="zoom-out"] {
+    filter: blur(80px) !important;
+    opacity: 0;
+}
+
+[data-aos="zoom-out"].aos-animate {
+    filter: blur(0px) !important;
+    opacity: 1;
 }
 
 
