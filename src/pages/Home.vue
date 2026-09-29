@@ -98,9 +98,10 @@ import S45 from "@/section/s45.vue"
 import Order from "@/section/order.vue"
 import Nav from "@/layout/navbar.vue"
 
-import { onMounted, ref } from "vue"
+import { onMounted, onBeforeUnmount, ref } from "vue"
 
 import AOS from "aos"
+import Lenis from "lenis"
 
 
 const isLoading = ref(true)
@@ -112,16 +113,48 @@ const config = ref({
 })
 
 
-
+let lenis
+let rafId
 
 onMounted(() => {
+
+  lenis = new Lenis({
+    duration: 0.6,
+    smoothWheel: true,
+    wheelMultiplier: 0.9,
+    touchMultiplier: 1,
+    syncTouch: false,
+    easing: (t) => 1 - Math.pow(1 - t, 3),
+  })
+
+  function raf(time) {
+    lenis.raf(time)
+    rafId = requestAnimationFrame(raf)
+  }
+
+  rafId = requestAnimationFrame(raf)
+
 
   window.onload = function () {
 
     isLoading.value = false
 
-    AOS.init()
+    AOS.init({
+      offset: 0,
+      duration: 1000,
+      once: false,
+    })
 
+  }
+
+})
+
+onBeforeUnmount(() => {
+
+  cancelAnimationFrame(rafId)
+
+  if (lenis) {
+    lenis.destroy()
   }
 
 })
