@@ -8,7 +8,7 @@
   data-aos="zoom-out"
   data-aos-offset="20"
   data-aos-delay="520"
-  data-aos-duration="3000"
+  data-aos-duration="2000"
   data-aos-easing="ease-out-cubic"
   data-aos-once="false"
   data-aos-mirror="false"
