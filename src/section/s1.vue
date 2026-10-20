@@ -24,7 +24,7 @@
   position: relative;
   display: flex;
   width: 100%;
-  height: 100vh;
+  height: auto;
   }
 
 .s1-bg-m {
@@ -35,7 +35,7 @@
   position: relative;
   display: flex;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   z-index: 1;
 }
