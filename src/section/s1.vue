@@ -45,21 +45,23 @@
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {}
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 800px) {
 
  .s1 {
   position: relative;
   display: flex;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   }
 
 .s1-bg-m {
-    position: relative;
+  position: relative;
   display: flex;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
+  object-position: center top;
   z-index: 1;
 }
 
