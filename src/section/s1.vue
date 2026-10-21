@@ -9,7 +9,12 @@
     
 	<img 
       class="s1-bg-m"
-      src="@/section/s1/1020-bg-m.jpg"
+      src="@/section/s1/1020-bg-m-2-spw.jpg"
+    />
+
+  <img 
+      class="s1-h1"
+      src="@/section/s1/s1-h1.png"
     />
 
     
@@ -27,7 +32,7 @@
   height: auto;
   }
 
-.s1-bg-m {
+.s1-bg-m,.s1-h1 {
   display:none;
 }
 
@@ -60,9 +65,21 @@
   display: flex;
   width: 100%;
   height: auto;
+  max-height: 100vh;
   object-fit: cover;
   object-position: center top;
   z-index: 1;
+}
+
+.s1-h1 {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: auto;
+  top:40vw;
+  object-fit: cover;
+  object-position: center top;
+  z-index: 2;
 }
 
 .s1-bg {
