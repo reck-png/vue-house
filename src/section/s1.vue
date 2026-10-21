@@ -1,9 +1,27 @@
 <template>
-  <section class="s1 text-white relative">
+  <section class="s1">
 
+<div class="all-bg"
+data-aos="fade"
+    data-aos-delay="500"
+    data-aos-duration="1200"
+    data-aos-easing="ease"
+    data-aos-once="false"
+    data-aos-mirror="true">
 
+    <img 
+      class="bg"
+      src="@/section/s1/s1-bg.jpg"
+    />
 
-<div class="H1"
+    <img 
+      class="bg-m"
+      src="@/section/s1/s1-bg-m.jpg"
+    />
+
+</div>
+
+<div class="h1"
     data-aos="fade"
     data-aos-delay="500"
     data-aos-duration="1200"
@@ -14,26 +32,24 @@
 
 
     <img 
-      class="Coming-soon"
-      src="@/section/s1/h1-coming-soon.svg"
+      class="s1-h1"
+      src="@/section/s1/s1-h1.svg"
     />
 
     <img 
-      class="Coming-soon-m"
-      src="@/section/s1/h1-coming-soon-m.svg"
+      class="s1-h1-m"
+      src="@/section/s1/s1-h1-m.svg"
     >
 
     <img 
-      class="LOGO"
-      src="@/section/s1/h2-logo.svg"
+      class="th40"
+      src="@/section/s1/40th.png"
     >
     
     <img 
-      class="LOGO-m"
-      src="@/section/s1/h2-logo-m.svg" 
+      class="th40-m"
+      src="@/section/s1/40th-m.svg" 
     >
-
-
 
 </div>
     
@@ -43,6 +59,9 @@
 
 <style lang="scss">
 @import "@/assets/style/function.scss";
+
+
+
 
 .s1 {
   position: relative;
@@ -57,40 +76,59 @@
     
   }
   
+.bg-m,.s1-h1-m,.th40-m{
+  display:none;
+}
 
+.all-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
 
-.H1 {
+.bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  height: auto;
+  min-height: 100vh;
+  width: clamp(768px, 100vw, 1920px);
+  aspect-ratio: 1920 / 916;
+    object-fit: contain;
+    object-position: top center;
+  transform: translateX(-50%);
+}
+
+.h1 {
     display: flex;
     flex-direction: column;
     position: relative;
-    justify-content: center;
-    align-items: center; 
-    width: auto ;
-    height: auto;
-    gap: clamp(4px, 2vw, 12px);
+    width: clamp(350px, 45vw, 1920px);
+    height: fit-content;
+    top:10vw;
+    left:35vw;
+    gap: 5vw;
     z-index: 3;
+    align-items: center;
     
   }
 
-  .Coming-soon {
-    position: relative;
-    width: clamp(320px, 64vw, 920px);
-    height: fit-content;
-    object-fit: Contain;
-    margin: clamp(148px, 20vw, 240px) auto clamp(8px, 5vw, 24px) auto;
-    z-index: 3;
-    animation: glowBreath 3s ease-in-out infinite;
-  }
-
-  .LOGO {
-    position: relative;
-    width: clamp(364px, 80vw, 935px);
+.s1-h1{
+    width: clamp(480px, 60vw, 898px);
     height: fit-content;
     object-fit: contain;
-    margin: clamp(8px, 5vw, 48px) auto clamp(8px, 5vw, 24px) auto;
-    z-index: 3;
-  }
+}
 
+.th40{
+    width: clamp(120px, 20vw, 393px);
+    height: fit-content;
+    object-fit: contain;
+}
 
 
 
