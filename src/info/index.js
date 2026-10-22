@@ -8,17 +8,16 @@ export default {
   address: "XXXXX",
   googleSrc: "",
   googleLink: "",
-  phone: "04-829-1133",
+  phone: "06-2690111",
   fbLink: "https://www.facebook.com/profile.php?id=61593190918264",
   fbMessage: "https://m.me/61593190918264",
   //line: "https://lin.ee/qakWswp",
   caseName: caseName,
   houseInfos: [
-    ["投資建設", "秀溙開發有限公司"],
-    ["營造公司", "和固營造有限公司"],
-    ["建造執照", "(115)府建管(建)字第0189047號"],
-    ["企劃銷售", "泰和茂營建團隊"],
-    ["建築設計", "陳茂盛建築師事務所"],
+    ["投資興建", "春曉建設有限公司"],
+    ["建造號碼", "(115)南工造字第00799號"],
+    ["行銷企劃", "富裕臻實業有限公司"],
+    ["經紀人　", "郭峰旻"],
     /*
     */
   ],

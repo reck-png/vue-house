@@ -174,6 +174,7 @@
   width:auto;
   height:100%;
   min-width: 100%;
+  z-index: -99;
 }
 
 
@@ -227,7 +228,7 @@ $o-title-c: #A30C24; //.order-title
 
   .order-title-line{
   display: flex;
-  padding: 18px 112px;
+  padding: 18px 112px 0px 112px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -236,12 +237,12 @@ $o-title-c: #A30C24; //.order-title
 
   .order-title-line::after {
   content: "";
-  width: 400px;
+  width: 60vw;
   height: 1px;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255, 255, 255, 1) 50%,
+    rgb(255, 196, 106) 50%,
     transparent 100%
   );
 }
@@ -398,7 +399,7 @@ $o-title-c: #A30C24; //.order-title
   }
 
   .send {
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 1px;
 
   background:
@@ -427,11 +428,11 @@ $o-title-c: #A30C24; //.order-title
   #892A0D;
     
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    padding: .7em 0;
+    padding: .8em 0;
     letter-spacing: 0.2em;
     line-height: 1.5;
     text-indent: 0.5em;
-    border-radius: 12px;
+    border-radius: 18px;
     text-align: center;
     width: 264px;
     z-index: 10;
@@ -536,7 +537,6 @@ $o-title-c: #A30C24; //.order-title
     min-height: sizem(800);
     position: relative;
     // overflow: hidden;
-    // padding-top: sizem(200);
 
     .bg-image {
       position: absolute;

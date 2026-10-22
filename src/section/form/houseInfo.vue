@@ -35,26 +35,22 @@
   </div>
 
   <!-- Footer -->
-  <div class="footer">
-
-    <a
-      href="https://www.taihe-mao.com"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="@/section/form/footer-taihe-logo.svg"
-        alt="泰和茂"
-      />
-    </a>
-
+ <div
+    class="footer flex items-center justify-center w-full h-[40px] bg-[#302626]"
+  >
+    <a href="https://www.lixin.com.tw/" target="_blank"
+      ><img
+        class="hover:opacity-50"
+        src="//h35.banner.tw/img/footerLogo.gif"
+        alt="立炘數位"
+        srcset=""
+    /></a>
     <a
       href="https://www.h65.tw/admin/test/login"
       target="_blank"
-      rel="noopener noreferrer"
-      class="footer-link"
+      class="text-white text-xs"
+      >網頁製作</a
     >
-    </a>
   </div>
 </template>
 
@@ -71,42 +67,22 @@
 
 .house {
   position: relative;
-  width: 100%;
+  width: 100vw;
   color: #fff;
   font-family: "Inter", "Noto Sans TC", sans-serif;
 }
 
-.house-inner {
-  width: 100%;
-  padding: size(80) size(40);
-}
-
-
-/* =========================================================
-   Info Box
-========================================================= */
-
-.house {
-  position: relative;
-  width: 100%;
-  color: #fff;
-}
 
 .house-inner {
-  width: 100%;
+  width: 100vw;
   box-sizing: border-box;
+  padding-bottom: size(60);
 
-  /* 左右一起往中間收 */
-  padding: 80px 30px;
 }
 
 .info-box {
-  position: relative;
-
-  width: 100%;
-  max-width: 800px;
-
-  /* 核心：永遠置中 */
+  width: 80vw;
+  max-width: none;
   margin-left: auto;
   margin-right: auto;
 }
@@ -118,23 +94,29 @@
 
 .title {
   width: 100%;
-
-  margin-bottom: size(40);
-
+  margin-bottom: size(30);
   color: #fff;
-
-  font-family: "Inter","Noto Sans TC", sans-serif;
-
-  /* 固定字體 */
+  font-family: "Inter", "Noto Sans TC", sans-serif;
   font-size: 24px;
-
   font-weight: 400;
-
   letter-spacing: 2px;
-
   line-height: 1.5;
-
   text-align: center;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 400px;
+    max-width: 80%;
+    height: 1px;
+    margin: size(12) auto 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgb(255, 170, 101) 50%,
+      transparent 100%
+    );
+  }
 }
 
 
@@ -143,23 +125,20 @@
 ========================================================= */
 
 .info-items {
-  width: 100%;
-
+  width: fit-content;
   display: grid;
-
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-font-family: "Inter","Noto Sans TC", sans-serif;
-  column-gap: size(120);
-  row-gap: size(25);
+  grid-template-columns: max-content max-content;
+  margin: 0 auto;
+  padding: 0;
+  column-gap: size(160);
+  row-gap: size(12);
 }
-
-
 /* =========================================================
    Single Item
 ========================================================= */
 
 .item {
-  width: 120%;
+  width: 100%;
 
   min-width: 0;
 
@@ -170,7 +149,7 @@ font-family: "Inter","Noto Sans TC", sans-serif;
   font-family: "Inter","Noto Sans TC", sans-serif;
 
   /* 固定字體 */
-  font-size: 18px;
+  font-size: sizem(16);
 
   line-height: 1.6;
 
@@ -186,7 +165,7 @@ font-family: "Inter","Noto Sans TC", sans-serif;
 
 .item-label {
   flex: 0 0 auto;
-
+font-size: sizem(16);
   margin: 0 size(18) 0 0;
 
   padding-right: size(18);
@@ -195,7 +174,7 @@ font-family: "Inter","Noto Sans TC", sans-serif;
 
   color: #fff;
 
-  font-weight: 500;
+  font-weight: 400;
 
   white-space: nowrap;
 }
@@ -208,13 +187,14 @@ font-family: "Inter","Noto Sans TC", sans-serif;
 .item-value {
   flex: 1 1 auto;
 
+ font-size: sizem(16);
   min-width: 0;
 
   margin: 0;
 
   color: #fff;
 
-  font-weight: 400;
+  font-weight: 300;
 
   text-align: left;
 
@@ -232,320 +212,70 @@ font-family: "Inter","Noto Sans TC", sans-serif;
 
 
 
-.footer {
-  width: 100%;
-
-  height: 60px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 10px;
-
-  background: #4e69a3b7;
-  
-
-  img {
-    display: block;
-
-    height: 17px;
-
-    transition: opacity 0.3s ease;
+ .footer {
+    margin-bottom: sizem(300);
+    //margin-bottom: sizem(63);
   }
 
-  a:hover img {
-    opacity: 0.5;
-  }
-}
 
-.footer-link {
-  color: #fff;
-
-  font-size: 12px;
-
-  text-decoration: none;
-}
-
-
-/* =========================================================
-   Tablet
-   769px ~ 1100px
-========================================================= */
-
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1024px) {
 
   .house-inner {
-    padding: 70px 30px;
+  padding-bottom: size(180);
+}
+
+}
+
+
+@media screen and (max-width: 734px) {
+
+.title {
+    font-size: 18px;
+    
   }
 
-  .info-box {
-    width: min(100%, 800px);
-  }
+
+
+.house-inner {
+  width: 100vw;
+  box-sizing: border-box;
+  padding-bottom: size(340);
+}
 
   .title {
     font-size: 20px;
-
-    margin-bottom: 32px;
-
-    letter-spacing: 2px;
+    padding-bottom: size(60);
   }
+
+  
 
   .info-items {
-  width: 100%;
-
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-
-  column-gap: 40px;
-  row-gap: 25px;
-}
-
-  .item {
-    /* 固定 16px */
-    font-size: 16px;
-  }
-
-  .item-label {
-    margin-right: 14px;
-
-    padding-right: 14px;
-  }
-}
-
-
-/* =========================================================
-   Mobile
-   768px 以下
-========================================================= */
-
-@media screen and (max-width: 1076px) {
-
-  .house-inner {
-    width: 100%;
-    box-sizing: border-box;
-
-    padding: 55px 24px;
-  }
-
-  .info-box {
-    width: fit-content;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  .title {
-    text-align: center;
-    font-size: 22px;
-    margin-bottom: 30px;
-  }
-
-  .info-items {
-    width: fit-content;
-    max-width: 100%;
-
-    display: grid;
-    grid-template-columns: 1fr;
-
-    row-gap: 18px;
-
-    margin: 0 auto 40px auto;
-  }
-
-  .item {
-    width: auto;
-    max-width: 100%;
-    
-
+    width:fit-content;
     display: flex;
-    align-items: center;
-
-    font-size: 14px;
-  }
-
-  .item-label {
-    flex: 0 0 auto;
-
-    margin-right: 12px;
-    padding-right: 12px;
-
-    border-right: 1px solid #fff;
-
-    font-size: 14px;
-    white-space: nowrap;
-  }
-
-  .item-value {
-    flex: 0 1 auto;
-
-    min-width: 0;
-
-    font-size: 14px;
-
-    text-align: left;
-
-    white-space: pre-line;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-  }
-
-
-
-  /* -------------------------
-     Title
-  ------------------------- */
-
-  .title {
-    margin-bottom: 30px;
-
-    /* Mobile 固定 22px */
-    font-size: 22px;
-
-    letter-spacing: 2px;
-
-    line-height: 1.5;
-  }
-
-
-  /* -------------------------
-     Mobile 改成單欄
-  ------------------------- */
-
-  .info-items {
-    display: grid;
-
-    grid-template-columns: 1fr;
-
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0;
     column-gap: 0;
-
-    row-gap: 18px;
-
-    width: 100%;
+    row-gap: size(20);
   }
-
-
-  /* -------------------------
-     Item
-  ------------------------- */
 
   .item {
-    width: 100%;
-
-    /* Mobile 固定 14px */
-    font-size: 14px;
-
-    line-height: 1.6;
-
-    align-items: center;
+    width: fit-content;
+    font-size: sizem(13px);
   }
-
-
-  /* -------------------------
-     Label
-  ------------------------- */
 
   .item-label {
-    flex: 0 0 auto;
-
-    margin-right: 12px;
-
-    padding-right: 12px;
-
-    border-right: 1px solid #fff;
-
-    white-space: nowrap;
-
-    /* 固定 14px */
-    font-size: 14px;
-    
+    margin-right: 18px;
+    padding-right: 18px;
+    font-size: sizem(13px);
   }
-
-
-  /* -------------------------
-     Value
-  ------------------------- */
 
   .item-value {
-    flex: 1;
-
-    min-width: 0;
-
-    /* 固定 14px */
-    font-size: 14px;
-
-    line-height: 1.6;
-
-    white-space: pre-line;
-
-    overflow-wrap: anywhere;
-
-    word-break: break-word;
-  }
-
-
-  /* -------------------------
-     Footer
-  ------------------------- */
-
-  .footer {
-    height: 40px;
-
-    gap: 8px;
-  }
-
-  .footer img {
-    height: 17px;
-  }
-
-  .footer-link {
-    /* 固定 12px */
-    font-size: 12px;
+    font-size: sizem(13px);
   }
 }
 
 
-/* =========================================================
-   Very Small Mobile
-   375px 以下
-========================================================= */
-
-@media screen and (max-width: 375px) {
-
-  .house-inner {
-    padding-left: 20px;
-
-    padding-right: 20px;
-  }
-
-  .title {
-    /* 仍然固定 22px */
-    font-size: 22px;
-  }
-
-  .info-items {
-    row-gap: 16px;
-  }
-
-  .item {
-    /* 仍然固定 14px */
-    font-size: 14px;
-    
-  }
-
-  .item-label {
-    margin-right: 9px;
-
-    padding-right: 9px;
-
-    font-size: 14px;
-  }
-
-  .item-value {
-    font-size: 14px;
-  }
-}
 </style>
 
 

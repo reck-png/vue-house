@@ -154,7 +154,7 @@
   .contact-item-box {
     font-family: "Chiron Hei HK", sans-serif;
     position: relative;
-    margin-top:-1em;
+    margin-top:-4em;
     gap: 1.8em;
    // width: size(920);
     // min-width: 680px;
@@ -202,46 +202,41 @@
   // 藍色覆蓋層
   // =================================
 
-   &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
+&::before {
+  content: "";
+  position: absolute;
+  inset: 0;
 
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 180, 100, 0.35),
+    rgba(255, 120, 60, 0.12) 50%,
+    transparent 75%
+  );
 
-    mix-blend-mode: color-burn;
+  z-index: 0;
+  pointer-events: none;
 
-    z-index: 0;
-    pointer-events: none;
+  clip-path: circle(
+    0% at
+    var(--mouse-x, 0%)
+    var(--mouse-y, 0%)
+  );
 
-    clip-path: circle(
-      0% at
-      var(--mouse-x, 50%)
-      var(--mouse-y, 50%)
-    );
+  transition: clip-path 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
 
-    // 滑入動畫
-    transition:
-      clip-path 0.5s cubic-bezier(
-        0.5,
-        1,
-        0.1,
-        1
-      );
-  }
+&.is-hover::before {
+  clip-path: circle(
+    800% at
+    var(--mouse-x, 100%)
+    var(--mouse-y, 100%)
+  );
+}
 
-  // 滑入
-  &.is-hover::before {
-    clip-path: circle(
-      150% at
-      var(--mouse-x)
-      var(--mouse-y)
-    );
-  }
-
-  // ★ 滑出快速消失
-  &:not(.is-hover)::before {
-    transition: clip-path 0.03s ease-in-out;
-  }
+&:not(.is-hover)::before {
+  transition: clip-path 0.12s ease-out;
+}
 
   img,
   div {
@@ -358,22 +353,22 @@
 
     background:
       radial-gradient(
-        ellipse 200% 220% at 35% -10%,
-        #3361dfc4 2%,
-        rgba(135, 54, 146, 0.747) 15%,
-        rgb(19, 44, 77) 30%,
+        ellipse 200% 220% at 45% -20%,
+        #df8633c4 0%,
+        rgba(194, 78, 58, 0.747) 15%,
+        rgb(87, 34, 13) 40%,
         transparent 85%
       ),
       radial-gradient(
         ellipse 80% 180% at -10% 110%,
-        rgba(60, 110, 190, 0.5) 0%,
-        rgba(0, 55, 100, 0.6) 45%,
+        rgba(207, 111, 47, 0.5) 0%,
+        rgba(100, 53, 0, 0.6) 45%,
         transparent 80%
       ),
       radial-gradient(
         ellipse 80% 180% at 80% 70%,
-        rgb(81, 125, 207) 0%,
-        rgba(0, 55, 100, 0.6) 45%,
+        rgb(207, 106, 81) 0%,
+        rgba(245, 115, 55, 0.6) 45%,
         transparent 80%
       );
 
@@ -604,116 +599,98 @@ const handleMouseEnter = (e) => {
 }
 
 const handleMouseLeave = (e) => {
-  const item = e.currentTarget
+  const item = e.currentTarget;
 
-  item.classList.remove("is-hover")
+  item.classList.remove("is-hover");
 
-  const state = mouseState.get(item)
+  const state = mouseState.get(item);
 
-  if (!state) return
+  if (!state) return;
 
-  state.leaving = true
-}
+  state.leaving = true;
+
+  // 停止追蹤，讓動畫結束
+  state.targetX = state.x;
+  state.targetY = state.y;
+
+  // 讓滑出後的效果直接消失
+  item.style.setProperty("--mouse-x", `${state.x}px`);
+  item.style.setProperty("--mouse-y", `${state.y}px`);
+};
 
 const handleMouseMove = (e) => {
-  const item = e.currentTarget
-  const rect = item.getBoundingClientRect()
+  const item = e.currentTarget;
+  const rect = item.getBoundingClientRect();
 
-  const state = mouseState.get(item)
+  const state = mouseState.get(item);
 
-  if (!state) return
+  if (!state) return;
 
-  state.targetX = e.clientX - rect.left
-  state.targetY = e.clientY - rect.top
-}
+  state.targetX = e.clientX - rect.left;
+  state.targetY = e.clientY - rect.top;
+};
 
 const startMouseAnimation = () => {
-  if (mouseAnimation) return
+  if (mouseAnimation) return;
 
   const animate = () => {
-    let hasHover = false
+    let hasActiveAnimation = false;
 
-    document.querySelectorAll(".contact-item").forEach((item) => {
-      hasHover = true
+    document.querySelectorAll(".contact-item.is-hover").forEach((item) => {
+      const state = mouseState.get(item);
 
-      const state = mouseState.get(item)
+      if (!state) return;
 
-      if (!state) return
+      hasActiveAnimation = true;
 
-      // ★ 慣性追蹤
-      const ease = 0.08
+      const ease = 0.08;
 
-      state.vx += (state.targetX - state.x) * ease
-      state.vy += (state.targetY - state.y) * ease
+      state.vx += (state.targetX - state.x) * ease;
+      state.vy += (state.targetY - state.y) * ease;
 
-      // ★ 阻尼
-      state.vx *= 0.72
-      state.vy *= 0.72
+      state.vx *= 0.72;
+      state.vy *= 0.72;
 
-      state.x += state.vx
-      state.y += state.vy
+      state.x += state.vx;
+      state.y += state.vy;
 
-      // ★ 計算移動速度
       const speed = Math.sqrt(
         state.vx * state.vx +
         state.vy * state.vy
-      )
+      );
 
-      // ★ 速度越快，拉伸越明顯
       const stretch = Math.min(
         1 + speed * 0.06,
         2.2
-      )
+      );
 
       state.stretch +=
-        (stretch - state.stretch) * 0.18
+        (stretch - state.stretch) * 0.18;
 
-      // ★ 方向角度
-      const angle = Math.atan2(
-        state.vy,
-        state.vx
-      ) * 180 / Math.PI
+      const rect = item.getBoundingClientRect();
 
-      const rect = item.getBoundingClientRect()
+      const mouseX = (state.x / rect.width) * 100;
+      const mouseY = (state.y / rect.height) * 100;
 
-const mouseX =
-  (state.x / rect.width) * 100
-
-const mouseY =
-  (state.y / rect.height) * 100
-
-item.style.setProperty(
-  "--mouse-x",
-  `${mouseX}%`
-)
-
-item.style.setProperty(
-  "--mouse-y",
-  `${mouseY}%`
-)
-
-      item.style.setProperty(
-        "--stretch",
-        state.stretch
-      )
-
+      item.style.setProperty("--mouse-x", `${mouseX}%`);
+      item.style.setProperty("--mouse-y", `${mouseY}%`);
+      item.style.setProperty("--stretch", state.stretch);
       item.style.setProperty(
         "--angle",
-        `${angle}deg`
-      )
-    })
+        `${Math.atan2(state.vy, state.vx) * 180 / Math.PI}deg`
+      );
+    });
 
-    if (hasHover) {
-      mouseAnimation = requestAnimationFrame(animate)
+    if (hasActiveAnimation) {
+      mouseAnimation = requestAnimationFrame(animate);
     } else {
-      mouseAnimation = null
+      mouseAnimation = null;
     }
-  }
+  };
 
-  
+  mouseAnimation = requestAnimationFrame(animate);
+};
 
-  mouseAnimation = requestAnimationFrame(animate)
-}
 
 
 

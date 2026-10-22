@@ -82,8 +82,10 @@ data-aos="fade"
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   min-height: 100vh;
+      object-fit: contain;
+    object-position: top center;
   height: auto;
 
   z-index: 1;
@@ -97,9 +99,9 @@ data-aos="fade"
   display: block;
   height: auto;
   min-height: 100vh;
-  width: clamp(768px, 100vw, 1920px);
+  width: 100vw;
   
-    object-fit: cover;
+    object-fit: visible;
     object-position: top left;
   transform: translateX(-50%);
 }
@@ -134,6 +136,20 @@ data-aos="fade"
 
 
 @media screen and (max-width:1568px){
+
+    .s1-bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  height: auto;
+  min-height: 100vh;
+  width: 100vw;
+  
+    object-fit: cover;
+    object-position: top left;
+  transform: translateX(-50%);
+}
 
     .s1-h1{
     margin-top:5vw;
