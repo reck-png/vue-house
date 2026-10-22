@@ -29,7 +29,7 @@ export default {
   recaptcha_site_key: "6Lck-L8UAAAAABxfvNA1NJuBrdl3iLFc3GkudC8s", // recaptcha v3
   recaptcha_user_token: "6Lck-L8UAAAAAIcvenwGDl8_Q1tKbrEYsKuriePa",
   order: {
-    title: "立即登記",
+    title: "預約賞屋",
     //subTitle: "歡迎填寫表單，將由專人與您聯繫並提供服務，謝謝！",
     //subTitle_mo: "歡迎填寫表單，將由專人與您聯繫並提供服務，謝謝！",
   },
@@ -61,30 +61,6 @@ export default {
           nowrap: false, //選項過長時是否換行
           //bypass:true, //必填開啟使用
         },
-
-         time: {
-          title: "方便聯絡時間",
-          type: "select",
-          hold: "請選擇",
-          option: ["全天皆可", "上午 09:00–12:00", "中午 12:00–13:00","下午 13:00–17:00","晚上 17:00–21:00",],
-          nowrap: false, //選項過長時是否換行
-          //bypass:true, //必填開啟使用
-        },
-
-       
-        recommender: {
-          title: "介紹、推薦來源",
-          type: "select",
-          hold: "請選擇來源",
-         option: ["親友介紹", "合作店家推薦","泰和茂已購VIP"]
-      },
-
-        recname: {
-          title: "介紹人、店家名稱",
-          type: "text",
-          dependsOn: "recommender",
-          hold: "請填寫介紹人或店家名稱",
-      },
 
       
         

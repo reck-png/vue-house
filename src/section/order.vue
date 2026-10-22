@@ -1,5 +1,17 @@
 <template>
   <div id="order" class="order relative text-center ">
+
+    <img 
+      class="or-bg"
+      src="@/section/order/order-bg.jpg"
+    />
+
+    <img 
+      class="or-bg-m"
+      src="@/section/order/order-bg-m.jpg"
+    />
+
+
     <div class="order-section">
       <div class="order-title-style">
         <div class="order-title-line">
@@ -150,6 +162,21 @@
 </template>
 <style lang="scss">
 @import "@/assets/style/function.scss";
+
+
+.or-bg-m{
+  display:none;
+}
+
+.or-bg{
+  display:block;
+  position: absolute;
+  width:auto;
+  height:100%;
+  min-width: 100%;
+}
+
+
 .area-drop-enter-active {
   transition: all 0.35s ease;
   overflow: hidden;
@@ -166,7 +193,7 @@ $o-title-c: #A30C24; //.order-title
 
 .order {
   width: 100%;
-  padding-top: size(40);
+  
   font-size: clamp(12px, 4vw, 16px);
   z-index: 6;
 
@@ -190,6 +217,7 @@ $o-title-c: #A30C24; //.order-title
 
   .order-title-style{
   display: flex;
+  
   padding-bottom: 0px;
   flex-direction: column;
   align-items: center;
@@ -219,6 +247,7 @@ $o-title-c: #A30C24; //.order-title
 }
 
   .order-title {
+    margin-top: 5vw;
   color: #FFF;
   font-family: "Noto Sans";
   font-size: 24px;
@@ -258,7 +287,7 @@ $o-title-c: #A30C24; //.order-title
       height: auto;
       //  width: size(419);
       .row {
-        color: #ffffff;
+        color: #FF6200;
         padding-left: 2em;
         padding-right: 2em;
         padding-top: 1.5em;
@@ -266,10 +295,10 @@ $o-title-c: #A30C24; //.order-title
     }
 
     .right textarea::placeholder {
-    color: #ffffff;
-    opacity: 0.5;
+    color: #FF6200;
+    opacity: 0.8;
     letter-spacing: 1px;
-    font-weight: 100;
+    font-weight: 400;
     padding-left: 1em;
     padding-top: 1em;
     }
@@ -279,11 +308,10 @@ $o-title-c: #A30C24; //.order-title
     .row {
       font-family: "Chiron Hei HK", sans-serif;
 
-      border-radius: 12px;
-      border: 0.1px solid #FFF;
-      background: rgba(255, 255, 255, 0.01);
+      border-radius: 20px;
+      background: rgb(253, 253, 253);
       box-shadow: 1px 4px 38.3px 0 rgba(255, 255, 255, 0.04) inset;
-      color: #def6ff;
+      color: #FF6200;
       display: flex;
       width: 100%;
       align-items: center;
@@ -303,7 +331,7 @@ $o-title-c: #A30C24; //.order-title
       }
 
       input {
-    color:#ffffff;
+    color:#FF6200;
     opacity:1;
     background:transparent;
     font-size: clamp(12px, 4vw, 16px);
@@ -312,7 +340,7 @@ $o-title-c: #A30C24; //.order-title
 
 
   input::placeholder {
-    color:rgba(255,255,255,.5);
+    color:#ff6200c0;
     opacity:1;
     font-size: clamp(12px, 4vw, 16px);
     letter-spacing:1.5px;
@@ -322,28 +350,26 @@ $o-title-c: #A30C24; //.order-title
 
     }
 
-     .dynamic-row {
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0em;
+.dynamic-row {
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
 
   > span {
-    width: 100%;
-    min-width: 0;
+    width: 8em;
+    min-width: 8em;
     padding-left: 1.5em;
-    padding-top: 0.8em;
-  }
-
-  > input {
-    width: calc(100% - 3em);
-    height: 2em;
-    margin: 1em auto 1em;
-    padding-left: 0em; // ⭐ 加這個
+    padding-top: 0;
+    flex-shrink: 0;
+    box-sizing: border-box;
   }
 
   :deep(.custom-select) {
-    width: calc(100% - 3em);
-    margin: 0 auto 1em;
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    margin: 0;
+    padding-left: 0;
   }
 }
 
@@ -377,28 +403,28 @@ $o-title-c: #A30C24; //.order-title
 
   background:
   radial-gradient(
-    ellipse at 36% -20%,
-    #e93fff 0%,
-    #9b66b9 10%,
-    #003c80 55%,
-    transparent 75%
+    ellipse at 48% -20%,
+    #f3c48e -10%,
+    #f1966e 5%,
+    #963112 65%,
+    transparent 800%
   ),
 
   radial-gradient(
-    ellipse at -100% 100%,
+    ellipse at 100% 80%,
   
-    #5893FF 22%,
-    #00446E 55%,
-    transparent 75%
+    #FF9C8B 22%,
+    #DE794E 55%,
+    transparent 60%
   ),
   radial-gradient(
-    ellipse at 180% 120%,
-    #AD3DB7 0%,
-    #5893FF 22%,
-    #00446E 55%,
+    ellipse at 160% 80%,
+    #FF9C8B 0%,
+    #DE794E 22%,
+    #892A0D 80%,
     transparent 75%
   ),
-  #00446E;
+  #892A0D;
     
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     padding: .7em 0;
@@ -489,7 +515,23 @@ $o-title-c: #A30C24; //.order-title
 }
 
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:1076px) {
+
+.or-bg{
+  display:none;
+}
+
+.or-bg-m{
+  display:block;
+  position: absolute;
+  width:auto;
+  height:100%;
+  min-width: 100%;
+}
+
+
+
+
   .order-section {
     min-height: sizem(800);
     position: relative;
@@ -519,6 +561,7 @@ $o-title-c: #A30C24; //.order-title
     }
 
     .order-title {
+       margin-top: 10vw;
       font-size: 20px;
       width: sizem(310);
       /*  font-size: sizem(27);
@@ -587,11 +630,11 @@ $o-title-c: #A30C24; //.order-title
   
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1076px) {
   .order {
     .form {
       .row {
-        background: rgba(64, 106, 161, 0.466);
+        background: #ffffff
       }
     }
   }

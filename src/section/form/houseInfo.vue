@@ -321,7 +321,7 @@ font-family: "Inter","Noto Sans TC", sans-serif;
    768px 以下
 ========================================================= */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1076px) {
 
   .house-inner {
     width: 100%;

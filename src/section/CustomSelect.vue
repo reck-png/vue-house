@@ -122,32 +122,27 @@ onUnmounted(() => {
   padding-left: 1.5em;
 }
 
-.select-btn{
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  width:100%;
-  height:100%;
-
-  min-height:48px; 
-
-  cursor:pointer;
-
-  color:#fff;
-
-  padding-right:1em;
+.select-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 48px;
+  cursor: pointer;
+  color: #FF6200;
+  padding-right: 1em;
+  box-sizing: border-box;
 }
 
 .placeholder{
 
-  color:rgba(255,255,255,.55);
+  color:#0000006e;
 
 }
 
 .arrow{
-  filler:#fff;
+  filler:#FF6200;
   width:48px;
   height:48px;
 
@@ -199,7 +194,7 @@ onUnmounted(() => {
 
   cursor:pointer;
 
-  color:#024DB0;
+  color:#FF6200;
 
   transition:.25s;
 
@@ -208,7 +203,7 @@ onUnmounted(() => {
 
 .options li:hover{
 
-  background:#024DB0;
+  background:#FF6200;
 
   color:#fff;
 
@@ -216,7 +211,7 @@ onUnmounted(() => {
 
 .options li.active{
 
-  background:#024DB0;
+  background:#FF6200;
 
   color:#fff;
 
@@ -244,5 +239,7 @@ onUnmounted(() => {
   transform:translateY(0);
 
 }
+
+
 
 </style>

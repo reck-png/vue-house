@@ -128,6 +128,7 @@
 
 .contact-info-img{
   height: 0;z-index: 52;
+  
 }
 .contact-info {
   margin-bottom: 48px;
@@ -153,7 +154,7 @@
   .contact-item-box {
     font-family: "Chiron Hei HK", sans-serif;
     position: relative;
-    margin-top:0em;
+    margin-top:-1em;
     gap: 1.8em;
    // width: size(920);
     // min-width: 680px;
@@ -162,6 +163,7 @@
   position: relative;
   overflow: hidden;
   gap:1em;
+  
 
   border-radius: 12px;
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
@@ -173,10 +175,14 @@
     rgba(255, 255, 255, 0.05) 100%
   );
 
+  
+
   box-shadow:
     1.127px 4.508px 43.168px 0 rgba(255, 255, 255, 0.2) inset;
 
   backdrop-filter: blur(2.3105762004852295px);
+  box-shadow: 0 0 21.7px 0 #A93B00 inset, 1.127px 4.508px 43.168px 0 rgba(255, 255, 255, 0.04) inset;
+
 
   color: #fff;
 
@@ -201,14 +207,7 @@
     position: absolute;
     inset: 0;
 
-    background:
-       linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.28) 0%,
-    rgba(255, 255, 255, 0.10) 35%,
-    rgba(130, 170, 255, 0.10) 65%,
-    rgba(255, 255, 255, 0.06) 100%
-  );
+
     mix-blend-mode: color-burn;
 
     z-index: 0;
@@ -331,7 +330,7 @@
   img{filter: invert(0%) sepia(1%) saturate(4%) hue-rotate(348deg) brightness(99%) contrast(101%);
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1076px) {
 
   .mo-contact-info {
   position: fixed;
@@ -452,6 +451,8 @@
   }
 
    .contact-info {
+
+    
     width: 92%;
     margin-bottom: 32px;
     min-width:0;
@@ -471,6 +472,7 @@
     }
 
     .contact-item-box {
+      
       position: relative;
       margin-top: sizem(0);
       gap: sizem(15);
@@ -478,15 +480,17 @@
     width: sizem(310);
 
       .contact-item {
+        
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.178) 0%, rgba(255, 255, 255, 0.05) 100%);
-        box-shadow: 1.127px 4.508px 43.168px 0 rgba(255, 255, 255, 0.2) inset;
+        box-shadow: 0 0 21.7px 0 #A93B00 inset, 1.127px 4.508px 43.168px 0 rgba(255, 255, 255, 0.04) inset;
         padding: 1.1em sizem(80);
         font-size: sizem(16);
         max-width: 100%;
         white-space: nowrap;
         margin: 0;
 
-        img {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+        img {                   
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
           max-width: sizem(27);
           height: auto;
           max-height: sizem(27);

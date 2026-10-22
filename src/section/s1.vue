@@ -1,5 +1,5 @@
 <template>
-  <section class="s1">
+  <section class="s1-sec">
 
 <div class="all-bg"
 data-aos="fade"
@@ -10,12 +10,12 @@ data-aos="fade"
     data-aos-mirror="true">
 
     <img 
-      class="bg"
+      class="s1-bg"
       src="@/section/s1/s1-bg.jpg"
     />
 
     <img 
-      class="bg-m"
+      class="s1-bg-m"
       src="@/section/s1/s1-bg-m.jpg"
     />
 
@@ -62,21 +62,19 @@ data-aos="fade"
 
 
 
-
-.s1 {
+.s1-sec {
   position: relative;
   width: 100%;
   height: auto;
-  
+  overflow: visible;
   font-weight: 500;
-  margin-bottom:190px;
-  
-  @media screen and (min-width:768px) {
-    height: auto;
-    
+  min-height: 100vh;
   }
   
-.bg-m,.s1-h1-m,.th40-m{
+    
+    
+  
+.s1-bg-m,.s1-h1-m,.th40-m{
   display:none;
 }
 
@@ -85,12 +83,14 @@ data-aos="fade"
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  height: auto;
+
   z-index: 1;
+  
 }
 
-.bg {
+.s1-bg {
   position: absolute;
   top: 0;
   left: 50%;
@@ -98,9 +98,9 @@ data-aos="fade"
   height: auto;
   min-height: 100vh;
   width: clamp(768px, 100vw, 1920px);
-  aspect-ratio: 1920 / 916;
-    object-fit: contain;
-    object-position: top center;
+  
+    object-fit: cover;
+    object-position: top left;
   transform: translateX(-50%);
 }
 
@@ -110,8 +110,8 @@ data-aos="fade"
     position: relative;
     width: clamp(350px, 45vw, 1920px);
     height: fit-content;
-    top:10vw;
-    left:35vw;
+    top:12vw;
+    right:0%;
     gap: 5vw;
     z-index: 3;
     align-items: center;
@@ -120,93 +120,111 @@ data-aos="fade"
 
 .s1-h1{
     width: clamp(480px, 60vw, 898px);
+    margin-right:-75vw;
     height: fit-content;
     object-fit: contain;
 }
 
 .th40{
-    width: clamp(120px, 20vw, 393px);
+    width: clamp(120px, 20vw, 800px);
     height: fit-content;
+    margin-right:-75vw;
     object-fit: contain;
 }
 
 
+@media screen and (max-width:1568px){
 
-@media(max-width:767px){
-
-
-
-
-  
-  
+    .s1-h1{
+    margin-top:5vw;
+    margin-right:-95vw;
 }
 
+.th40{
+    height: fit-content;
+    margin-right:-95vw;
 
- /* 手機版 */
+}}
 
-.Coming-soon-m,
-.Coming-soon-TC-m,
-.Local-m,
-.LOGO-m{
+@media screen and (max-width:1076px){
+
+
+.s1-sec {
+  min-height: 0;
+  height: auto;
+}
+
+    .s1-bg,
+.s1-h1,
+.th40{
     display:none;
 }
 
 
-@media screen and (max-width:767px){
-
-    .Coming-soon,
-    .Local,
-    .LOGO{
-        display:none;
-    }
-
-
-    .Coming-soon-m,
-    .Coming-soon-TC-m,
-    .Local-m,
-    .LOGO-m{
+    .s1-bg-m,
+    .s1-h1-m,
+    .th40-m{
         display:block;
     }
 
-    .s1{margin-bottom: 132px;}    
+
+.s1-sec{
+    background: rgba(255, 255, 255, 0.01);
+box-shadow: 0 0 20.2px 0 rgba(169, 59, 0, 0.70);
+width: 100%;
+}
+
+.all-bg {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.s1-bg-m {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+  object-position: top center;
+}
+
+.h1 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  gap: 12vw;
+  z-index: 3;
+  align-items: center;
+}
 
 
 
+.s1-h1-m {
+    display: block;
+    width: clamp(120px, 70vw, 898px);
+    margin-top: 60vw;
+
+    filter: drop-shadow(0px 0px 26.1px rgba(169, 14, 0, 0.80));
+    height: fit-content;
+    object-fit: contain;
+}
+
+.th40-m{
+    width: clamp(120px, 45vw, 348px);
 
 
-    .Coming-soon-m{
-      position: relative;
-      width: clamp(240px, 100vw, 880px);
-      height: fit-content;
-      object-fit: Contain;
-      margin-top: 134px;
-      margin-bottom: 24px;
-      z-index: 3;
-      animation: glowBreath 3s ease-in-out infinite;
-  }
-
-
-    .Local-m{
-      position: relative;
-      width: clamp(264px, 60vw, 660px);
-      height: fit-content;
-      object-fit: Contain;
-      margin-top: 64px;
-      z-index: 3;
-    }
-
-    .LOGO-m{
-      position: relative;
-      width: clamp(256px, 56vw, 560px);
-      height: fit-content;
-      object-fit: contain;
-      margin-top: 16px;
-      margin-bottom: 0px;
-      z-index: 3;
-
-
-    }
-
+    height: fit-content;
+    object-fit: contain;
+}
     
 
 }
@@ -577,7 +595,7 @@ data-aos="fade"
     animation-delay:1.8s;
 }
 
-}
+
 
 
 
