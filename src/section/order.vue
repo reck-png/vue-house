@@ -645,10 +645,11 @@ $o-title-c: #A30C24; //.order-title
 <script setup>
 import Policy from "@/section/form/policy.vue"
 import ContactInfo from "@/section/form/contactInfo.vue"
-//import Map from "@/section/form/map.vue"
+import Map from "@/section/form/map.vue"
 import HouseInfo from "@/section/form/houseInfo.vue"
 /*自訂下拉選單*/
 import CustomSelect from "@/section/CustomSelect.vue"
+
 
 
 import info from "@/info"
@@ -656,7 +657,9 @@ import { cityList, renderAreaList } from "@/info/address.js"
 import { ref, reactive, watch, computed, getCurrentInstance } from "vue"
 import { VueRecaptcha } from "vue-recaptcha"
 import { useToast } from "vue-toastification"
-import AOS from "aos";
+import AOS from "aos"
+
+
 
 const toast = useToast()
 const sending = ref(false)
@@ -691,19 +694,16 @@ const formData = reactive({
   name: "",
   phone: "",
   room_type: "",
-  budget: "",
-  time: "",
-  recommender: "",
-  recname: "",
+  budget: [],
   msg: "",
   city: "",
   area: "",
-  gender: "",
+  //gender: "",
   policyChecked: false,
   r_verify: false,
 
   ...Object.keys(selectFields).reduce((acc, k) => {
-    acc[k] = ""
+    acc[k] = selectFields[k].type === "checkbox" ? [] : ""
     return acc
   }, {})
 })
@@ -721,10 +721,8 @@ const fieldLabelMap = {
   phone: "手機",
   //gender: "性別",
   room_type: "需求房型",
-  budget: "購屋預算",
-  time: "方便聯絡時間",
-  recommender: "介紹、推薦來源",
-  recname: "介紹人、店家名稱",
+  budget: "最吸引您的特點",
+  //time: "方便聯絡時間",
   city: "居住縣市",
   area: "居住地區",
   policyChecked: "個資聲明",
@@ -849,7 +847,10 @@ if (unfill.length) {
 for (const [k, v] of Object.entries(formData)) {
   if (["policyChecked", "r_verify"].includes(k)) continue
   if (k === "area" && !v) continue
-  presendA.form[k] = v
+
+  presendA.form[k] = Array.isArray(v)
+    ? v.join(" / ")
+    : v
 }
 
 presendA.form.note = formData.msg
@@ -869,9 +870,12 @@ for (const [k, v] of Object.entries(formData)) {
   if (mergeToMessageKeys.includes(k)) continue
   if (k === "area" && !v) continue
 
-  // B API 欄位對應
   const apiKey = selectFields[k]?.apiB || k
-  presendB.append(apiKey, v)
+
+  presendB.append(
+    apiKey,
+    Array.isArray(v) ? v.join(" / ") : v
+  )
 }
 
 Object.entries(utm).forEach(([k, v]) => presendB.append(k, v))
@@ -902,12 +906,15 @@ presendB.append(
   const scriptParams = new URLSearchParams();
 
   for (const [k, v] of Object.entries(formData)) {
-    if (["policyChecked", "r_verify"].includes(k)) continue;
-    if (mergeToMessageKeys.includes(k)) continue; // ← 新增：car、time 不單獨送
-    if (k === "area" && !v) continue;
+  if (["policyChecked", "r_verify"].includes(k)) continue
+  if (mergeToMessageKeys.includes(k)) continue
+  if (k === "area" && !v) continue
 
-    scriptParams.append(k, v ?? "");
-  }
+  scriptParams.append(
+    k,
+    Array.isArray(v) ? v.join(" / ") : (v ?? "")
+  )
+}
 
   // msg 也統一改用合併後的 finalMessage
   scriptParams.set("msg", finalMessage);
@@ -970,4 +977,5 @@ presendB.append(
     sending.value = false
   }
 }
+
 </script>
