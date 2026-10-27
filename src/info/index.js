@@ -47,7 +47,7 @@ export default {
       title: "需求房型",
       type: "select",
       hold: "請選擇房型",
-      option: ["1房", "2房", "3房"],
+      option: ["2房", "3房"],
       required: false, //必填開啟使用
       nowrap: false, //選項過長時是否換行
     }, 
@@ -56,7 +56,7 @@ export default {
           title: "購屋預算",
           type: "select",
           hold: "請選擇區間",
-          option: ["600萬以下", "600～800萬", "800～1,000萬","1,000萬以上"],
+          option: ["1,000萬以下", "1,000～1,500萬", "1,500萬以上"],
           nowrap: false, //選項過長時是否換行
           //bypass:true, //必填開啟使用
         },

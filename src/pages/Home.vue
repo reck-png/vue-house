@@ -1,19 +1,34 @@
+
 <template>
   <div ref="heroStage" class="hero-stage">
     <div class="s1-layer">
       <S1 />
     </div>
 
-    <div ref="orderLayer" class="order-layer">
+    <div
+      ref="orderLayer"
+      class="order-layer"
+    >
       <Order />
     </div>
   </div>
 </template>
 
 
+
+
 <style lang="scss">
 
 
+::selection {
+  color: #ffffff;    
+  background: #c25700; 
+}
+
+::-moz-selection {
+  color: #ffffff;
+  background: #c25700;
+}
 
 .hero-stage {
   position: relative;
@@ -97,6 +112,35 @@ body::-webkit-scrollbar,
 
 @media(max-width: 554px) {
 
+    .hero-stage {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .s1-layer {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .s1-layer > .s1-sec {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .order-layer {
+    position: relative;
+    inset: auto;
+    height: auto;
+    overflow: visible;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+
   .bg-pc {
     display: none;
   }
@@ -144,6 +188,7 @@ body::-webkit-scrollbar,
 import { ref, onMounted, onUnmounted } from "vue";
 import S1 from "@/section/s1.vue";
 import Order from "@/section/order.vue";
+import ContactInfo from "@/section/form/contactInfo.vue";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import 'lenis/dist/lenis.css'
@@ -152,6 +197,8 @@ const heroStage = ref(null);
 const orderLayer = ref(null);
 
 let isOrderActive = false;
+let touchStartY = 0;
+let touchStartX = 0;
 let isAnimating = false;
 let animationTimer = null;
 let orderAosObserver = null;
@@ -188,6 +235,7 @@ const hideOrder = () => {
 };
 
 const handleWheel = (event) => {
+  if (window.innerWidth <= 554) return;
   if (!heroStage.value || !orderLayer.value) return;
 
   const rect = heroStage.value.getBoundingClientRect();
@@ -215,6 +263,45 @@ if (!inStage) return;
     if (orderLayer.value.scrollTop > 0) return;
 
     event.preventDefault();
+    hideOrder();
+  }
+};
+
+const handleTouchStart = (event) => {
+  if (!event.touches.length) return;
+
+  touchStartY = event.touches[0].clientY;
+  touchStartX = event.touches[0].clientX;
+};
+
+const handleTouchEnd = (event) => {
+  if (window.innerWidth <= 554) return;
+  if (!event.changedTouches.length) return;
+  if (!heroStage.value || !orderLayer.value) return;
+
+  const touchEndY = event.changedTouches[0].clientY;
+  const touchEndX = event.changedTouches[0].clientX;
+
+  const deltaY = touchStartY - touchEndY;
+  const deltaX = touchStartX - touchEndX;
+
+  // 忽略橫向滑動及太短的滑動
+  if (Math.abs(deltaY) < 50 || Math.abs(deltaY) < Math.abs(deltaX)) {
+    return;
+  }
+
+  if (isAnimating) return;
+
+  // 手指往上滑：開啟 Order
+  if (deltaY > 0 && !isOrderActive) {
+    showOrder();
+    return;
+  }
+
+  // 手指往下滑：Order 已回到頂部才關閉
+  if (deltaY < 0 && isOrderActive) {
+    if (orderLayer.value.scrollTop > 0) return;
+
     hideOrder();
   }
 };
@@ -254,6 +341,19 @@ onMounted(() => {
   window.addEventListener("wheel", handleWheel, {
     passive: false,
   });
+
+  heroStage.value?.addEventListener(
+  "touchstart",
+  handleTouchStart,
+  { passive: true }
+);
+
+heroStage.value?.addEventListener(
+  "touchend",
+  handleTouchEnd,
+  { passive: true }
+);
+
 });
 
 onUnmounted(() => {
@@ -264,6 +364,16 @@ onUnmounted(() => {
     orderAosObserver.disconnect();
     orderAosObserver = null;
   }
+
+  heroStage.value?.removeEventListener(
+  "touchstart",
+  handleTouchStart
+);
+
+heroStage.value?.removeEventListener(
+  "touchend",
+  handleTouchEnd
+);
 });
 
 

@@ -1,5 +1,5 @@
 <template>
-  <div id="order" class="order relative text-center ">
+  <div id="order" class="order relative text-center " >
 
     <img 
       class="or-bg"
@@ -12,13 +12,13 @@
     />
 
 
-    <div class="order-section">
-      <div class="order-title-style"data-aos="fade"
-    data-aos-delay="500"
-    data-aos-duration="1200"
+    <div class="order-section"data-aos="fade-up"
+    data-aos-duration="300"
     data-aos-easing="ease"
     data-aos-once="false"
     data-aos-mirror="true">
+ 
+      <div class="order-title-style">
         <div class="order-title-line">
           <div class="order-title" v-if="info.order.title" v-html="info.order.title"></div>
         </div>  
@@ -31,7 +31,7 @@
       <div
   class="form mx-auto relative flex justify-center"
   data-aos="fade"
-  data-aos-delay="300"
+  data-aos-delay="450"
   data-aos-duration="1200"
   data-aos-once="true"
 >
@@ -161,9 +161,8 @@
 
       </div>
 
-      <ContactInfo />
     </div>
-
+<ContactInfo />
     <Map v-if="info.address" />
 
     
@@ -490,20 +489,8 @@ $o-title-c: #A30C24; //.order-title
 /* 勾選後 */
 .checkbox:checked {
   background:
-    radial-gradient(
-      ellipse at 36% -20%,
-      #e93fff 0%,
-      #9b66b9 10%,
-      #003c80 55%,
-      transparent 75%
-    ),
-    radial-gradient(
-      ellipse at -100% 100%,
-      #5893FF 22%,
-      #00446E 55%,
-      transparent 75%
-    ),
-    #00446E;
+      rgb(117, 44, 14) 40%,;
+    
 
   border-color: transparent;
 }
@@ -527,7 +514,7 @@ $o-title-c: #A30C24; //.order-title
 }
 
 
-@media screen and (max-width:554px) {
+@media screen and (max-width:768px) {
 
 .or-bg{
   display:none;

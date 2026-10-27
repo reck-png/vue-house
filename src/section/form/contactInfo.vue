@@ -1,6 +1,12 @@
 <template>
   <div>
-  <div class="contact-info-img relative">
+  <div class="contact-info-img relative"
+  data-aos="fade-up"
+    data-aos-duration="300"
+    data-aos-easing="ease"
+    data-aos-once="false"
+    data-aos-mirror="true">
+
 </div>
   <div class="contact-info mx-auto  flex flex-col items-center justify-between">
    <!--    --><div class="logo">
@@ -50,6 +56,7 @@
 </div>
 
   <!-- Mobile contact info -->
+   <Teleport to="body">
     <div v-if="$isMobile()" class="mo-contact-info">
     <div class="flex  flex-col contact-item justify-center items-center" 
       @click="modalOpen = true; modalType = 'phone'" v-if="info.phone">
@@ -74,6 +81,7 @@
     </div>
   -->
   </div>
+  </Teleport>
 
   <!-- Modal -->
   <input type="checkbox" v-model="modalOpen" id="contact-modal" class="modal-toggle" />
@@ -324,7 +332,7 @@
   img{filter: invert(0%) sepia(1%) saturate(4%) hue-rotate(348deg) brightness(99%) contrast(101%);
   }
 }
-@media screen and (max-width: 554px) {
+@media screen and (max-width: 768px) {
 
   .mo-contact-info {
   position: fixed;
@@ -353,22 +361,22 @@
     background:
       radial-gradient(
         ellipse 200% 220% at 45% -20%,
-        #df8633c4 0%,
-        rgba(194, 78, 58, 0.747) 15%,
-        rgb(87, 34, 13) 40%,
-        transparent 85%
+        #e49449c4 0%,
+        rgba(207, 111, 47, 0.5) 15%,
+        rgb(117, 44, 14) 40%,
+        transparent 100%
       ),
       radial-gradient(
         ellipse 80% 180% at -10% 110%,
         rgba(207, 111, 47, 0.5) 0%,
-        rgba(100, 53, 0, 0.6) 45%,
-        transparent 80%
+        rgb(117, 44, 14) 45%,
+        transparent 100%
       ),
       radial-gradient(
         ellipse 80% 180% at 80% 70%,
-        rgb(207, 106, 81) 0%,
-        rgba(245, 115, 55, 0.6) 45%,
-        transparent 80%
+        rgb(194, 75, 46) 0%,
+        rgba(218, 94, 37, 0.6) 45%,
+        transparent 100%
       );
 
     overflow: hidden;
