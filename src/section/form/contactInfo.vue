@@ -84,50 +84,135 @@
   </Teleport>
 
   <!-- Modal -->
-  <input type="checkbox" v-model="modalOpen" id="contact-modal" class="modal-toggle" />
-  <div class="modal -mt-20 md:-mt-72">
+ <!-- Modal -->
+<Teleport to="body">
+  <div
+    v-if="modalOpen"
+    class="contact-modal"
+    @click.self="modalOpen = false"
+  >
     <div class="modal-box py-12 relative flex flex-col items-center justify-center">
-      <label for="contact-modal" class="btn btn-sm btn-circle absolute right-4 top-4">✕</label>
+
+      <!-- 關閉按鈕 -->
+      <button
+        type="button"
+        class="btn btn-sm btn-circle absolute right-4 top-4"
+        @click="modalOpen = false"
+      >
+        ✕
+      </button>
+
       <!-- icon -->
-      <img class="h-12" v-if="modalType == 'phone'" src="//h35.banner.tw/img/form/phone.svg" alt="phone" srcset="" />
-      <img class="h-12" v-else-if="modalType == 'fb'" src="//h35.banner.tw/img/form/messenger.svg" alt="fb" srcset="" />
-      <img class="h-12" v-else-if="modalType == 'gmap'" src="//h35.banner.tw/img/form/gmap.svg" alt="gmap" srcset="" />
+      <img
+        class="h-12"
+        v-if="modalType == 'phone'"
+        src="//h35.banner.tw/img/form/phone.svg"
+        alt="phone"
+      />
+
+      <img
+        class="h-12"
+        v-else-if="modalType == 'fb'"
+        src="//h35.banner.tw/img/form/messenger.svg"
+        alt="fb"
+      />
+
+      <img
+        class="h-12"
+        v-else-if="modalType == 'gmap'"
+        src="//h35.banner.tw/img/form/gmap.svg"
+        alt="gmap"
+      />
+
       <!-- title -->
-      <div class="text-xl mt-4 font-bold">{{ modalType == 'phone' ? '預約專線' : modalType == 'fb' ? 'Facebook Messenger' :
-      `${info.address2?info.address2:'導航地址'}`
-      }}</div>
+      <div class="text-xl mt-4 font-bold">
+        {{
+          modalType == 'phone'
+            ? '預約專線'
+            : modalType == 'fb'
+              ? 'Facebook Messenger'
+              : `${info.address2 ? info.address2 : '導航地址'}`
+        }}
+      </div>
+
       <!-- content -->
-      <div class="text-md mt-4">{{ modalType == 'phone' ? info.phone : modalType == 'fb' ? '線上諮詢' :
-      `${info.address}`
-      }}</div>
-      <!-- btn -->
-      <div class="btn btn-lg bg-color1 border-0 text-white mt-12 hover:bg-color2" @click="go()" v-if="modalType != 'phone'" v-bind:class="{
-        'hidden': modalType == 'phone' && !$isMobile(),
-        'btlead': modalType == 'fb',
-        'btsearch': modalType == 'gmap',
-        'btcontac': modalType == 'phone'
-      }">
-        {{ modalType == 'phone' ? '撥打電話' : modalType == 'fb' ? '立即諮詢' :
-        '開啟導航'
-        }}</div>
-      <!-- btn phone -->
-      <div class="btn btn-lg bg-color1 border-0 text-white mt-12 hover:bg-color2" @click="go()" id="phonegtm" v-else v-bind:class="{
-        'hidden': modalType == 'phone' && !$isMobile(),
-        'btlead': modalType == 'fb',
-        'btsearch': modalType == 'gmap',
-        'btcontac': modalType == 'phone'
-      }">
-        {{ modalType == 'phone' ? '撥打電話' : modalType == 'fb' ? '立即諮詢' :
-        '開啟導航'
-        }}</div>
+      <div class="text-md mt-4">
+        {{
+          modalType == 'phone'
+            ? info.phone
+            : modalType == 'fb'
+              ? '線上諮詢'
+              : `${info.address}`
+        }}
+      </div>
+
+      <!-- button -->
+      <div
+        class="btn btn-lg bg-color1 border-0 text-white mt-12 hover:bg-color2"
+        @click="go()"
+        :class="{
+          btlead: modalType == 'fb',
+          btsearch: modalType == 'gmap',
+          btcontac: modalType == 'phone'
+        }"
+      >
+        {{
+          modalType == 'phone'
+            ? '撥打電話'
+            : modalType == 'fb'
+              ? '立即諮詢'
+              : '開啟導航'
+        }}
+      </div>
+
     </div>
   </div>
+</Teleport>
+
 
 
 </template>
 
 <style lang="scss">
 @use "@/assets/style/function.scss" as *;
+
+/* 全螢幕遮罩 */
+.contact-modal {
+  position: fixed !important;
+  inset: 0 !important;
+
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+
+  margin: 0 !important;
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  z-index: 99999;
+}
+
+/* 彈窗本體 */
+.contact-modal .modal-box {
+  position: relative;
+
+  width: min(100%, 500px);
+  max-width: 500px;
+
+  max-height: calc(100dvh - 40px);
+  overflow-y: auto;
+
+  margin: 0;
+  box-sizing: border-box;
+}
+
 
 .bg-color1{background-color: #00312E;}
 .hover\:bg-color2:hover{background-color:#002421;}
