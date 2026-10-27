@@ -5,7 +5,7 @@
 </template>
 
 <style lang="scss">
-@import "@/assets/style/function.scss";
+@use "@/assets/style/function.scss" as *;
 
 .gmap {
     width: 100%;
@@ -17,7 +17,7 @@
     }
 }
 
-@media screen and (max-width:1076px) {
+@media screen and (max-width:554px) {
     .gmap {
         height: size-m(354);
     }

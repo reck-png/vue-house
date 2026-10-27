@@ -56,7 +56,7 @@
 
 
 <style lang="scss">
-@import "@/assets/style/function.scss";
+@use "@/assets/style/function.scss" as *;
 
 
 /* =========================================================
@@ -67,14 +67,14 @@
 
 .house {
   position: relative;
-  width: 100vw;
+  width: 100%;
   color: #fff;
   font-family: "Inter", "Noto Sans TC", sans-serif;
 }
 
 
 .house-inner {
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box;
   padding-bottom: size(60);
 
@@ -213,12 +213,13 @@ font-size: sizem(16);
 
 
  .footer {
+  width:100%;
     margin-bottom: sizem(300);
     //margin-bottom: sizem(63);
   }
 
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 554px) {
 
   .house-inner {
   padding-bottom: size(180);
@@ -237,7 +238,7 @@ font-size: sizem(16);
 
 
 .house-inner {
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box;
   padding-bottom: size(340);
 }

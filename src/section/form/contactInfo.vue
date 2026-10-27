@@ -119,7 +119,7 @@
 </template>
 
 <style lang="scss">
-@import "@/assets/style/function.scss";
+@use "@/assets/style/function.scss" as *;
 
 .bg-color1{background-color: #00312E;}
 .hover\:bg-color2:hover{background-color:#002421;}
@@ -324,7 +324,7 @@
   img{filter: invert(0%) sepia(1%) saturate(4%) hue-rotate(348deg) brightness(99%) contrast(101%);
   }
 }
-@media screen and (max-width: 1076px) {
+@media screen and (max-width: 554px) {
 
   .mo-contact-info {
   position: fixed;

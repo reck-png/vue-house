@@ -23,7 +23,7 @@ data-aos="fade"
 
 <div class="h1"
     data-aos="fade"
-    data-aos-delay="500"
+    data-aos-delay="1000"
     data-aos-duration="1200"
     data-aos-easing="ease"
     data-aos-once="false"
@@ -58,9 +58,12 @@ data-aos="fade"
 </template>
 
 <style lang="scss">
-@import "@/assets/style/function.scss";
+@use "@/assets/style/function.scss" as *;
 
 
+.s1-bg {
+  background: red;
+}
 
 .s1-sec {
   position: relative;
@@ -82,7 +85,7 @@ data-aos="fade"
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
       object-fit: contain;
     object-position: top center;
@@ -99,7 +102,7 @@ data-aos="fade"
   display: block;
   height: auto;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   
     object-fit: visible;
     object-position: top left;
@@ -143,8 +146,8 @@ data-aos="fade"
   left: 50%;
   display: block;
   height: auto;
-  min-height: 100vh;
-  width: 100vw;
+  min-height: 100%;
+  width: 100%;
   
     object-fit: cover;
     object-position: top left;
@@ -162,13 +165,76 @@ data-aos="fade"
 
 }}
 
-@media screen and (max-width:1076px){
+
+@media screen and (max-width:1124px){
+
+    .s1-bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  
+    object-fit: cover;
+    object-position: top left;
+  transform: translateX(-50%);
+}
+.s1-h1,
+.th40{
+    display:none;
+}
+
+.h1 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  gap: 12vw;
+  z-index: 3;
+  align-items: center;
+
+  translate: 0 -50%;
+}
+
+.s1-h1-m {
+  display: block;
+  width: clamp(120px, 50vw, 898px);
+  margin-top: 0;
+
+  filter: drop-shadow(0px 0px 40.1px rgb(169, 14, 0));
+  height: fit-content;
+  object-fit: contain;
+}
+
+.th40-m{
+    width: clamp(120px, 45vw, 348px);
+
+
+    height: fit-content;
+    object-fit: contain;
+}
+
+
+
+}
+
+
+
+
+@media screen and (max-width:544px){
 
 
 .s1-sec {
-  min-height: 0;
-  height: auto;
-}
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
+  }
 
     .s1-bg,
 .s1-h1,
@@ -200,12 +266,17 @@ width: 100%;
 }
 
 .s1-bg-m {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+
   display: block;
   width: 100%;
-  height: auto;
-  min-height: 0;
-  object-fit: contain;
+  height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  object-fit: cover;
   object-position: top center;
 }
 
@@ -213,25 +284,26 @@ width: 100%;
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 0;
   width: 100%;
   height: fit-content;
   gap: 12vw;
   z-index: 3;
   align-items: center;
+  translate: 0 -50%;
 }
 
 
 
 .s1-h1-m {
-    display: block;
-    width: clamp(120px, 70vw, 898px);
-    margin-top: 60vw;
+  display: block;
+  width: clamp(120px, 70vw, 898px);
+  margin-top: 0;
 
-    filter: drop-shadow(0px 0px 26.1px rgba(169, 14, 0, 0.80));
-    height: fit-content;
-    object-fit: contain;
+  filter: drop-shadow(0px 0px 26.1px rgba(169, 14, 0, 0.80));
+  height: fit-content;
+  object-fit: contain;
 }
 
 .th40-m{

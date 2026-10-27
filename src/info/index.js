@@ -1,7 +1,7 @@
-const caseName = "泰和茂田中新案"
+const caseName = "春福悅悅"
 
 export default {
-  caseid: "f65b0dfd-6b1d-448b-9460-b5112e1ac995",
+  caseid: "ea03258a-052f-4e25-bf80-7079ba23da9b",
   //caseid_j: "3c00c7f1-d23a-4d28-a94c-790a8f4626c5", //兩邊id一樣可以不用有
   address1: "接待中心",//按鈕區的--- 如空白會只呈現地址
   address2: "接待中心",//map點下確認的--- 如空白會顯示"導航地址"
@@ -9,8 +9,8 @@ export default {
   googleSrc: "",
   googleLink: "",
   phone: "06-2690111",
-  fbLink: "https://www.facebook.com/profile.php?id=61593190918264",
-  fbMessage: "https://m.me/61593190918264",
+  fbLink: "https://www.facebook.com/profile.php?id=61594634672650",
+  fbMessage: "https://m.me/61594634672650",
   //line: "https://lin.ee/qakWswp",
   caseName: caseName,
   houseInfos: [
@@ -21,7 +21,7 @@ export default {
     /*
     */
   ],
-   gtmCode: ["GTM-MZW7KDGM"], // 可放置多個
+   gtmCode: ["GTM-WMLBZL2N"], // 可放置多個
   //recaptcha_site_key_v2: "6Lep-78UAAAAAMaZLtddpvpixEb8cqu7v7758gLz", //主1
   recaptcha_site_key_v2: "6LfGUjEaAAAAANYvhZQx5imGm23pRt0V-rOvkpNC", //主2
   //recaptcha_site_key_v2: "6LdbrqAmAAAAAPj2D_6cBbflea1livK9Uud4FGmN", //主3

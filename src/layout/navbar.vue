@@ -20,7 +20,7 @@
 
 
 <style lang="scss">
-@import "@/assets/style/function.scss";
+@use "@/assets/style/function.scss" as *;
 
 .nav {
     padding: 0 size(50);
@@ -195,7 +195,7 @@
     }
 }
 
-@media screen and (max-width:1076px) {
+@media screen and (max-width:554px) {
 
     .gotop {
         width: size-m(34.24);

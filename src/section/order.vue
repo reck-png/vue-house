@@ -13,7 +13,12 @@
 
 
     <div class="order-section">
-      <div class="order-title-style">
+      <div class="order-title-style"data-aos="fade"
+    data-aos-delay="500"
+    data-aos-duration="1200"
+    data-aos-easing="ease"
+    data-aos-once="false"
+    data-aos-mirror="true">
         <div class="order-title-line">
           <div class="order-title" v-if="info.order.title" v-html="info.order.title"></div>
         </div>  
@@ -23,7 +28,13 @@
       </div>
 <!--  -->
       <!-- FORM -->
-      <div class="form mx-auto relative flex justify-center">
+      <div
+  class="form mx-auto relative flex justify-center"
+  data-aos="fade"
+  data-aos-delay="300"
+  data-aos-duration="1200"
+  data-aos-once="true"
+>
 
         <div class="left h-full flex flex-col justify-between items-center">
           <div class="name">
@@ -161,7 +172,7 @@
   </div>
 </template>
 <style lang="scss">
-@import "@/assets/style/function.scss";
+@use "@/assets/style/function.scss" as *;
 
 
 .or-bg-m{
@@ -516,7 +527,7 @@ $o-title-c: #A30C24; //.order-title
 }
 
 
-@media screen and (max-width:1076px) {
+@media screen and (max-width:554px) {
 
 .or-bg{
   display:none;
@@ -630,7 +641,7 @@ $o-title-c: #A30C24; //.order-title
   
 }
 
-@media screen and (max-width: 1076px) {
+@media screen and (max-width: 544px) {
   .order {
     .form {
       .row {
@@ -658,6 +669,7 @@ import { cityList, renderAreaList } from "@/info/address.js"
 import { ref, reactive, watch, computed, getCurrentInstance } from "vue"
 import { VueRecaptcha } from "vue-recaptcha"
 import { useToast } from "vue-toastification"
+import AOS from "aos";
 
 const toast = useToast()
 const sending = ref(false)
