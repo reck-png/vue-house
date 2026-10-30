@@ -150,6 +150,10 @@
 </template>
 <style lang="scss">
 @import "@/assets/style/function.scss";
+
+.order {
+  background: transparent !important;
+}
 .area-drop-enter-active {
   transition: all 0.35s ease;
   overflow: hidden;

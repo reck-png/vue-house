@@ -1,7 +1,5 @@
 <template>
-  <section class="s1 text-white relative">
-
-
+  <section class="s1">
 
 <div class="H1"
     data-aos="fade"
@@ -9,31 +7,27 @@
     data-aos-duration="1200"
     data-aos-easing="ease"
     data-aos-once="false"
-    data-aos-mirror="true"
->
-
+    data-aos-mirror="true">
 
     <img 
       class="Coming-soon"
-      src="@/section/s1/h1-coming-soon.svg"
+      src="@/section/s1/s1-h1.svg"
     />
 
     <img 
       class="Coming-soon-m"
-      src="@/section/s1/h1-coming-soon-m.svg"
+      src="@/section/s1/s1-h1-m.svg"
     >
 
-    <img 
-      class="LOGO"
-      src="@/section/s1/h2-logo.svg"
-    >
-    
-    <img 
-      class="LOGO-m"
-      src="@/section/s1/h2-logo-m.svg" 
-    >
+    <div class="h1-box">
+      <p class="MRT">正南屯捷運 出站即到家</p>  
+      <p class="park">森林公園・鋼骨地標 2~3房</p>  
+    </div>
 
-
+    <div class="h1-box-m">
+      <p class="MRT-m">正南屯捷運 出站即到家</p>  
+      <p class="park-m">森林公園・鋼骨地標 2~3房</p>  
+    </div>
 
 </div>
     
@@ -55,7 +49,12 @@
   @media screen and (min-width:768px) {
     height: auto;
     
-  }
+  
+
+.Coming-soon-m,
+.h1-box-m{
+    display:none;
+}
   
 
 
@@ -74,7 +73,7 @@
 
   .Coming-soon {
     position: relative;
-    width: clamp(320px, 64vw, 920px);
+    width: clamp(320px, 50vw, 951px);
     height: fit-content;
     object-fit: Contain;
     margin: clamp(148px, 20vw, 240px) auto clamp(8px, 5vw, 24px) auto;
@@ -82,36 +81,74 @@
     animation: glowBreath 3s ease-in-out infinite;
   }
 
-  .LOGO {
-    position: relative;
-    width: clamp(364px, 80vw, 935px);
-    height: fit-content;
-    object-fit: contain;
-    margin: clamp(8px, 5vw, 48px) auto clamp(8px, 5vw, 24px) auto;
-    z-index: 3;
-  }
+ .h1-box {
+  position: relative;
+  width: clamp(280px, 40vw, 700px);
+  box-sizing: border-box;
 
+  display: flex;
+  padding: clamp(16px, 1.75vw, 25px)
+           clamp(12px, 3vw, 45px)
+           clamp(18px, 2.57vw, 37px);
 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(5px, 0.7vw, 10px);
 
+  border-radius: 8px;
+  background: rgba(255, 139, 247, 0.04);
+  box-shadow: 0 0 25.791px 0 rgba(255, 255, 255, 0.25);
 
-@media(max-width:767px){
-
-
-
-
-  
-  
+  z-index: 3;
 }
 
 
- /* 手機版 */
+.MRT {
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+  flex-shrink: 0;
 
-.Coming-soon-m,
-.Coming-soon-TC-m,
-.Local-m,
-.LOGO-m{
-    display:none;
+  font-family: "Noto Serif TC Black", serif;
+  font-weight: 900;
+  font-size: clamp(18px, 2vw, 28px);
+  line-height: 1.2;
+  letter-spacing: clamp(1px, 0.58vw, 8.295px);
+
+  text-align: center;
+
+  background: linear-gradient(
+    207deg,
+    #F1E6FF -340.98%,
+    #5D1C73 -25.06%,
+    #FFF 80.24%,
+    #E19DE8 322.76%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
+.park {
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  color: #FFF;
+  font-family: "Noto Serif TC", serif;
+  font-size: clamp(12px, 1.4vw, 19.5px);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: clamp(1px, 0.72vw, 10.4px);
+
+  text-align: center;
+}
+
+}
+
 
 
 @media screen and (max-width:767px){
