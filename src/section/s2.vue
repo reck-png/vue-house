@@ -7,7 +7,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/style/function.scss';
+@use '@/assets/style/function.scss' as *;
 
 .s2 {
   @apply relative overflow-hidden bg-[#27AEE6] text-[#fff];

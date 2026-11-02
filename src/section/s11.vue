@@ -22,7 +22,7 @@
 </template>
 
 <style lang="scss">
-@import '@/assets/style/function.scss';
+@use '@/assets/style/function.scss' as *;
 
 .s11 {
   @apply relative flex flex-col items-center justify-center text-[#fff];

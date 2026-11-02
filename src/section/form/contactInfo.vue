@@ -102,7 +102,7 @@
 </template>
 
 <style lang="scss">
-@import "@/assets/style/function.scss";
+@use "@/assets/style/function.scss" as *;
 
 .bg-color1{background-color: #00312E;}
 .hover\:bg-color2:hover{background-color:#002421;}

@@ -8,7 +8,7 @@
 </template>
 
 <style lang="scss" scoped>  
-@import '@/assets/style/function.scss';
+@use '@/assets/style/function.scss' as *;
 .s9 {
  // @apply relative w-full h-screen;
   // height: size(1080);

@@ -25,7 +25,7 @@
 </template>
 
 <style lang="scss">
-@import '@/assets/style/function.scss';
+@use '@/assets/style/function.scss' as *;
 
 .s5 {
   @apply relative flex flex-col items-center justify-center text-[#222];

@@ -87,7 +87,7 @@
 </template>
 
 <style lang="scss">
-@import "@/assets/style/function.scss";
+@use "@/assets/style/function.scss" as *;
 
 /*
 .eggbg3{position: absolute;
