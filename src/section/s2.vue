@@ -1,444 +1,497 @@
 <template>
-<section class="s2 text-white relative">
+<section class="s2">
 
-<div class="gift"
-    data-aos="fade"
-    data-aos-delay="500"
-    data-aos-duration="1200"
-    data-aos-easing="ease"
-    data-aos-once="false"
-    data-aos-mirror="true"
+<div class="s2-pc">
+
+  <div
+  class="s2-bg-wrap"
+  data-aos="zoom-out"
+  data-aos-offset="20"
+  data-aos-delay="520"
+  data-aos-duration="2000"
+  data-aos-easing="ease-out-cubic"
+  data-aos-once="false"
+  data-aos-mirror="false"
 >
-    <p class="opentxt" @click="scrollTo('.order')">提前登記開放中</p>
-      
-    <div class="gift-box">
-      <p class="get">搶先掌握最新資訊，取得<b>限量早鳥優惠</b></p>  
-      <img 
-        class="gift-img"
-        src="@/section/s2/proicons_gift.svg"
-      />
-    </div>
 
-</div>
+    <div class="s2-bg-size">
+        <img
+        class="s2-bg"
+        src="@/section/s2/s2-map.webp"
+         >
 
-<div class="gift-m"
+         <img
+    class="s2-light"
+    src="@/section/s2/s2-light.webp"
     data-aos="fade"
-    data-aos-delay="500"
-    data-aos-duration="1200"
-    data-aos-easing="ease"
-    data-aos-once="false"
-    data-aos-mirror="true"
-
->   <div class="line-m">
-    <p class="open-m" @click="scrollTo('.order')">提前登記開放中</p>
+    data-aos-offset="10"
+    data-aos-delay="5200"
+    data-aos-duration="2000"
+    data-aos-easing="ease-out-cubic"
+/>
     </div>
- <div class="umargin">   
- <div class="wmask">  
 
-    <div class="gift-box-m">
-      <p class="get-m">搶先掌握最新資訊，</p>
-        
 
-        <div class="gift-box-m-2">
-             <p class="get-m-2">取得限量早鳥優惠</p>  
-                <img 
-                    class="gift-img-m"
-                    src="@/section/s2/proicons_gift.svg"/>
-        </div>
 
-</div>
-</div> 
-</div> 
+    
 </div>
 
+<!-- <p class="s2-p-txt">空拍實景經合成修飾示意</p> -->
+
+  </div>
+  
+
+
+<div class="s2-m" @pointerdown="handleFgInteraction">
+
+  <div class="s2-bg-wrap-m">
+
+    <div class="s2-bg-size-m">
+
+      <img
+        class="s2-bg-m"
+        src="@/section/s2/s2-map.webp"
+        data-aos="zoom-out"
+        data-aos-offset="20"
+        data-aos-delay="520"
+        data-aos-duration="3000"
+        data-aos-easing="ease-out-cubic"
+        data-aos-once="false"
+        data-aos-mirror="false"
+      >
+
+      <div
+        class="fg-wp"
+        :class="{ 'fg-hidden': !fgVisible }"
+      ></div>
+
+      <img
+    class="s2-light-m"
+    src="@/section/s2/s2-light.webp"
+    data-aos="fade"
+    data-aos-offset="10"
+    data-aos-delay="5200"
+    data-aos-duration="2000"
+    data-aos-easing="ease-out-cubic"
+/>
+
+    </div>
+
+  </div>
+
+  <img
+    class="s2-finger"
+    src="@/section/s2/s2-finger.svg"
+    :class="{ 'fg-hidden': !fgVisible }"
+  >
+<!--<p class="s2-p-txt-m">空拍實景經合成修飾示意</p>-->
+
+</div>
+  
 </section>    
 </template>
 
 <style lang="scss">
 @import "@/assets/style/function.scss";
 
-.gift-m{
-    display:none;
-}
-
 .s2 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+  
+}
+  
+@media screen and (min-width:1601px) {
+
+  .s2-m {
+    display: none;
+  }
+
+  .s2-pc {
   position: relative;
   width: 100%;
+  overflow: hidden;
+}
+
+  .s2-light {
+  position: absolute;
+
+  width: 13.2769%;
   height: auto;
-  display: flex;
-  padding: 64px 0 62px 0;
-  flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
-  
-  @media screen and (min-width:768px) {
-    height: auto;
-    
-  }
+  aspect-ratio: 254.916 / 745;
 
-}
-  
+  left: 45.3%;
+  top: 49%;
 
+  animation: glowBreath 3s ease-in-out infinite;
+  mix-blend-mode: plus-lighter;
 
-.gift {
-    display: flex;
-    width: clamp(240px, 80vw, 1200px);
-    flex-direction: row;
-    position: relative;
-    justify-content: center;
-    align-items: center; 
-    height: auto;
-    z-index: 3;
-
-    animation: glowBreath-light 3s ease-in-out infinite;
-    
-  }
-
-.opentxt{
-    display: flex;
-    padding: 18px 64px;
-    justify-content: center;
-    align-items: center;
-    align-self: stretch;
-    border: 0.5px solid #FFF;
-    color: #FFF;
-    font-size: clamp(24px, 1.5vw, 24px);
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 3.12px;
-    
-      border-radius: 12px;
-        border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.178) 0%, rgba(255, 255, 255, 0.05) 100%);
-        box-shadow: 1.127px 4.508px 43.168px 0 rgba(255, 255, 255, 0.2) inset;
-        backdrop-filter: blur(2.3105762004852295px);
-
-        transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-
-&:hover {
-  transform: scale(1.03);
+  z-index: 2;
 }
 
-    
-}
+.s2-bg-wrap {
+  position: relative;
 
-.gift-box{
-    display: flex;
-    padding: 16px 64px;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-    border-radius: 0 12px 12px 0;
-    background: linear-gradient(90deg, rgba(102, 102, 102, 0.00) -4.28%, rgba(231, 209, 232, 0.18) 3.74%);
-}
-
-.get{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #FFF;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 3.12px;
-}
-
-.gift-img{
-    width: clamp(32px, 2vw, 48px);
-    height: auto;
-}
-
-  
-
-
-
-
-
-
-@media screen and (max-width:1200px){
-
-    .gift{
-        display:none;
-    }
-
-
-    .gift-m{
-        display:block;
-    }
-
-    .s2{
-        width: 100%;
-        margin-bottom: 132px;}    
-
-
-
-.gift-m {
-    display: flex;
-    width: 100%;
-    padding: 18px 0px 8px 0px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-self: stretch;
-    z-index: 3;
-
-    margin-top: -120px;
-    
-    
-  }
-
-
-.line-m{
-  width: 60%;
-  display: flex;
-  padding: 18px 0px 0px 0px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  }
-
-  .line-m::after {
-  content: "";
   width: 100%;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 1) 50%,
-    transparent 100%
-  );
+
+  overflow: hidden;
 }
 
 
-.open-m{
-    width: 100%;
-    display: flex;
-    animation: glowBreath-light 3s ease-in-out infinite;
-   
-    justify-content: center;
-    align-items: center;
-    align-self: stretch;
-    border-radius: 12px;
+/* =========================
+   1920 × 1000 設計稿
+   ========================= */
+.s2-bg-size {
+  position: relative;
+  width: max(100%, calc(100vh * 1.92));
 
-    color: #FFF;
-    font-size: clamp(24px, 2vw, 80px);
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 2.6px;
-    white-space: nowrap;
-    flex-shrink: 1;
-
-    margin-bottom: 16px;
-    animation: glowBreath-light 3s ease-in-out infinite;
-
-    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-
-&:active {
-  transform: scale(1.03);
-}
-}
-
-.wmask{
-    width:90%;
-    height:150px;
-    background: rgba(231, 209, 232, 0.18);
-
--webkit-mask-image:
-  linear-gradient(
-    90deg,
-    transparent 0%,
-    #000 20%,
-    #000 80%,
-    transparent 100%
-  ),
-  linear-gradient(
-    180deg,
-    #000 0%,
-    #000 60%,
-    transparent 100%
-  );
-
--webkit-mask-composite: source-in;
-mask-image:
-  linear-gradient(
-    90deg,
-    transparent 0%,
-    #000 20%,
-    #000 80%,
-    transparent 100%
-  ),
-  linear-gradient(
-    180deg,
-    #000 0%,
-    #000 60%,
-    transparent 100%
-  );
-
-mask-composite: intersect;
-
-
-}
-
-.gift-box-m{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: fit-content;
-padding: 25px 0px 64px 0px;
-justify-content: center;
-align-items: center;
-border-radius: 0 12px 12px 0;
-
-gap: 4px;
-
-white-space: nowrap;
-    flex-shrink: 1;
-    
-    margin-bottom: 0px;
-
-
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 
-.gift-box-m-2{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: fit-content;
-padding: 0px 0px 64px 0px;
-justify-content: center;
-align-items: center;
-border-radius: 0 12px 12px 0;
-
-
-mask-composite: intersect;
-gap: 4px;
-
-white-space: nowrap;
-    flex-shrink: 1;
-    
-    margin-bottom: -120px;
-
-
+/* BG */
+.s2-bg {
+  display: block;
+  margin-top: -25vw;
+  width: 100%;
+  height: auto;
 }
 
 
-.get-m,
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #FFF;
-    font-size: clamp(16px, 8vw, 20px);
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 3px;
-    animation: glowBreath-light 3s ease-in-out infinite;
+/* LOCAL */
+.s2-local {
+  position: absolute;
 
-    
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+
+  z-index: 1;
 }
 
+.s2-p-txt {
+    position: absolute;
 
-.get-m-2
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #FFF;
-    font-size: clamp(16px, 8vw, 20px);
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 3px;
-    animation: glowBreath-light 3s ease-in-out infinite;
+    right: calc(12% - 12vh);
+    bottom: 20px;
 
-    
-}
-
-.gift-img-m{
-    width: clamp(24px, 60vw, 40px);
+    width: auto;
     height: auto;
-    animation: glowBreath-light 3s ease-in-out infinite;
-    margin-left: 4px;
-    
 
-}
+    margin: 0;
 
-.umargin {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: #fff;
+    text-align: right;
 
-    margin-bottom: -120px;
-}
-    
+    text-shadow: 0 0 3.806px #000;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: clamp(12px, 0.73vw, 14px);
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 1.776px;
 
-}
-
-.glow-breath {
-  animation: glowBreath 1s ease-in-out infinite;
-}
-
-@keyframes glowBreath {
-  0%,
-  100% {
-    filter:
-      drop-shadow(0 0 2px rgba(255, 78, 196, 0.2))
-      drop-shadow(0 0 6px rgba(255, 220, 170, 0.1));
+    z-index: 10;
+    white-space: nowrap;
+  
   }
 
-  50% {
-    filter:
-      drop-shadow(0 0 2px rgba(255, 92, 201, 0.7))
-      drop-shadow(0 0 15px rgba(255, 220, 170, 0.45))
-      drop-shadow(0 0 30px rgba(255, 220, 170, 0.2));
-  }
+
+
 }
 
 
-@keyframes glowBreath-light {
-  0%,
-  82%,
-  100% {
-    filter:
-      drop-shadow(0 0 2px rgba(255, 78, 196, 0.2))
-      drop-shadow(0 0 6px rgba(255, 220, 170, 0.1));
+
+@media screen and (max-width:1600px) {
+
+  .s2-pc {
+    display: none;
   }
 
-  50% {
-    filter:
-       drop-shadow(0 0 2px rgba(255, 92, 201, 0.5))
-      drop-shadow(0 0 10px rgba(255, 220, 170, 0.45))
-      drop-shadow(0 0 30px rgba(255, 220, 170, 0.2));
-  }
-
-  10% {
-    filter:
-      drop-shadow(0 0 2px rgba(255, 78, 196, 0.2))
-      drop-shadow(0 0 6px rgba(255, 220, 170, 0.1));
-  }
+  .s2-m {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
+
+.s2-light-m {
+  position: absolute;
+
+  width: 13.2769%;
+  height: 41.1148%;
+
+  top: 45.5%;
+  left: 45.15%;
+
+  animation: glowBreath 3s ease-in-out infinite;
+  mix-blend-mode: plus-lighter;
+
+  z-index: 2;
+}
+
+
+
+.s2-bg-wrap-m {
+  position: relative;
+
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  touch-action: pan-x pan-y;
+
+-webkit-mask-image: linear-gradient(
+  to bottom,
+  transparent 0%,
+  rgba(0, 0, 0, 0.15) 8%,
+  rgba(0, 0, 0, 0.6) 18%,
+  #000 30%,
+  #000 100%
+);
+
+mask-image: linear-gradient(
+  to bottom,
+  transparent 0%,
+  rgba(0, 0, 0, 0.15) 8%,
+  rgba(0, 0, 0, 0.6) 18%,
+  #000 30%,
+  #000 100%
+);
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.s2-bg-wrap-m::-webkit-scrollbar {
+  display: none;
+}
+
+
+.s2-bg-size-m {
+  position: relative;
+  width: max(100%, calc(100vh * 1.0596));
+}
+
+
+/* BG */
+.s2-bg-m {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+/* LOCAL */
+.s2-local-m {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+
+  z-index: 1;
+}
+
+
+.fg-wp {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+
+  z-index: 10;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    180deg,
+    rgba(14, 88, 177, 0) 0%,
+    rgba(14, 88, 177, 0.50) 80.91%,
+    rgba(14, 88, 177, 0) 100%
+  );
+
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
+.fg-wp.fg-hidden {
+  opacity: 0;
+}
+
+
+.s2-finger {
+  position: absolute;
+
+  width: clamp(290px, 80vw, 490px);
+  height: auto;
+
+  pointer-events: none;
+
+  opacity: 1;
+  transition: opacity 0.35s ease;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 11;
+}
+
+.s2-finger.fg-hidden {
+  opacity: 0;
+}
+
+.s2-p-txt-m {
+    position: absolute;
+
+    right: 20px;
+    bottom: clamp(20px, 8vw, 60px);
+
+    width: auto;
+    height: auto;
+
+    margin: 0;
+
+    color: #fff;
+    text-align: right;
+
+    text-shadow: 0 0 3.806px #000;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: clamp(12px, -12vw, 12px);
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 1.776px;
+
+    z-index: 10;
+    white-space: nowrap;
+  
+  }
+
+
+}
+
+@media screen and (max-width:768px) {
+
+.s2-bg-m {
+  display: block;
+margin-top: 25vw;
+  width: 100%;
+  height: auto;
+}
+
+}
+
+
+
+@keyframes cityGlow {
+
+    0% {
+        opacity: 0.30;
+    }
+
+    25% {
+        opacity: 0.36;
+    }
+
+    50% {
+        opacity: 0.48;
+    }
+
+    68% {
+        opacity: 0.60;
+    }
+
+    76% {
+        opacity: 0.58;
+    }
+
+    100% {
+        opacity: 0.30;
+    }
+}
+
+[data-aos="zoom-out"] {
+    filter: blur(80px) !important;
+    opacity: 0;
+}
+
+[data-aos="zoom-out"].aos-animate {
+    filter: blur(0px) !important;
+    opacity: 1;
+}
+
+
+
 
 
 
 
 </style>
+
 <script setup>
-import { computed, getCurrentInstance, ref ,inject} from 'vue';
+import { computed, getCurrentInstance, ref, inject, onMounted, nextTick } from 'vue';
+
 const globals = getCurrentInstance().appContext.config.globalProperties;
 
 const isMobile = computed(() => globals.$isMobile());
 
-const smoothScroll = inject('smoothScroll')
+const smoothScroll = inject('smoothScroll');
+
 const scrollTo = (el) => {
   smoothScroll({
     scrollTo: document.querySelector(el)
-  })
-}
+  });
+};
+
+
+/* =========================
+   FG 點擊隱藏
+========================= */
+
+const fgVisible = ref(true);
+
+let fgTimer = null;
+
+const handleFgInteraction = () => {
+
+  // 立即隱藏
+  fgVisible.value = false;
+
+  // 重新計時
+  clearTimeout(fgTimer);
+
+  fgTimer = setTimeout(() => {
+    fgVisible.value = true;
+  }, 1500);
+};
+
+onMounted(async () => {
+  await nextTick();
+
+  if (window.innerWidth <= 1600) {
+    const wrap = document.querySelector('.s2-bg-wrap-m');
+
+    if (wrap) {
+      wrap.scrollLeft = (wrap.scrollWidth - wrap.clientWidth) / 2;
+    }
+  }
+});
+
+
 </script>

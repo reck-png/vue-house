@@ -1,6 +1,12 @@
 <template>
-  <div id="order" class="order relative text-center ">
-    <div class="order-section">
+  <div id="order" class="order relative text-center " >
+
+    <div class="order-section" data-aos="fade-up"
+    data-aos-duration="300"
+    data-aos-easing="ease"
+    data-aos-once="false"
+    data-aos-mirror="true">
+ 
       <div class="order-title-style">
         <div class="order-title-line">
           <div class="order-title" v-if="info.order.title" v-html="info.order.title"></div>
@@ -9,9 +15,14 @@
     <div class="order-subTitle text-center" v-if="info.order.subTitle"
         v-html="$isMobile() && info.order.subTitle_mo ? info.order.subTitle_mo : info.order.subTitle">
       </div>
-<!--  -->
       <!-- FORM -->
-      <div class="form mx-auto relative flex justify-center">
+      <div
+  class="form mx-auto relative flex justify-center"
+  data-aos="fade"
+  data-aos-delay="450"
+  data-aos-duration="1200"
+  data-aos-once="true"
+>
 
         <div class="left h-full flex flex-col justify-between items-center">
           <div class="name">
@@ -138,18 +149,27 @@
 
       </div>
 
-      <ContactInfo />
     </div>
-
+<ContactInfo />
     <Map v-if="info.address" />
 
-    
+
     <HouseInfo />
 
   </div>
 </template>
 <style lang="scss">
 @import "@/assets/style/function.scss";
+
+
+.order {
+  input,
+  textarea,
+  button,
+  select {
+    font-family: inherit;
+  }
+}
 
 .order {
   background: transparent !important;
@@ -193,6 +213,7 @@ $o-title-c: #A30C24; //.order-title
 
 
   .order-title-style{
+  
   display: flex;
   padding-bottom: 0px;
   flex-direction: column;
@@ -224,10 +245,10 @@ $o-title-c: #A30C24; //.order-title
 
   .order-title {
   color: #FFF;
-  font-family: "Noto Sans";
+  font-family: "Noto Serif TC";
   font-size: 24px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 900;
   line-height: normal;
   letter-spacing: 4.16px;
   z-index: 6;
@@ -273,7 +294,7 @@ $o-title-c: #A30C24; //.order-title
     color: #ffffff;
     opacity: 0.5;
     letter-spacing: 1px;
-    font-weight: 100;
+    font-weight: 700;
     padding-left: 1em;
     padding-top: 1em;
     }
@@ -327,27 +348,26 @@ $o-title-c: #A30C24; //.order-title
     }
 
      .dynamic-row {
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0em;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
 
   > span {
-    width: 100%;
-    min-width: 0;
+    width: auto;
+    min-width: 8em;
     padding-left: 1.5em;
-    padding-top: 0.8em;
+    padding-top: 0;
   }
 
   > input {
     width: calc(100% - 3em);
-    height: 2em;
-    margin: 1em auto 1em;
-    padding-left: 0em; // ⭐ 加這個
+    margin: 1em auto;
   }
 
   :deep(.custom-select) {
-    width: calc(100% - 3em);
-    margin: 0 auto 1em;
+    flex: 1;
+    min-width: 0;
+    margin: 0;
   }
 }
 
@@ -376,36 +396,38 @@ $o-title-c: #A30C24; //.order-title
   }
 
   .send {
-    font-size: 20px;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 700;
+    font-size: sizem(10px);
     border-radius: 1px;
 
   background:
   radial-gradient(
     ellipse at 36% -20%,
-    #e93fff 0%,
-    #9b66b9 10%,
-    #003c80 55%,
+    #b520c9 0%,
+    #6c2f8f 10%,
+    #0f0a38 55%,
     transparent 75%
   ),
 
   radial-gradient(
     ellipse at -100% 100%,
   
-    #5893FF 22%,
-    #00446E 55%,
+    #693a88 22%,
+    #1b0657 55%,
     transparent 75%
   ),
   radial-gradient(
     ellipse at 180% 120%,
-    #AD3DB7 0%,
-    #5893FF 22%,
-    #00446E 55%,
+    #8a3db7 0%,
+    #733092 22%,
+    #2a006e 55%,
     transparent 75%
   ),
-  #00446E;
+  #4b0666;
     
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    padding: .7em 0;
+    padding: 1.1em 0;
     letter-spacing: 0.2em;
     line-height: 1.5;
     text-indent: 0.5em;
@@ -417,7 +439,7 @@ $o-title-c: #A30C24; //.order-title
     position: relative;
     transition: transform .5s;
     margin-bottom: 0em;
-    font-weight: 400;
+    font-weight: 700;
     &:hover{transform: scale(1.03);}
   }
   .send-load{color: #ffffff;}
@@ -493,7 +515,7 @@ $o-title-c: #A30C24; //.order-title
 }
 
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:1600px) {
   .order-section {
     min-height: sizem(800);
     position: relative;
@@ -591,11 +613,12 @@ $o-title-c: #A30C24; //.order-title
   
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width:1600px) {
   .order {
+    padding-top: size(240);
     .form {
       .row {
-        background: rgba(64, 106, 161, 0.466);
+        background: rgba(255, 255, 255, 0.123);
       }
     }
   }
@@ -608,7 +631,7 @@ $o-title-c: #A30C24; //.order-title
 <script setup>
 import Policy from "@/section/form/policy.vue"
 import ContactInfo from "@/section/form/contactInfo.vue"
-//import Map from "@/section/form/map.vue"
+import Map from "@/section/form/map.vue"
 import HouseInfo from "@/section/form/houseInfo.vue"
 /*自訂下拉選單*/
 import CustomSelect from "@/section/CustomSelect.vue"
@@ -619,6 +642,7 @@ import { cityList, renderAreaList } from "@/info/address.js"
 import { ref, reactive, watch, computed, getCurrentInstance } from "vue"
 import { VueRecaptcha } from "vue-recaptcha"
 import { useToast } from "vue-toastification"
+import AOS from "aos";
 
 const toast = useToast()
 const sending = ref(false)

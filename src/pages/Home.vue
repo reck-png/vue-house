@@ -55,10 +55,15 @@
 ========================= */
 
 .s1,
-.s2,
 .order {
   position: relative;
   z-index: 1;
+}
+
+.s2{
+  position: relative;
+  margin-top: -10vw;
+  z-index: 0;
 }
 
 .light-effect {
@@ -74,9 +79,14 @@
    RWD
 ========================= */
 
-@media(max-width: 767px) {
+@media(max-width:1600px) {
+  .s2{
+  position: relative;
+  margin-top: -45vh;
+  z-index: 0;
+}
 
-  .bg {
+ .bg {
     display: none;
   }
 
@@ -95,6 +105,15 @@
     z-index: 0;
     pointer-events: none;
   }
+}
+
+@media(max-width: 767px) {
+
+ .s2{
+  position: relative;
+  margin-top: -60vh;
+  z-index: 0;
+}
 
 
 }

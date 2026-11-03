@@ -1,8 +1,14 @@
 <template>
-  <div>
-  <div class="contact-info-img relative">
+<div class="contact-wrapper">
+  <div class="contact-info-img relative" >
 </div>
-  <div class="contact-info mx-auto  flex flex-col items-center justify-between">
+  <div class="contact-info mx-auto  flex flex-col items-center justify-between" data-aos="fade-in"
+      data-aos-offset="20"
+      data-aos-delay="100"
+      data-aos-duration="1000"
+      data-aos-easing="ease-out-cubic"
+      data-aos-once="false"
+      data-aos-mirror="false">
    <!--    --><div class="logo">
       <img src="@/section/s1/logo.svg" alt="" data-aos="zoom-out" data-aos-delay="300" data-aos-duration="1000"/>
     </div>
@@ -37,44 +43,68 @@
       </div>
     </div>
     <div class="flex justify-between w-full contact-item-box no-gap address" v-if="info.address">
-      <div class="flex contact-item justify-center items-center add">
-        <div><span v-if="info.address1">{{ info.address1 }}：</span>{{ info.address }}</div>
-      </div>
+      <div
+  class="flex contact-item justify-center items-center add"
+  @mousemove="handleMouseMove"
+  @mouseenter="handleMouseEnter"
+  @mouseleave="handleMouseLeave"
+>
+  <div>
+    <span v-if="info.address1">{{ info.address1 }}：</span>
+    {{ info.address }}
+  </div>
+</div>
       <div class="flex contact-item justify-center items-center googlemap"
         @click="modalOpen = true; modalType = 'gmap'">
-        <img src="//h35.banner.tw/img/form/gmap.svg" alt="導航 GoogleMap" srcset="" />
+        <img class="local-icon" src="@/section/icon/local.svg" alt="導航 GoogleMap" srcset="" />
         <div>導航 GoogleMap</div>
       </div>
     </div>
 
   </div>
-</div>
 
   <!-- Mobile contact info -->
-    <div v-if="$isMobile()" class="mo-contact-info">
-    <div class="flex  flex-col contact-item justify-center items-center" 
-      @click="modalOpen = true; modalType = 'phone'" v-if="info.phone">
-      <img src="@/section/icon/line-md_phone-filled.svg" alt="撥打電話" srcset="" />
-      <div>撥打電話</div>
-    </div>
-    <div class="flex  flex-col contact-item justify-center items-center"
-      @click="modalOpen = true; modalType = 'fb'">
-      <img src="@/section/icon/ri_messenger-line.svg" alt="FB 諮詢" srcset="" />
-      <div>FB 諮詢</div>
-    </div>
-    <div class="flex  flex-col contact-item justify-center items-center" @click="scrollTo('.order')">
-      <img src="@/section/icon/iCON.svg" alt="立即預約" srcset="" />
-      <div>立即預約
-      </div>
-    </div>
-    <!--
-    <div class="flex flex-1 flex-col contact-item justify-center items-center"
-      @click="modalOpen = true; modalType = 'gmap'"  v-if="info.address" >
-      <img src="//h35.banner.tw/img/form/gmap.svg" alt="地圖導航" srcset="" />
-      <div>地圖導航</div>
-    </div>
-  -->
+<div v-if="$isMobile()" class="mo-contact-info">
+
+  <!-- 電話 -->
+  <div
+    class="flex flex-col contact-item justify-center items-center"
+    @click="modalOpen = true; modalType = 'phone'"
+    v-if="info.phone"
+  >
+    <span class="gradient-icon phone-icon"></span>
+    <div>撥打電話</div>
   </div>
+
+  <!-- FB 諮詢 -->
+  <div
+    class="flex flex-col contact-item justify-center items-center"
+    @click="modalOpen = true; modalType = 'fb'"
+  >
+    <span class="gradient-icon messenger-icon"></span>
+    <div>FB 諮詢</div>
+  </div>
+
+  <!-- 立即預約 -->
+  <div
+    class="flex flex-col contact-item justify-center items-center"
+    @click="scrollTo('.order')"
+  >
+    <span class="gradient-icon reserve-icon"></span>
+    <div>立即預約</div>
+  </div>
+
+  <!-- 地圖導航 -->
+  <div
+    class="flex flex-1 flex-col contact-item justify-center items-center mobile-googlemap"
+    @click="modalOpen = true; modalType = 'gmap'"
+    v-if="info.address"
+  >
+    <span class="gradient-icon map-icon"></span>
+    <div>地圖導航</div>
+  </div>
+
+</div>
 
   <!-- Modal -->
   <input type="checkbox" v-model="modalOpen" id="contact-modal" class="modal-toggle" />
@@ -115,9 +145,10 @@
         }}</div>
     </div>
   </div>
-
+</div>
 
 </template>
+
 
 <style lang="scss">
 @import "@/assets/style/function.scss";
@@ -126,16 +157,28 @@
 .hover\:bg-color2:hover{background-color:#002421;}
 
 
+.contact-wrapper {
+  
+  font-weight: 300 !important;
+
+  input,
+  textarea,
+  button,
+  select {
+    font-family: inherit;
+  }
+}
+
 .contact-info-img{
   height: 0;z-index: 52;
 }
 .contact-info {
   margin-bottom: 48px;
-  padding: 5em 0 2.5em 0;
+  padding: 2em 0 2.5em 0;
   position: relative;
   z-index: 50;
   width: clamp(768px, 90vw, 1000px);
-  font-size:18px;
+  font-size:16px;
 
   .logo {position: relative;
     display: none;
@@ -151,7 +194,9 @@
   }
 
   .contact-item-box {
-    font-family: "Chiron Hei HK", sans-serif;
+    
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 700;
     position: relative;
     margin-top:0em;
     gap: 1.8em;
@@ -159,12 +204,22 @@
     // min-width: 680px;
 
  .contact-item {
+
+img {
+  width: 27px;
+  height: 27px;
+  max-width: 27px;
+  max-height: 27px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
   position: relative;
   overflow: hidden;
   gap:1em;
 
   border-radius: 12px;
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 0.1px solid rgba(245, 184, 240, 0.5);
 
   // 原本透白
   background: linear-gradient(
@@ -276,52 +331,80 @@
   }
 }
     &.address {
-        display: none;
-        background-color: #eee;
-        border-radius: 16px;
+      margin-top: 1.8em;
+  background: transparent;
+  border-radius: 0;
 
-      .contact-item {
-        &.add{
-          background: none;
-        color: #000;
-        cursor: text;
-        flex:2.10;
+  .contact-item {
 
-        }
-        /*
-        background: none;
-        z-index: 0;
-        position: relative;
-        flex:2.17;
-        // border-radius: 999px 0 0 999px;
-      //  max-width: 9999px;
-        justify-content: center;
+    // 地址
+    &.add {
+      color: #fff;
+      cursor: default;
+      flex: 2.10;
+    }
 
-        &::before {
-          content: "";
-          position: absolute;
-          width: 8em;
-          height: 100%;
-          background-color: transparent;
-          left: calc(100% - 4em);
-          z-index: -1;
-        }
-        div{
-          text-indent:0em;
-          white-space: normal;
-          padding: 0 1em;
-        }
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.178) 0%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
 
+    box-shadow:
+      1.127px 4.508px 43.168px 0
+      rgba(255, 255, 255, 0.2) inset;
 
-      &.googlemap {
-        flex:1;
-  //    background-color: #9B1E44;
+    backdrop-filter: blur(2.3105762004852295px);
+
+    border-radius: 12px 0px 0px 12px;
+
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+
+    flex: 2.17;
+    max-width: 9999px;
+    justify-content: center;
+
+    // 保留原本地址文字排列
+    div {
+      text-indent: 0;
+      white-space: normal;
+      padding: 0 1em;
+    }
+
+    // GoogleMap
+    &.googlemap {
+      border-radius: 0px 12px 12px 0px;
+      flex: 1;
+      background:
+  radial-gradient(
+    ellipse at 36% -20%,
+    #b520c9 0%,
+    #6c2f8f 10%,
+    #0f0a38 55%,
+    transparent 75%
+  ),
+
+  radial-gradient(
+    ellipse at -100% 100%,
+  
+    #693a88 22%,
+    #1b0657 55%,
+    transparent 75%
+  ),
+  radial-gradient(
+    ellipse at 180% 120%,
+    #8a3db7 0%,
+    #733092 22%,
+    #2a006e 55%,
+    transparent 75%
+  ),
+  #4b0666;
       border-left-width: 0;
-      //  color: #fff;
-      }
-    */
     }
-    }
+  }
+}
     &.no-gap {
       gap: 0 !important;
     }
@@ -331,26 +414,25 @@
   img{filter: invert(0%) sepia(1%) saturate(4%) hue-rotate(348deg) brightness(99%) contrast(101%);
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1020px) {
 
   .mo-contact-info {
-  position: fixed;
-  z-index: 99;
-  bottom: 0;
-  left: 0;
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    left: 0;
 
-  width: 100%;
-  height: 80px;
+    width: 100%;
+    height: 80px;
 
-  /* ★ 固定三欄橫排 */
-  display: grid !important;
-  grid-template-columns: repeat(3, 70px);
-  grid-template-rows: 1fr;
+    display: grid !important;
+    grid-template-columns: repeat(4, 48px);
+    grid-template-rows: 1fr;
 
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
 
-  column-gap: clamp(20px, 80vw, 40px);
+    column-gap: clamp(20px, 60vw, 40px);
 
     box-sizing: border-box;
 
@@ -360,29 +442,33 @@
     background:
       radial-gradient(
         ellipse 200% 220% at 35% -10%,
-        #3361dfc4 2%,
-        rgba(135, 54, 146, 0.747) 15%,
-        rgb(19, 44, 77) 30%,
+        rgb(95, 34, 57)  2%,
+        rgb(102, 43, 87)  15%,
+        rgb(45, 26, 61) 30%,
         transparent 85%
       ),
       radial-gradient(
         ellipse 80% 180% at -10% 110%,
-        rgba(60, 110, 190, 0.5) 0%,
-        rgba(0, 55, 100, 0.6) 45%,
+        rgba(87, 49, 117, 0.5) 0%,
+        rgba(32, 20, 65, 0.6) 45%,
         transparent 80%
       ),
       radial-gradient(
         ellipse 80% 180% at 80% 70%,
-        rgb(81, 125, 207) 0%,
-        rgba(0, 55, 100, 0.6) 45%,
+        rgb(85, 28, 50) 0%,
+        rgba(36, 23, 80, 0.6) 45%,
         transparent 80%
       );
+
 
     overflow: hidden;
     isolation: isolate;
 
 
-    /* noise */
+    /* =========================
+       noise
+       ========================= */
+
     &::after {
       content: "";
       position: absolute;
@@ -399,94 +485,182 @@
 
 
     /* =========================
-       三個按鈕
+       手機 bar 按鈕
        ========================= */
 
     .contact-item {
-  position: relative;
-  z-index: 1;
+      position: relative;
+      z-index: 1;
 
-  width: sizem(70px);
-  min-width: 0;
-  max-width: none;
+      width: sizem(64px);
+      min-width: 0;
+      max-width: none;
 
-  height: auto;
+      height: auto;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-  box-sizing: border-box;
+      box-sizing: border-box;
 
-  font-size: sizem(16px);
-  font-weight: 400;
-  color: #fff;
+      font-size: clamp(10px, 4vw, 12px);
+  
 
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-  backdrop-filter: none;
+      color: transparent;
 
-  img {
-    position: static;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      backdrop-filter: none;
 
-    width: sizem(27px);
-    height: sizem(27px);
+      /* ★ 文字漸層 */
+      background: #ffcfe9;
 
-    max-width: sizem(27px);
-    max-height: sizem(27px);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
 
-    margin: 0 0 sizem(5px) 0;
+      cursor: pointer;
 
-    transform: none;
 
-    filter: brightness(0) invert(1);
+      /* =========================
+         icon 漸層
+         ========================= */
+
+      .gradient-icon {
+        display: block;
+
+        width: sizem(27px);
+        height: sizem(27px);
+
+        margin: 0 0 sizem(5px) 0;
+
+        background: #ffcfe9;
+
+        -webkit-mask-position: center;
+        mask-position: center;
+
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+
+        -webkit-mask-size: contain;
+        mask-size: contain;
+      }
+
+
+      /* 電話 icon */
+      .phone-icon {
+        -webkit-mask-image: url("@/section/icon/line-md_phone-filled.svg");
+        mask-image: url("@/section/icon/line-md_phone-filled.svg");
+      }
+
+
+      /* Messenger icon */
+      .messenger-icon {
+        -webkit-mask-image: url("@/section/icon/ri_messenger-line.svg");
+        mask-image: url("@/section/icon/ri_messenger-line.svg");
+      }
+
+
+      /* 立即預約 icon */
+      .reserve-icon {
+        -webkit-mask-image: url("@/section/icon/iCON.svg");
+        mask-image: url("@/section/icon/iCON.svg");
+
+        width: sizem(32px);
+        height: sizem(32px);
+      }
+
+
+      /* 地圖 icon */
+      .map-icon {
+        -webkit-mask-image: url("@/section/icon/local.svg");
+        mask-image: url("@/section/icon/local.svg");
+
+        width: sizem(32px);
+        height: sizem(32px);
+      }
+
+
+      /* =========================
+         文字
+         ========================= */
+
+      div {
+        text-indent: 0;
+        white-space: nowrap;
+
+        background: inherit;
+
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+
+    /* =========================
+       預約 / 地圖 icon 尺寸
+       ========================= */
+
+    .contact-item .reserve-icon,
+    .contact-item .map-icon {
+      width: sizem(32px);
+      height: sizem(32px);
+      max-width: sizem(32px);
+      max-height: sizem(32px);
+    }
   }
 
-  div {
-    text-indent: 0;
-    white-space: nowrap;
-  }
-}
-  }
 
-   .contact-info {
+  /* =========================
+     原本 contact-info
+     ========================= */
+
+  .contact-info {
     width: 92%;
     margin-bottom: 32px;
-    min-width:0;
-    // height: sizem(400);
-    // border-radius: sizem(68);
-    //padding: sizem(0) sizem(0);
+    min-width: 0;
+    border: 0;
+
     padding: sizem(80) 0 sizem(80) 0;
     margin-top: sizem(0);
+
     position: relative;
     justify-content: space-between;
-  background-size: sizem(450) auto;
+
+    background-size: sizem(450) auto;
 
     .logo {
       width: sizem(257);
-    margin: sizem(00) auto sizem(50) auto;
-     // margin-bottom: sizem(47);
+      margin: sizem(0) auto sizem(50) auto;
     }
 
     .contact-item-box {
       position: relative;
+      height: 240px;
       margin-top: sizem(0);
-      gap: sizem(15);
+      gap: 20px;
       flex-direction: column;
-    width: sizem(310);
+      width: 90vw;
+      max-width: 400px;
 
       .contact-item {
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.178) 0%, rgba(255, 255, 255, 0.05) 100%);
-        box-shadow: 1.127px 4.508px 43.168px 0 rgba(255, 255, 255, 0.2) inset;
+  
+
+        box-shadow:
+          1.127px 4.508px 43.168px 0
+          rgba(255, 255, 255, 0.2) inset;
+
         padding: 1.1em sizem(80);
-        font-size: sizem(16);
+        font-size: clamp(10px, 4vw, 12px);
         max-width: 100%;
         white-space: nowrap;
         margin: 0;
 
-        img {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+        img {
           max-width: sizem(27);
           height: auto;
           max-height: sizem(27);
@@ -495,16 +669,16 @@
           left: calc(50% - 5em);
           transform: translateX(-50%);
         }
-        div{
+
+        div {
           text-indent: 2em;
         }
-/*
+
         &.address {
-          font-size: sizem(15);
+          font-size: clamp(12px, 4vw, 16px);
           border-radius: sizem(0) sizem(0) 0 0;
           padding: 1.1em 0;
-          margin-top: sizem(25);
-          //font-size: .9em;
+          margin-top: sizem(25px);
 
           &::before {
             width: 100%;
@@ -513,29 +687,91 @@
             left: 0;
           }
         }
-        &.address+div {
+
+        &.address + div {
           border-radius: 0 0 sizem(0) sizem(0);
         }
-      &.googlemap {
-        border-top-width: 0;
-      border-left-width:0;
-      }
-*/
-      }
-      &.address {
-        margin:sizem(15) 0 0 0 ;
-        .contact-item {
-          &.add{text-align: center;
-          div{text-indent: 0em;}
-          }
+
+        &.googlemap {
+          border-top-width: 0;
+          border-left-width: 0;
+          padding-left: 2em;
         }
       }
+
+      &.address {
+  // 地址區塊整體位置
+  margin: sizem(25) 0 0 0;
+
+  // 地址區塊高度
+  height: auto;
+
+  // 地址與 GoogleMap 排列
+  
+  flex-direction: column;
+  gap: sizem(10);
+
+  .contact-item {
+    &.add {
+      border-radius: 12px 12px 0px 0px;
+      width: 100%;
+      flex: none;
+      min-height: sizem(65);
+      padding: sizem(24) sizem(24);
+
+      text-align: center;
+      white-space: normal;
+
+      div {
+        text-indent: 0;
+        white-space: normal;
+      }
+    }
+
+    &.googlemap {
+      width: 100%;
+      flex: none;
+      min-height: sizem(55);
+      border-radius: 0px 0px 12px 12px;
+      padding: sizem(12) 0;
+    }
+  }
+}
 
       &.no-gap {
         gap: 0 !important;
       }
     }
   }
+
+.mo-contact-info .messenger-icon {
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+}
+
+.mo-contact-info .phone-icon {
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+}
+
+
+  .mo-contact-info .mobile-googlemap .map-icon {
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+}
+
+.mo-contact-info .reserve-icon {
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+}
 
 }
 </style>

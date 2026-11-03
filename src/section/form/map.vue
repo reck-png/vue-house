@@ -17,9 +17,9 @@
     }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:1600px) {
     .gmap {
-        height: size-m(354);
+        height: size-m(540);
     }
 }
 </style>

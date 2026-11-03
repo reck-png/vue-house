@@ -25,9 +25,11 @@
     </div>
 
     <div class="h1-box-m">
-      <p class="MRT-m">正南屯捷運 出站即到家</p>  
-      <p class="park-m">森林公園・鋼骨地標 2~3房</p>  
+      <p class="MRT-m">正南屯捷運<br>出站即到家</p>  
     </div>
+    <p class="park-m">森林公園・鋼骨地標 2~3房</p>  
+
+    
 
 </div>
     
@@ -46,13 +48,15 @@
   font-weight: 500;
   margin-bottom:190px;
   
-  @media screen and (min-width:768px) {
+  @media screen and (min-width:1601px) {
     height: auto;
     
   
 
 .Coming-soon-m,
-.h1-box-m{
+.h1-box-m,
+.park-m
+{
     display:none;
 }
   
@@ -66,14 +70,16 @@
     align-items: center; 
     width: auto ;
     height: auto;
-    gap: clamp(4px, 2vw, 12px);
+    gap: clamp(60px, 2vw, 122px);
     z-index: 3;
+    
+    
     
   }
 
   .Coming-soon {
     position: relative;
-    width: clamp(320px, 50vw, 951px);
+    width: clamp(320px, 80vw, 920px);
     height: fit-content;
     object-fit: Contain;
     margin: clamp(148px, 20vw, 240px) auto clamp(8px, 5vw, 24px) auto;
@@ -83,7 +89,7 @@
 
  .h1-box {
   position: relative;
-  width: clamp(280px, 40vw, 700px);
+  width: clamp(280px, 60vw, 700px);
   box-sizing: border-box;
 
   display: flex;
@@ -101,6 +107,7 @@
   box-shadow: 0 0 25.791px 0 rgba(255, 255, 255, 0.25);
 
   z-index: 3;
+  animation: glowBreath 6s ease-in-out infinite;
 }
 
 
@@ -110,8 +117,8 @@
   white-space: nowrap;
   flex-shrink: 0;
 
-  font-family: "Noto Serif TC Black", serif;
-  font-weight: 900;
+  font-family: "Noto Serif TC";
+  font-weight: 700;
   font-size: clamp(18px, 2vw, 28px);
   line-height: 1.2;
   letter-spacing: clamp(1px, 0.58vw, 8.295px);
@@ -151,61 +158,122 @@
 
 
 
-@media screen and (max-width:767px){
+@media screen and (max-width:1600px) {
 
     .Coming-soon,
-    .Local,
-    .LOGO{
+    .h1-box
+    {
         display:none;
     }
 
 
     .Coming-soon-m,
-    .Coming-soon-TC-m,
-    .Local-m,
-    .LOGO-m{
+    .h1-box-m
+ {
         display:block;
     }
 
-    .s1{margin-bottom: 132px;}    
+    .s1{margin-top: 134px;}    
 
 
 
-
-
-    .Coming-soon-m{
+    .H1 {
+      display: flex;
+      flex-direction: column;
       position: relative;
-      width: clamp(240px, 100vw, 880px);
-      height: fit-content;
-      object-fit: Contain;
-      margin-top: 134px;
-      margin-bottom: 24px;
-      z-index: 3;
-      animation: glowBreath 3s ease-in-out infinite;
-  }
-
-
-    .Local-m{
-      position: relative;
-      width: clamp(264px, 60vw, 660px);
-      height: fit-content;
-      object-fit: Contain;
-      margin-top: 64px;
+      justify-content: center;
+      align-items: center; 
+      width: auto ;
+      height: auto;
+      gap: clamp(18px, 2vw, 200px);
       z-index: 3;
     }
 
-    .LOGO-m{
+   .Coming-soon-m {
+  position: relative;
+  display: block;
+  width: clamp(240px, 90vw, 640px);
+  height: auto;
+  object-fit: contain;
+
+  margin-top: 134px;
+  margin-bottom: 24px;
+
+  z-index: 3;
+  animation: glowBreath 3s ease-in-out infinite;
+}
+
+
+    .h1-box-m {
       position: relative;
-      width: clamp(256px, 56vw, 560px);
-      height: fit-content;
-      object-fit: contain;
-      margin-top: 16px;
-      margin-bottom: 0px;
+      width: 100%;
+      box-sizing: border-box;
+
+      display: flex;
+      padding: clamp(16px, 1.75vw, 25px)
+              clamp(12px, 3vw, 45px)
+              clamp(18px, 2.57vw, 37px);
+
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(5px, 0.7vw, 10px);
+
+      border-radius: 2.203px;
+border-top: 0.124px solid rgba(255, 255, 255, 0.00);
+border-bottom: 0.124px solid rgba(255, 255, 255, 0.00);
+background: rgba(255, 139, 247, 0.04);
+box-shadow: 0 0 15.224px 0 rgba(255, 145, 147, 0.25);
+
       z-index: 3;
-
-
+      animation: glowBreath 6s ease-in-out infinite;
     }
 
+
+    .MRT-m {
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  font-family: "Noto Serif TC", serif;
+font-size: clamp(11px, 80vw, 22px);
+font-style: normal;
+font-weight: 700;
+line-height: 29.824px; /* 130.909% */
+letter-spacing: 4.101px;
+
+  text-align: center;
+
+  background: linear-gradient(
+    207deg,
+    #F1E6FF -340.98%,
+    #5D1C73 -25.06%,
+    #FFF 80.24%,
+    #E19DE8 322.76%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.park-m {
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  color: #FFD7F2;
+font-family: "Noto Serif TC";
+font-size: clamp(8px, 80vw, 16px);
+font-style: normal;
+font-weight: 500;
+line-height: 24.101px; /* 166.667% */
+letter-spacing: 4.049px;
+
+  text-align: center;
+}
     
 
 }
