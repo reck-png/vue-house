@@ -9,9 +9,9 @@
       data-aos-easing="ease-out-cubic"
       data-aos-once="false"
       data-aos-mirror="false">
-   <!--    --><div class="logo">
+   <!--    <div class="logo">
       <img src="@/section/s1/logo.svg" alt="" data-aos="zoom-out" data-aos-delay="300" data-aos-duration="1000"/>
-    </div>
+    </div>-->
     <div class="flex justify-between w-full contact-item-box">
       <div
   class="flex contact-item justify-center items-center"
@@ -537,7 +537,7 @@ img {
 
         margin: 0 0 sizem(5px) 0;
 
-        background: #ffcfe9;
+        background: #ffffff;
 
         -webkit-mask-position: center;
         mask-position: center;

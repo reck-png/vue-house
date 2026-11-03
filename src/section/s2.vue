@@ -5,20 +5,15 @@
 
   <div
   class="s2-bg-wrap"
-  data-aos="zoom-out"
-  data-aos-offset="20"
-  data-aos-delay="520"
-  data-aos-duration="2000"
-  data-aos-easing="ease-out-cubic"
-  data-aos-once="false"
-  data-aos-mirror="false"
 >
 
-    <div class="s2-bg-size">
+    <div class="s2-bg-size"
+    >
         <img
         class="s2-bg"
         src="@/section/s2/s2-map.webp"
          >
+
 
          <img
     class="s2-light"
@@ -35,6 +30,15 @@
 
     
 </div>
+<img
+    class="s2-h1"
+    src="@/section/s2/s2-h1.svg"
+    data-aos="fade"
+    data-aos-offset="10"
+    data-aos-delay="5200"
+    data-aos-duration="2000"
+    data-aos-easing="ease-out-cubic"
+/>
 
 <!-- <p class="s2-p-txt">空拍實景經合成修飾示意</p> -->
 
@@ -65,6 +69,8 @@
         :class="{ 'fg-hidden': !fgVisible }"
       ></div>
 
+      
+
       <img
     class="s2-light-m"
     src="@/section/s2/s2-light.webp"
@@ -84,6 +90,11 @@
     src="@/section/s2/s2-finger.svg"
     :class="{ 'fg-hidden': !fgVisible }"
   >
+
+  <img
+    class="s2-h1-m"
+    src="@/section/s2/s2-h1.svg"/>
+
 <!--<p class="s2-p-txt-m">空拍實景經合成修飾示意</p>-->
 
 </div>
@@ -112,6 +123,23 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+}
+
+.s2-h1 {
+  position: absolute;
+
+  width: 40vw;
+  height: auto;
+
+  left: 0;
+  right: 0;
+  top: 22%;
+
+  margin: auto;
+
+  transform: translateY(-50%);
+
+  z-index: 3;
 }
 
   .s2-light {
@@ -154,7 +182,7 @@
 /* BG */
 .s2-bg {
   display: block;
-  margin-top: -25vw;
+  margin-top: -15vw;
   width: 100%;
   height: auto;
 }
@@ -210,6 +238,23 @@
   .s2-pc {
     display: none;
   }
+
+.s2-h1-m {
+  position: absolute;
+
+  width: 60vw;
+  height: auto;
+
+  left: 0;
+  right: 0;
+  top: 45vw;
+
+  margin: auto;
+
+  transform: translateY(-50%);
+
+  z-index: 3;
+}
 
   .s2-m {
   position: relative;
@@ -285,6 +330,7 @@ mask-image: linear-gradient(
 
 /* BG */
 .s2-bg-m {
+  margin-top: 15vw;
   display: block;
   width: 100%;
   height: auto;
@@ -321,7 +367,7 @@ mask-image: linear-gradient(
   background: linear-gradient(
     180deg,
     rgba(14, 88, 177, 0) 0%,
-    rgba(14, 88, 177, 0.50) 80.91%,
+    rgba(0, 0, 0, 0.5) 80.91%,
     rgba(14, 88, 177, 0) 100%
   );
 
@@ -345,7 +391,7 @@ mask-image: linear-gradient(
   opacity: 1;
   transition: opacity 0.35s ease;
 
-  top: 50%;
+  top: 70%;
   left: 50%;
 
   transform: translate(-50%, -50%);
@@ -390,9 +436,26 @@ mask-image: linear-gradient(
 
 .s2-bg-m {
   display: block;
-margin-top: 25vw;
+margin-top: 45vw;
   width: 100%;
   height: auto;
+}
+
+.s2-h1-m {
+  position: absolute;
+
+  width: 80vw;
+  height: auto;
+
+  left: 0;
+  right: 0;
+  top: 45%;
+
+  margin: auto;
+
+  transform: translateY(-50%);
+
+  z-index: 3;
 }
 
 }
