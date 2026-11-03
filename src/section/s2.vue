@@ -93,7 +93,18 @@
 
   <img
     class="s2-h1-m"
-    src="@/section/s2/s2-h1.svg"/>
+    src="@/section/s2/s2-h1-m.svg"/>
+
+    <img
+    class="s2-h1"
+    src="@/section/s2/s2-h1.svg"
+    data-aos="fade"
+    data-aos-offset="10"
+    data-aos-delay="5200"
+    data-aos-duration="2000"
+    data-aos-easing="ease-out-cubic"
+/>
+
 
 <!--<p class="s2-p-txt-m">空拍實景經合成修飾示意</p>-->
 
@@ -239,7 +250,7 @@
     display: none;
   }
 
-.s2-h1-m {
+.s2-h1 {
   position: absolute;
 
   width: 60vw;
@@ -247,7 +258,7 @@
 
   left: 0;
   right: 0;
-  top: 45vw;
+  top: 50vw;
 
   margin: auto;
 
@@ -330,7 +341,7 @@ mask-image: linear-gradient(
 
 /* BG */
 .s2-bg-m {
-  margin-top: 15vw;
+  margin-top: 25vw;
   display: block;
   width: 100%;
   height: auto;
@@ -434,9 +445,14 @@ mask-image: linear-gradient(
 
 @media screen and (max-width:768px) {
 
+.s2-h1 {
+    display: none;
+  }
+
+
 .s2-bg-m {
   display: block;
-margin-top: 45vw;
+margin-top: 70vw;
   width: 100%;
   height: auto;
 }
@@ -444,12 +460,12 @@ margin-top: 45vw;
 .s2-h1-m {
   position: absolute;
 
-  width: 80vw;
+  width: 55vw;
   height: auto;
 
   left: 0;
   right: 0;
-  top: 45%;
+  top: 47%;
 
   margin: auto;
 
