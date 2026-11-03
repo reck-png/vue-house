@@ -404,27 +404,28 @@ $o-title-c: #A30C24; //.order-title
   background:
   radial-gradient(
     ellipse at 36% -20%,
-    #b520c9 0%,
-    #6c2f8f 10%,
-    #0f0a38 55%,
+    #895091 0%,
+    #684174 10%,
+    #24183d 55%,
     transparent 75%
   ),
 
   radial-gradient(
     ellipse at -100% 100%,
-  
-    #693a88 22%,
-    #1b0657 55%,
+    #654777 22%,
+    #35234f 55%,
     transparent 75%
   ),
+
   radial-gradient(
     ellipse at 180% 120%,
-    #8a3db7 0%,
-    #733092 22%,
-    #2a006e 55%,
+    #80539a 0%,
+    #67427f 22%,
+    #38214f 55%,
     transparent 75%
   ),
-  #4b0666;
+
+  #34203f;
     
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     padding: 1.1em 0;
