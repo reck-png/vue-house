@@ -196,7 +196,7 @@
   .contact-item-box {
     
     font-family: 'Noto Serif TC', serif;
-    font-weight: 700;
+    font-weight: 500;
     position: relative;
     margin-top:0em;
     gap: 1.8em;
@@ -423,8 +423,7 @@ img {
     left: 0;
 
     width: 100%;
-    height: 80px;
-
+    height: 85px;
     display: grid !important;
     grid-template-columns: repeat(4, 48px);
     grid-template-rows: 1fr;
@@ -444,7 +443,7 @@ img {
         ellipse 200% 220% at 35% -10%,
         rgb(95, 34, 57)  2%,
         rgb(102, 43, 87)  15%,
-        rgb(45, 26, 61) 30%,
+        rgb(28, 10, 43) 30%,
         transparent 85%
       ),
       radial-gradient(
@@ -491,7 +490,7 @@ img {
     .contact-item {
       position: relative;
       z-index: 1;
-
+  
       width: sizem(64px);
       min-width: 0;
       max-width: none;
@@ -537,7 +536,7 @@ img {
 
         margin: 0 0 sizem(5px) 0;
 
-        background: #ffffff;
+        background: #ffcfe9;
 
         -webkit-mask-position: center;
         mask-position: center;
@@ -655,7 +654,7 @@ img {
           rgba(255, 255, 255, 0.2) inset;
 
         padding: 1.1em sizem(80);
-        font-size: clamp(10px, 4vw, 12px);
+        font-size: clamp(12px, 4vw, 14px);
         max-width: 100%;
         white-space: nowrap;
         margin: 0;
@@ -772,8 +771,12 @@ img {
   max-width: 32px !important;
   max-height: 32px !important;
 }
-
+.contact-info .contact-item-box.address .contact-item.add > div {
+  white-space: pre-line;
 }
+}
+
+
 </style>
 
 <script setup>

@@ -162,6 +162,7 @@
 @import "@/assets/style/function.scss";
 
 
+
 .order {
   input,
   textarea,
@@ -308,7 +309,7 @@ $o-title-c: #A30C24; //.order-title
       border: 0.1px solid #FFF;
       background: rgba(255, 255, 255, 0.01);
       box-shadow: 1px 4px 38.3px 0 rgba(255, 255, 255, 0.04) inset;
-      color: #def6ff;
+      color: #ffffff;
       display: flex;
       width: 100%;
       align-items: center;

@@ -199,7 +199,7 @@ onUnmounted(() => {
 
   cursor:pointer;
 
-  color:#024DB0;
+  color:#6e398d;
 
   transition:.25s;
 
@@ -208,7 +208,7 @@ onUnmounted(() => {
 
 .options li:hover{
 
-  background:#024DB0;
+  background:#6e398d;
 
   color:#fff;
 
@@ -216,7 +216,7 @@ onUnmounted(() => {
 
 .options li.active{
 
-  background:#024DB0;
+  background:#6e398d;
 
   color:#fff;
 
