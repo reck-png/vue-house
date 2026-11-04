@@ -246,7 +246,8 @@
 
 @media screen and (max-width:1600px) {
 
-  .s2-pc {
+  .s2-pc,
+  .s2-h1-m{
     display: none;
   }
 
@@ -458,6 +459,7 @@ margin-top: 70vw;
 }
 
 .s2-h1-m {
+  display: block;
   position: absolute;
 
   width: 55vw;

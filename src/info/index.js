@@ -56,7 +56,7 @@ export default {
           title: "購屋預算",
           type: "select",
           hold: "請選擇區間",
-          option: ["1,000萬以下", "1,000～1,500萬", "1,500萬以上"],
+          option: ["1,000～1,500萬", "1,500～2,000萬", "3,000萬以上"],
           nowrap: false, //選項過長時是否換行
           //bypass:true, //必填開啟使用
         },
