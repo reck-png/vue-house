@@ -37,14 +37,14 @@ export default {
       room_type: {
         title: "需求房型",
         hold: "請選擇房型",
-        option: ["兩房", "三房"],
+        option: [三房],
         bypass:true,
       },
       
       budget: {
         title: "購屋預算",
         hold: "請選擇區間",
-        option: ["1500~2000萬", "2000~2500萬", "2500~3000萬", "3000~3500萬"],
+        option: ["2000~2500萬", "2500~3000萬", "3000~3500萬"],
         bypass:true, //必填開啟使用
       },
       /*
