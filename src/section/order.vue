@@ -44,20 +44,20 @@
           </template>
           <!-- 動態 select end-->
 
-          <label class="row" v-if="requiredFields.city"><span>居住縣市<span>*</span></span>
-            <select class="select w-full rounded-none" v-model="formData.city">
-              <option value="" selected disabled>請選擇城市</option>
-              <option v-for="city in cityList" :value="city.value" :key="city">
-                {{ city.label }}
-              </option>
-            </select></label>
-          <label class="row" v-if="requiredFields.area"><span>居住地區<span>*</span></span>
-            <select class="select w-full rounded-none" v-model="formData.area">
-              <option value="" selected disabled>請選擇地區</option>
-              <option v-for="area in areaList" :value="area.value" :key="area">
-                {{ area.label }}
-              </option>
-            </select></label>
+           <label class="row"><span>居住縣市</span>
+          <select class="select w-full rounded-none" v-model="formData.city">
+            <option value="" selected disabled>請選擇城市</option>
+            <option v-for="city in cityList" :value="city.value" :key="city">
+              {{ city.label }}
+            </option>
+          </select></label>
+          <label class="row"><span>居住地區</span>
+          <select class="select w-full rounded-none" v-model="formData.area">
+            <option value="" selected disabled>請選擇地區</option>
+            <option v-for="area in areaList" :value="area.value" :key="area">
+              {{ area.label }}
+            </option>
+          </select></label>
         </div>
         <div class="right">
           <textarea :value="formData.msg" @input="(event) => (formData.msg = event.target.value)"
