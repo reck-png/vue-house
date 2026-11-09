@@ -1,0 +1,29 @@
+<!--
+src: 'https://tongyuan.tw/',
+title: '【統元極美｜統揚機構】一橋雙星 三重水漾｜官網',
+description: '統元極美：一橋雙星｜三重水漾，A2雙捷運三重站、CITYLINK、大都會公園｜質感18~32坪，電話：2989-2168地址：三重區光陽街68號',
+keyword: '統元極美,集美商圈,統揚建設,三重建案,三重預售',
+-->
+
+<!-- 基本 SEO 設定 -->
+<title>【統元極美｜統揚機構】一橋雙星 三重水漾｜官網</title>
+<meta name="description" content="統元極美：一橋雙星｜三重水漾，A2雙捷運三重站、CITYLINK、大都會公園｜質感18~32坪，電話：2989-2168地址：三重區光陽街68號">
+<meta name="keywords" content="統元極美,集美商圈,統揚建設,三重建案,三重預售">
+<link rel="canonical" href="https://tongyuan.tw/">
+
+<!-- Open Graph (社群分享 / LINE / Facebook) -->
+<meta property="og:locale" content="zh_TW">
+<meta property="og:type" content="website">
+<meta property="og:title" content="【統元極美｜統揚機構】一橋雙星 三重水漾｜官網">
+<meta property="og:description" content="統元極美：一橋雙星｜三重水漾，A2雙捷運三重站、CITYLINK、大都會公園｜質感18~32坪，電話：2989-2168地址：三重區光陽街68號">
+<meta property="og:site_name" content="【統元極美｜統揚機構】一橋雙星 三重水漾｜官網">
+<meta property="og:url" content="https://tongyuan.tw/">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="【統元極美｜統揚機構】一橋雙星 三重水漾｜官網">
+<meta name="twitter:description" content="統元極美：一橋雙星｜三重水漾，A2雙捷運三重站、CITYLINK、大都會公園｜質感18~32坪，電話：2989-2168地址：三重區光陽街68號">
+
+<!-- 結構化資料 / Schema.org -->
+<meta itemprop="name" content="【統元極美｜統揚機構】一橋雙星 三重水漾｜官網">
+<meta itemprop="description" content="統元極美：一橋雙星｜三重水漾，A2雙捷運三重站、CITYLINK、大都會公園｜質感18~32坪，電話：2989-2168地址：三重區光陽街68號">
